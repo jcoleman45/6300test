@@ -38,7 +38,7 @@ Entry Criteria
 
 Exit Criteria
 
-**Verify Software: **The software will be tested through various cases using JUnit. The QA manager will work with the developer lead to fix problems and make sure it pass all the tests. The test cases will be written to have a good code coverage.
+**Verify software:** The software will be tested through various test cases written using JUnit tool. The QA manager will prepare test scenarios and test cases along with test input data like raw text files that contains the essays. This will include various input combinations like different delimiters etc... to verify each functionality. The QA manager will work with the development lead to fix problems and make sure all tests are passed. The test cases will be written to have good code coverage.
 
 Entry Criteria
 
@@ -71,7 +71,7 @@ The development lead writes the Java code for the Java Application, and manages 
 The documentation lead manages the documentation systems and writes the requirements document and user manual.
 
 ###QA manager (Yue Li)
-The QA manager tests/debugs the code and evaluates the quality of the application to meet all requirements.
+The QA manager will prepare test cases and write Junit code to tests/debugs the code and evaluates the quality of the application to meet all requirements.
 
 
 ##4 Estimates
