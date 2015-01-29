@@ -4,7 +4,9 @@
 
 ```The introduction provides context for the project. Write a concise description of the software you will develop and its target users.```
 
-We will developing an application named "AverageSentenceLength" for students in a university. The program is Java based and executable from command line. This program will take a ASCII text file as input and will output the average number of words in every sentence within the file. 
+Development of a tool named "Average Sentence Length" for use by students in a university. Typically the students in the University write essays which have long and very wordy sentences. This tool would help the students improve their writing style by helping them count the average number of words in the sentences of their essays.
+
+The application will be a Java language based executable that can be run from the command prompt. The application will take an ASCII text file that contains the essay as input and will output the average number of words of all sentences within that file (for the particular essay). 
 
 ##2 Process Description
 
@@ -15,17 +17,38 @@ We will developing an application named "AverageSentenceLength" for students in 
 ```- Entrance criteria (inputs needed for the activity)```
 ```- Exit criteria (outputs produced by the activity and how you know it has been completed satisfactorily)```
 
-Our team are using a waterfall-like process for this project. Specifically, we will implement the following steps:
+The software development methodology planned to be used is the waterfall-process. Specifically, the following activities are planned : 
 
-**Plan Project:** Several meeting are scheduled to build the team, outline the whole process and define various responsibilities. A project plan will be drafted by the project manager and approved by the team.
+**Plan Project:** Meetings are scheduled to build the team, outline the whole process and define individual and team responsibilities. A project plan (current document) will be drafted by the project manager and approved by the team. The project plan will be tracked on an ongoing basis until the completion of the project. Certain PM metrics will be captured as and when necessary.
 
-**Define requirements: **The user requirements and system requirements(functional and non-functional) are identified in this step. The documentation lead will write the documents and update it after team review.
+Entry Criteria
 
-**Develop software: **The software will be developed through Java. The code will be shared and managed using Github repository. The code should be tested by QA manager and reviewed by all team members until it meets the requirements according to the requirements document.
+Exit Criteria
 
-**Verify software: **The software will be tested through various cases using JUnit. The QA manager will work with the develop lead to fix problems and make sure it pass all the tests.
 
-**Write user manual: **As a user guide, the manual will be written and released with the software. It will contain both usage guide and troubleshooting information for the software. The content will be written by the documentation and reviewed by all team members.
+**Define Requirements:** The user requirements and system requirements(functional and non-functional) will be identified. The Documentation lead will be responsible for the overall documentation with support from all team members with respect to review.
+
+Entry Criteria
+
+Exit Criteria
+
+**Develop Software:** The software will be developed using Java. The code will be shared and managed using Github version control repository. The code shall be tested by QA manager with support from all team members until it meets the requirements as per the requirements document.
+
+Entry Criteria
+
+Exit Criteria
+
+**Verify Software: **The software will be tested through various cases using JUnit. The QA manager will work with the developer lead to fix problems and make sure it pass all the tests. The test cases will be written to have a good code coverage.
+
+Entry Criteria
+
+Exit Criteria
+
+**Write User Manual:** Detailed user guides will be documented and released with the software. It will contain both usage guide and troubleshooting information for the software. The content will be written by the documentation lead and reviewed by all team members.
+
+Entry Criteria
+
+Exit Criteria
 
 
 ##3 Team
@@ -36,7 +59,7 @@ Our team are using a waterfall-like process for this project. Specifically, we w
 ```- Roles, with a short description of each role```
 ```- Table showing which team member(s) has which role(s)```
 
-Our team includes four members. The following are roles and their responsibilities:
+Project team structure is given below along with their roles and responsibilities:
 
 ###Project manager (Yuchun Qin)
 The project manager are responsible for setting goals and tracking the whole progress. This role drafts the project plan. 
