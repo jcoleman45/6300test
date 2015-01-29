@@ -23,7 +23,7 @@ Our team are using a waterfall-like process for this project. Specifically, we w
 
 **Develop software: **The software will be developed through Java. The code will be shared and managed using Github repository. The code should be tested by QA manager and reviewed by all team members until it meets the requirements according to the requirements document.
 
-**Verify software: **The software will be tested through various cases using JUnit. The QA manager will work with the develop lead to fix problems and make sure it pass all the tests.
+**Verify software: **The software will be tested through various cases using JUnit. The QA manager will prepare test cases which are raw text files including different delimeters to verify each functions and work with the develop lead to fix problems and make sure it pass all the tests.
 
 **Write user manual: **As a user guide, the manual will be written and released with the software. It will contain both usage guide and troubleshooting information for the software. The content will be written by the documentation and reviewed by all team members.
 
@@ -48,7 +48,7 @@ The development lead writes the Java code for the Java Application, and manages 
 The documentation lead manages the documentation systems and writes the requirements document and user manual.
 
 ###QA manager (Yue Li)
-The QA manager tests/debugs the code and evaluates the quality of the application to meet all requirements.
+The QA manager will prepare test cases and write Junit code to tests/debugs the code and evaluates the quality of the application to meet all requirements.
 
 
 ##4 Estimates
