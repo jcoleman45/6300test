@@ -6,7 +6,7 @@
 
 The project involves development of a tool named "Average Sentence Length" for use by students in a university. Typically the students in the University write essays which have long and very wordy sentences. This tool would help the students improve their writing style by helping them count the average number of words in the sentences of their essays.
 
-The application will be a Java language based executable that can be run from the command prompt. The application will take an ASCII text file that contains the essay as input and will output the average number of words of all sentences within that file (for the essay). 
+The application will be a Java language based executable that can be run from the command prompt. The application will take an ASCII text file that contains the essay as input, will parse all sentences of the essay and will output the average number of words considering all sentences. 
 
 ##2 Process Description
 
@@ -40,8 +40,8 @@ Exit Criteria
 Entry Criteria
 
 - Project plan
-- Verbal requirements as specified in the conversation video 
-- Instruction notes regarding requirements
+- Verbal requirements as specified in the conversation videos
+- Instructor notes regarding requirements
 
 Exit Criteria
 
@@ -65,7 +65,7 @@ Exit Criteria
 - Unit testing of source code using JUnit. Unit testing is performed to check critical code logic and also give a code coverage of 60% or above 
 - Design document, working source code & unit tests shall be uploaded to github repository
 
-**Verify software:** The software will be tested through various test cases using JUnit tool and also through manual testing. The QA manager will prepare test scenarios and test cases along with test input data like raw text files that contains the essays. This will include various input combinations like different delimiters etc... to verify each functionality. The QA manager will work with the development lead to fix defects and make sure all tests are passed. The code coverage details will also be validated. The open defects will be classified as critical/major/minor/cosmetic.
+**Verify software:** The software will be tested through various test cases using JUnit tool and also through manual testing. The QA manager will prepare test scenarios and test cases along with test input data like raw text files that contains the essays. This will include various input combinations like different delimiters etc... to verify each functionality. The QA manager will work with the development lead to fix defects and make sure all tests are passed. The code coverage details will also be validated. The defects will be classified as critical/major/minor/cosmetic.
 
 Entry Criteria
 
@@ -76,8 +76,9 @@ Entry Criteria
 Exit Criteria
 
 - Agreed test cases (integration, system, unit etc...) that test each requirement. This will be part of "Test Cases" document.
+- Sample test data preparation and agreement by the QA manager
 - Test completion report
-- Approval of test completion report by QA manager
+- Approval of test completion by QA manager
 - No critical/major/minor defects.
 - All artifacts will be uploaded to github repository
 
