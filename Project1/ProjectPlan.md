@@ -136,25 +136,26 @@ The project team constitutes of the following members:
 - Yuchun Qin
 - Cedric Meury
 - Yue Li
-- Ganesh Shivashankar
+- Ganesh Shivashankaraiah
 
 The description of roles assigned to team members are given below:
 
-- **Project Manager:** The project manager are responsible for setting goals and tracking the whole progress. This role drafts the project
+- **Project Manager:** The project manager is responsible for setting goals and tracking the whole progress. This role drafts the project
 plan.
-- **Development Lead:** The development lead writes the Java code for the Java Application, and manages merges of different branches.
-- **Documentation Lead:** The documentation lead manages the documentation systems and writes the requirements document and user manual.
-- **QA Manager:** The QA manager will prepare test cases and write Junit code to tests/debugs the code and evaluates the quality of the
+- **Development Lead:** The development lead writes the Java code for the Java application, and manages merges of different branches in 
+the github repository.
+- **Documentation Lead:** The documentation lead manages the various documents and writes the requirements document, user manual etc...
+- **QA Manager:** The QA manager will prepare test cases and write Junit code to test/debug the code and evaluates the quality of the
 application to meet all requirements.
 
 In this project, the roles are assigned as follows:
 
-| Team Member         | Role(s)                        |
-| ------------------- | ------------------------------ |
-| Yuchun Qin          | Project Manager, Documentation |
-| Cedric Meury        | Development Lead, Developer    |
-| Yue Li              | QA Manager, Tester, Developer  |
-| Ganesh Shivashankar | Documentation Lead, Developer  |
+| Team Member             | Role(s)                        |
+| ----------------------- | ------------------------------ |
+| Yuchun Qin              | Project Manager, Documentation |
+| Cedric Meury            | Development Lead, Developer    |
+| Yue Li                  | QA Manager, Tester, Developer  |
+| Ganesh Shivashankaraiah | Documentation Lead, Developer  |
 
 ##4 Estimates
 > Provide estimates for the following metrics:
@@ -162,5 +163,11 @@ In this project, the roles are assigned as follows:
 > - Effort hours: total number of team-member hours you expect to spend on the project
 > - Lines of code: total number of lines of source code you expect to have in your final product
 
-We expect that this project should take a combined 25 team-member hours. In the final product, we expect 100 lines of
-code for the software, and 50 lines of code for testing.
+Effort Hours
+
+- The estimated project effort should be around 40 team-member/man hours. 
+
+Lines of Code
+
+- The estimated source LOC for the complete tool is around 200 lines.
+- And around 200 lines of code for Junit tests.

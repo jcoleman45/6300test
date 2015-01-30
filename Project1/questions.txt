@@ -1,2 +1,4 @@
-no questions
+What are the error conditions that need to be covered ?
+
+What is the input format of text file. Is it .txt or any other file extension ?
 
