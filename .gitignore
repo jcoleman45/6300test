@@ -1,11 +1,28 @@
+##
+# A gitignore file specifies intentionally untracked files that Git should ignore. Files already tracked by Git are not affected
+# More information: http://git-scm.com/docs/gitignore
+#
+
+# Intellij IDEA projectfiles
+.idea
+*.iml
+
 # Mac OSX folder files
 .DS_Store
+
+# Compiled Java classes
 *.class
+
 # Mobile Tools for Java (J2ME)
 .mtj.tmp/
+
 # Package Files #
 *.jar
 *.war
 *.ear
+
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
+
+# Temporary files
+*.swp
