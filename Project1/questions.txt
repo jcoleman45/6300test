@@ -1,4 +1,4 @@
-What are the error conditions that need to be covered ?
+What are the error conditions that need to be checked during program execution ?
 
-What is the input format of text file. Is it .txt or any other file extension ?
+What is the input format of text file that contains the essay. Is it .txt or any other file extension ?
 
