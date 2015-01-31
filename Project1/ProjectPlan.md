@@ -24,11 +24,10 @@ The software development methodology planned to be used is the waterfall-process
 are planned for the complete execution of this project : 
 
 ###2.1 Plan Project
-This phase includes the overall planning of activities for the whole project such as regular project
-meetings to build the team and to get the activity updates, outline the whole process and define individual and team
-responsibilities etc... A project plan (current document) will be drafted by the project manager and approved by the
-team. The project plan will be tracked on an ongoing basis until the completion of the project. Metrics will be captured
-as and when necessary.
+This phase includes the overall planning of activities for the whole project such as regular project meetings to build 
+the team and to get the activity updates, outline the whole process and define individual and team responsibilities etc... 
+A project plan (current document) will be drafted by the project manager and approved by the team. The project plan will 
+be tracked on an ongoing basis until the completion of the project. Metrics will be captured as and when necessary.
 
 Entry Criteria
 
@@ -64,9 +63,9 @@ Exit Criteria
 - Requirements specification to be uploaded to github repository
 
 ###2.3 Develop Software
-The software will be developed using Java technology. The code will be shared and managed using
-Github version control repository. An agreed design will be documented before starting coding. Intermediate code reviews
-will be performed before testing. The code shall be unit-tested by all development team members.
+The software will be developed using Java technology. The code will be shared and managed using Github version control 
+repository. Intermediate code reviews will be performed before testing. The code shall be unit-tested by all development 
+team members.
 
 Entry Criteria
 
@@ -75,46 +74,43 @@ Entry Criteria
 
 Exit Criteria
 
-- Agreed documented application architecture/design
-- Source code for the application including JUnit test cases (based on design).
+- Agreed design and source code for the application including JUnit test cases
 - Approval of development completion by development lead
 - Unit testing of source code using JUnit. Unit testing is performed to check critical code logic and also give a code
 coverage of 60% or above 
-- Design document, working source code & unit tests shall be uploaded to github repository
+- Working source code & unit tests shall be uploaded to github repository
 
 ###2.4 Verify software
-The software will be tested through various test cases using JUnit tool and also through manual
-testing. The QA manager will prepare test scenarios and test cases along with test input data like raw text files that
-contains the essays. This will include various input combinations like different delimiters etc... to verify each
-functionality. The QA manager will work with the development lead to fix defects and make sure all tests are passed. The
-code coverage details will also be validated. The defects will be classified as critical/major/minor/cosmetic.
+The software will be tested through various test cases using JUnit tool and also through manual testing. The QA manager 
+will prepare test scenarios and test cases along with test input data like raw text files that contains the essays. This 
+will include various input combinations like different delimiters etc... to verify each functionality. The QA manager 
+will work with the development lead to fix defects and make sure all tests are passed. The code coverage details will 
+also be validated. The defects will be categorized as critical/major/minor/cosmetic.
 
 Entry Criteria
 
 - Project plan
 - Requirements specification
-- Architecture/Design document
 
 Exit Criteria
 
 - Agreed test cases (integration, system, unit etc...) that test each requirement. This will be part of "Test Cases"
 document.
 - Sample test data preparation and agreement by the QA manager
-- Test completion report
+- Test completion details
 - Approval of test completion by QA manager
-- No critical/major/minor defects.
+- No critical/major/minor defects
 - All artifacts will be uploaded to github repository
 
 ###2.5 Write User Manual
-Detailed user guides will be documented and released with the software. It will contain both
-usage guide and troubleshooting information for the software. The content will be written by the documentation lead and
-reviewed by all team members.
+Detailed user guides will be documented and released with the software. It will contain both usage guide and 
+troubleshooting information for the software. The content will be written by the documentation lead and reviewed by 
+all team members.
 
 Entry Criteria
 
 - Project plan
 - Requirements specification
-- Architecture/design document
 - Test Cases document
 
 Exit Criteria
