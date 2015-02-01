@@ -93,6 +93,9 @@ The software shall return the average number of words per sentence, rounded down
 
 ###2.2 Non-Functional Requirements
 
+Some of the requirements listed here are quite technical and would better fit into a design document; however
+they were explicitly mentioned by one group of stake-holders (instructors).
+
 ####2.2.1 Compilation
 
 #####2.2.1.1 Programming Language (must have)
