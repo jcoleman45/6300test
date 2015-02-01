@@ -79,16 +79,16 @@ this program that is not the part of JDK, should be included as source code with
 
 ####2.1.1 Command-line interface
 
-#####2.1.1.1 File path
+#####2.1.1.1 File path (must have)
 The `file path` shall be specified by the user as the single command-line argument.
 
-#####2.1.1.2 Delimiters
+#####2.1.1.2 Delimiters (must have)
 A flag `-d` shall be used to specify the sentence separators. The default value is: `.?!`
 
-#####2.1.1.3 Minimum word length
+#####2.1.1.3 Minimum word length (must have)
 A flag `-l` shall be used to specify an inclusive lower limit for word length. The default value is: `3`
 
-#####2.1.1.4 Error messages
+#####2.1.1.4 Error messages (must have)
 Reasonably friendly, helpful messages shall be returned in various error cases:
 
 - Invalid file path
@@ -97,41 +97,41 @@ Reasonably friendly, helpful messages shall be returned in various error cases:
 - Invalid file extension
 - Empty input file
 
-####2.1.2 Input file format
+####2.1.2 Input file format (must have)
 The file shall be in ASCII format.
 
-####2.1.3 Output
+####2.1.3 Output (must have)
 The software shall return the average number of words per sentence, rounded down to the nearest integer.
 
 ###2.2 Non-Functional Requirements
 
 ####2.2.1 Compilation
 
-#####2.2.1.1 Programming Language
+#####2.2.1.1 Programming Language (must have)
 The software must be written in Java, language level 1.6 or 1.7.
 
-#####2.2.1.2 Third-party libraries
+#####2.2.1.2 Third-party libraries (must have)
 The software shall not make use of special/non-standard libraries. 
 All code required to execute the program that is not part of the  standard JDK, shall be included as source 
 code with the program.
 
-#####2.2.1.3 Compilation
+#####2.2.1.3 Compilation (must have)
 The source shall must compile with the `javac` command; without providing any compiler options.
 
 ####2.2.2 Execution
 
-#####2.2.2.1 Runtime environment 
+#####2.2.2.1 Runtime environment  (must have)
 The application shall work on machine with a vanilla installation of Java 1.6 or Java 1.7.
 
-#####2.2.2.2 Application Entry Point
+#####2.2.2.2 Application Entry Point (must have)
 The software is a Java application having a `main()` method.
 
-#####2.2.2.3 Execution
+#####2.2.2.3 Execution (must have)
 The application shall be executable from the command prompt using the `java` command.
 
-#####2.2.2.3 Usability
+#####2.2.2.3 Usability (must have)
 The application shall be easy to use and have user-friendly error messages rather than having error codes
 
-#####2.2.2.4 Documentation
+#####2.2.2.4 Documentation (must have)
 The application shall be accompanied by help documentation that indicates how to use the tool, troubleshooting 
 information and details around the various error messages.
