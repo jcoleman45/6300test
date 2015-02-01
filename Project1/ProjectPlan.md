@@ -53,6 +53,7 @@ review.
 - Requirements document review and approval by all team members
 - Questions about the requirements to be posted to Laura
 - Requirements specification document to be uploaded to Github repository
+- Requirements added as issues in Github issue tracker
 
 ###2.3 Develop Software
 The software will be developed using Java technology. The code will be shared and managed using Github version control 
@@ -63,6 +64,7 @@ team members.
 
 - Project plan
 - Software requirements specification
+- Requirements issues in Github issue tracker
 
 **Exit Criteria**
 
