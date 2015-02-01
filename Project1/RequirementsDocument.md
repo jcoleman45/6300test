@@ -124,5 +124,5 @@ Reasonably friendly, helpful messages shall be returned in various error cases.
 - Invalid file extension
 - Empty input file
 
-####2.2.2.6 Input file encoding (must have)
+#####2.2.2.6 Input file encoding (must have)
 The application shall be able to handle raw text files encoded in ASCII.
