@@ -1,8 +1,6 @@
 # **Project Plan -- Team 26**
 
 ##1 Introduction
-> The introduction provides context for the project. Write a concise description of the software you will develop and
-> its target users.
 
 The project involves development of an application called "Average Sentence Length" for use by students in a university.
 Typically the students in the University write essays which have long and very wordy sentences. This tool would help the
@@ -12,12 +10,6 @@ The application will be written in Java, the executable will be run from the com
 take a raw text file as input, parse all sentences of the essay and output the average number of words per sentence. 
 
 ##2 Process Description
-> Process description as a set of activities; for each activity, provide the following:
-> 
-> - Activity name (verb or verb phrase)
-> - Activity description (concise paragraph)
-> - Entrance criteria (inputs needed for the activity)
-> - Exit criteria (outputs produced by the activity and how you know it has been completed satisfactorily)
 
 The software development methodology used for this project is the waterfall process. Specifically, the following
 activities are planned for the complete execution of this project. Activity 2.5 "Write User Manual" will be tackled on a
@@ -122,11 +114,6 @@ all team members.
 - All artifacts will be uploaded to Github repository
 
 ##3 Team
-> Describe the team and their roles (there may be more roles than there are team members)
->
-> - Team members' names
-> - Roles, with a short description of each role
-> - Table showing which team member(s) has which role(s)
 
 The project team constitutes of the following members:
 
@@ -155,16 +142,12 @@ In this project, the roles are assigned as follows:
 | Ganesh Shivashankaraiah | Documentation Lead, Developer  |
 
 ##4 Estimates
-> Provide estimates for the following metrics:
->
-> - Effort hours: total number of team-member hours you expect to spend on the project
-> - Lines of code: total number of lines of source code you expect to have in your final product
 
-Effort Hours
+**Effort Hours**
 
 - The estimated project effort should be around 40 person-hours. 
 
-Lines of Code
+**Lines of Code**
 
 - The estimated amount of LOC for the finished application is around 200 lines, and an additional 200 lines for unit
 tests.

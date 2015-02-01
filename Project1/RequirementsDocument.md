@@ -12,26 +12,19 @@ with troubleshooting information.
 
 ###1.1 User Characteristics
 
-> General characteristics of the intended users of the product, including educational level, experience, and technical
-> expertise.
-
 There will be about 270 college students who may use this application per semester. Their computer expertise varies from
 no experience at all to being proficient users. Also there is no one type of computer that all students use and they 
 have machines with varied operating systems.
 
 ###1.2 System's functionality
 
-> Requirements written from the point of view of end users, usually expressed in narrative form.
-
-The users will identify the file-path to their essay (files are in raw text format) and use it as as a command-line 
+The users will identify the file-path to their essay (files are in raw text format) and use it as as a command-line
 parameter. As part of the command-line parameters, they have the option to customize the minimum word length and sentence
 delimiters that need to be used. If the users' input is not according to what the software expects, helpful error messages
 shall be returned to help them use the tool effectively. If the command-line parameters are valid, the software returns 
 the average number of words per sentence for the selected essay.
 
 ###1.3 User Interfaces
-
-> Interfaces between the software product and its users; that is, how the users will interact with the system.
 
 The users are required to have the Java Runtime Environment version 1.6 or 1.7 installed. The application is
 run on the command-line using the `java` command. The input data shall be specified by passing a path to a (raw text format)
@@ -65,12 +58,7 @@ running the program or if the input commands are wrongly entered.
 
 ##2 System Requirements
 
-> These subsections contain all the software requirements at a level of detail sufficient to enable
-> designers/developers to design/develop a system that satisfies those requirements, and testers to test that the 
-> system satisfies those requirements. This part of the document should provide a numbered (possibly hierarchical) list 
-> of simple, complete, and consistent functional and non-functional requirements.
-
-This software should be an application running using the Java Runtime Environment version 1.6 or 1.7. It is developed 
+This software should be an application running using the Java Runtime Environment version 1.6 or 1.7. It is developed
 to analyze the average words of sentences in a raw text file encoded in ASCII. It should have a main method and contain 
 a command line without other options. The code must be written in Java and must use standard Java libraries. All code in
 this program that is not the part of JDK, should be included as source code with the program.
