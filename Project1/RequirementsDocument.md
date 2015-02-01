@@ -33,33 +33,35 @@ the average number of words per sentence for the selected essay.
 
 > Interfaces between the software product and its users; that is, how the users will interact with the system.
 
-The users are required to have the Java Runtime Environment installed, with a version of 1.6 / 1.7. The application is 
+The users are required to have the Java Runtime Environment version 1.6 or 1.7 installed. The application is
 run on the command-line using the `java` command. The input data shall be specified by passing a path to a (raw text format)
 file on the command-line. The two customizations (sentence-separators and word-length) available are specified by command-
 line parameters. 
 
-This is a draft of the envisioned user interfaces:
+####1.3.1 Run the application
+
+This is a draft of the envisioned user interface (executed in the application directory):
  
 ````
-java -jar AverageSentenceLength.jar [-d <delimiters>] [-l <min_length>] <file_path>
+java -cp . AverageSentenceLength [-d <delimiters>] [-l <min_length>] <file_path>
 ````
 
 The option arguments are:
 
-- **delimiters:** (optional) Specify sentence delimiters - defaults to: `.` `?` `!`
+- **delimiters:** (optional) Specify a list of sentence delimiters - defaults to: `.?!`
 - **min_length:** (optional) Specify minimum word length (inclusive) - defaults to: `3`
 
-The software shall return the average number of words per sentence, rounded down to the nearest integer. Output shall be 
-something like
+####1.3.2 Output
+
+The software shall return the average number of words per sentence, rounded down to the nearest integer. The output 
+shall be returned as follows:
 
 ````
 Average number of words per sentence in the file - <file> : <number>
 ````
 
-````
-Valid and helpful error messages are displayed on the command line if there is an error condition while 
+Valid and helpful error messages are displayed on the command line if there is an error condition while
 running the program or if the input commands are wrongly entered.
-````
 
 ##2 System Requirements
 
@@ -68,27 +70,23 @@ running the program or if the input commands are wrongly entered.
 > system satisfies those requirements. This part of the document should provide a numbered (possibly hierarchical) list 
 > of simple, complete, and consistent functional and non-functional requirements.
 
-This software should be an application running with Java 1.6 or a later version 1.7. It is developed to analyze the 
-average words of sentences in an ASCII format file. It should have a main method and contain a command line without other options. The code must be written in Java and must use standard Java libraries. All code in this program that is not the 
-part of JDK, should be included as source code with the program.
+This software should be an application running using the Java Runtime Environment version 1.6 or 1.7. It is developed 
+to analyze the average words of sentences in a raw text file encoded in ASCII. It should have a main method and contain 
+a command line without other options. The code must be written in Java and must use standard Java libraries. All code in
+this program that is not the part of JDK, should be included as source code with the program.
  
 ###2.1 Functional Requirements
 
 ####2.1.1 Command-line interface
 
 #####2.1.1.1 File path
-
 The `file path` shall be specified by the user as the single command-line argument.
 
 #####2.1.1.2 Delimiters
-
-A flag `-d` shall be used to specify the sentence separators. Periods, question marks, exclamation points, semicolons 
-and colons are default delimiters. Comma is not to be used as a default sentence delimiter.
+A flag `-d` shall be used to specify the sentence separators. The default value is: `.?!`
 
 #####2.1.1.3 Minimum word length
-
-A flag `-l` shall be used to specify a lower limit for word length. This application shall only count words greater than 
-or equal to 3 characters by default unless specified otherwise by the `-l` option.
+A flag `-l` shall be used to specify an inclusive lower limit for word length. The default value is: `3`
 
 #####2.1.1.4 Error messages
 Reasonably friendly, helpful messages shall be returned in various error cases:
@@ -97,7 +95,6 @@ Reasonably friendly, helpful messages shall be returned in various error cases:
 - File inaccessible
 - Invalid usage of command-line parameters
 - Invalid file extension
-- Java runtime not installed or not configured correctly
 - Empty input file
 
 ####2.1.2 Input file format
@@ -127,7 +124,7 @@ The source shall must compile with the `javac` command; without providing any co
 The application shall work on machine with a vanilla installation of Java 1.6 or Java 1.7.
 
 #####2.2.2.2 Application Entry Point
-The software is a Java application having a main() method.
+The software is a Java application having a `main()` method.
 
 #####2.2.2.3 Execution
 The application shall be executable from the command prompt using the `java` command.

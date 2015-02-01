@@ -1,4 +1,2 @@
-What are the error conditions that need to be checked during program execution ?
-
-What is the input format of text file that contains the essay. Is it .txt or any other file extension ?
-
+What error conditions does the application need to take care of?
+What encoding do the input text files use?
