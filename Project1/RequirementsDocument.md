@@ -76,18 +76,6 @@ A flag `-d` shall be used to specify the sentence separators. The default value 
 #####2.1.1.3 Minimum word length (must have)
 A flag `-l` shall be used to specify an inclusive lower limit for word length. The default value is: `3`
 
-#####2.1.1.4 Error messages (must have)
-Reasonably friendly, helpful messages shall be returned in various error cases:
-
-- Invalid file path
-- File inaccessible
-- Invalid usage of command-line parameters
-- Invalid file extension
-- Empty input file
-
-####2.1.2 Input file format (must have)
-The file shall be in ASCII format.
-
 ####2.1.3 Output (must have)
 The software shall return the average number of words per sentence, rounded down to the nearest integer.
 
@@ -126,3 +114,15 @@ The application shall be easy to use and have user-friendly error messages rathe
 #####2.2.2.4 Documentation (must have)
 The application shall be accompanied by help documentation that indicates how to use the tool, troubleshooting 
 information and details around the various error messages.
+
+#####2.2.2.5 Error messages (must have)
+Reasonably friendly, helpful messages shall be returned in various error cases.
+
+- Invalid file path
+- File inaccessible
+- Invalid usage of command-line parameters
+- Invalid file extension
+- Empty input file
+
+####2.2.2.6 Input file encoding (must have)
+The application shall be able to handle raw text files encoded in ASCII.
