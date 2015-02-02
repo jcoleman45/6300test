@@ -36,7 +36,7 @@ public class AvgSentenceLength {
     public long computeAverageSentenceLength() {
         try {
             List<String> lines = readLines(file);
-            String text = String.join(" ", lines);
+            String text = joinLines(lines, " ");
             String[] sentences = text.split("[" + sentenceDelimiters + "]");
             long totalWords = 0;
             long sentenceCount = sentences.length;
@@ -94,6 +94,22 @@ public class AvgSentenceLength {
             line = reader.readLine();
         }
         return lines;
+    }
+
+    /**
+     * Join all strings in the given list using the specified delimiter. 
+     * @param lines list of strings
+     * @return all strings joined by the delimiter
+     */
+    private String joinLines(List<String> lines, String delimiter) {
+        StringBuilder builder = new StringBuilder();
+        for (int i = 0; i < lines.size(); i++) {
+            builder.append(lines.get(i));
+            if(i != lines.size() - 1) {
+                builder.append(delimiter);
+            }
+        }
+        return builder.toString();
     }
 
 }
