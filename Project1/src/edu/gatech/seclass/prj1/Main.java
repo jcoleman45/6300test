@@ -48,18 +48,19 @@ public class Main {
                     break;
             }
         }
-        if(fileName == null) {
-            System.err.println("missing filename");
-            printUsageAndExit();
-        } else {
+        if (fileName != null) {
             File file = new File(fileName);
-            if(!file.exists()) {
-                System.err.println("specified file does not exist: " + fileName);
-            } else {
+            if (file.exists()) {
                 asl.setFile(file);
                 long average = asl.computeAverageSentenceLength();
                 System.out.println("Average number of words per sentence in the file - " + fileName + " : " + average);
+            } else {
+                System.err.println("specified file does not exist: " + fileName);
+                System.exit(1);
             }
+        } else {
+            System.err.println("missing filename");
+            printUsageAndExit();
         }
     }
 
