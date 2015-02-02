@@ -6,7 +6,7 @@ Students of a university need a tool to calculate the average number of words in
 their writing style. The software shall be designed for use by each of the students considering the fact the not all 
 users are expert computer users. The application shall be known as `Average Sentence Length` and each student shall 
 have a copy of this tool. The input file which contains the essay is a raw text file. To use the tool, the students 
-are expected to pass the file path to the essay with some configuration / customization parameters on the command-line 
+are expected to pass the file path to the essay with some configuration parameters on the command-line 
 and get the average number of words of the sentences as output. Adequate help documentation shall be provided along 
 with troubleshooting information.
 
