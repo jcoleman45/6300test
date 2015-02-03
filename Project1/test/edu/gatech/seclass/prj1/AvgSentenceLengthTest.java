@@ -43,4 +43,16 @@ public class AvgSentenceLengthTest {
         asl.setMinWordLength(5);
         assertEquals(comment, 3, asl.computeAverageSentenceLength(), 0);
     }
+    @Test
+    public void testComputeAverageSentenceLength4() {
+        String comment = "Testing empty file";
+        asl.setFile(new File(fileDir + "emptyFile.txt"));
+        assertEquals(comment, 0, asl.computeAverageSentenceLength(), 0);
+    }
+    @Test
+    public void testComputeAverageSentenceLength5() {
+        String comment = "Testing file with no delimiters";
+        asl.setFile(new File(fileDir + "noDelimiters.txt"));
+        assertEquals(comment, 13, asl.computeAverageSentenceLength(), 0);
+    }
 }
