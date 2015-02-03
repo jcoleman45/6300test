@@ -1,6 +1,7 @@
 package edu.gatech.seclass.prj1;
 
 import java.io.File;
+import java.util.Objects;
 
 /**
  * Calculates average sentence length per word of a raw text file.
@@ -19,7 +20,7 @@ public class Main {
         String fileName = null;
         AvgSentenceLength asl = new AvgSentenceLength();
         for (int i = 0; i < args.length; i++) {
-            if (args[i] == "d") {
+            if (Objects.equals(args[i], "d")) {
                     if (i + 1 < args.length) {
                         asl.setSentenceDelimiters(args[i + 1]);
                         i++;
@@ -28,7 +29,7 @@ public class Main {
                         printUsageAndExit();
                     }
             }
-            else if (args[i] == "-l") {
+            else if (args[i].equals("-l")) {
                     if (i + 1 < args.length) {
                         try {
                             asl.setMinWordLength(Integer.valueOf(args[i + 1]));
@@ -45,7 +46,6 @@ public class Main {
             else
             {
                     fileName = args[i];
-                    break;
             }
         }
         
