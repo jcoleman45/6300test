@@ -19,8 +19,7 @@ public class Main {
         String fileName = null;
         AvgSentenceLength asl = new AvgSentenceLength();
         for (int i = 0; i < args.length; i++) {
-            switch (args[i]) {
-                case "-d":
+            if (args[i] == "d") {
                     if (i + 1 < args.length) {
                         asl.setSentenceDelimiters(args[i + 1]);
                         i++;
@@ -28,8 +27,8 @@ public class Main {
                         System.err.println("missing delimiters");
                         printUsageAndExit();
                     }
-                    break;
-                case "-l":
+            }
+            else if (args[i] == "-l") {
                     if (i + 1 < args.length) {
                         try {
                             asl.setMinWordLength(Integer.valueOf(args[i + 1]));
@@ -42,12 +41,14 @@ public class Main {
                         System.err.println("missing min_length");
                         printUsageAndExit();
                     }
-                    break;
-                default:
+            }
+            else
+            {
                     fileName = args[i];
                     break;
             }
         }
+        
         if (fileName != null) {
             File file = new File(fileName);
             if (file.exists()) {
