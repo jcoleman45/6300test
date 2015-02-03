@@ -23,6 +23,9 @@ public class AvgSentenceLengthTest {
         asl = null;
         fileDir = null;
     }
+
+    // -- START OF PROVIDED TEST CASES, DON'T CHANGE THESE --
+    
     @Test
     public void testComputeAverageSentenceLength1() {
         String comment = "Testing sentences that span multiple lines";
@@ -43,6 +46,9 @@ public class AvgSentenceLengthTest {
         asl.setMinWordLength(5);
         assertEquals(comment, 3, asl.computeAverageSentenceLength(), 0);
     }
+    
+    // -- END OF PROVIDED TEST CASES --
+    
     @Test
     public void testComputeAverageSentenceLength4() {
         String comment = "Testing empty file";
