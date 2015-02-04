@@ -124,6 +124,6 @@ public class AvgSentenceLengthTest
     	}
     	
         assertEquals(1, exitStatus);
-        assertEquals(true, outContent.toString().contains(Consts.ERR_FILE_NAME_MISSING));        
+        assertEquals(true, outContent.toString().contains(Constants.ERR_FILE_NAME_MISSING));
     }
 }

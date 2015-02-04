@@ -25,8 +25,8 @@ public class AvgSentenceLength
      */
     public AvgSentenceLength() 
     {
-        sentenceDelimiters = Consts.SENTENCE_DELIMITERS;
-        minWordLength = Consts.MIN_WORD_LENGTH;
+        sentenceDelimiters = Constants.SENTENCE_DELIMITERS;
+        minWordLength = Constants.MIN_WORD_LENGTH;
         file = null;
     }
     

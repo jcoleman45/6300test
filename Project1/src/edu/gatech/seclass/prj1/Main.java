@@ -18,9 +18,9 @@ public class Main {
         AvgSentenceLength asl = result.getAvgSentenceLength();
         if(result.getStatus() == RUN) {
             long average = asl.computeAverageSentenceLength();
-            System.out.printf(Consts.OUT_AVERAGE_NUMBER, asl.getFile().getPath(), average);
+            System.out.printf(Constants.OUT_AVERAGE_NUMBER, asl.getFile().getPath(), average);
         } else {
-            System.err.printf(Consts.ERR_COULD_NOT_START_CALCULATION, result.getErrorMessage());
+            System.err.printf(Constants.ERR_COULD_NOT_START_CALCULATION, result.getErrorMessage());
             if(result.getStatus() == PRINT_USAGE) {
                 printUsage();
             }
