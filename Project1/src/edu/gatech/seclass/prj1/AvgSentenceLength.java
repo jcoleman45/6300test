@@ -133,7 +133,7 @@ public class AvgSentenceLength
         for (int i = 0; i < lines.size(); i++) 
         {
             builder.append(lines.get(i));
-            if (i != lines.size() - 1) 
+            if (i != (lines.size() - 1)) 
             {
                 builder.append(delimiter);
             }

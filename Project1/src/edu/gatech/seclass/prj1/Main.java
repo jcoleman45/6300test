@@ -43,10 +43,11 @@ public class Main {
                 {
                     try 
                     {
-                    	int minWordLength = Integer.valueOf(args[i + 1]);                    	
+                    	int minWordLength = Integer.valueOf(args[i + 1]);
                     	if (minWordLength <= 0)
                     	{
-                    		throw new MinWordLengthException();
+                    		System.err.println("min_length should be greater than 0" + args[i + 1]);
+                        	printUsageAndExit();
                     	}
                     	asl.setMinWordLength(minWordLength);
                     }
@@ -55,11 +56,6 @@ public class Main {
                         System.err.println("Invalid min_length: " + args[i + 1]);
                         printUsageAndExit();
                     }
-                    catch (MinWordLengthException e)
-                    {
-                    	System.err.println("min_length should be greater than 0" + args[i + 1]);
-                    	printUsageAndExit();
-                    }                    
                     i++;
                 } 
                 else 
