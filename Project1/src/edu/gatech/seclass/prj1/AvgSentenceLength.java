@@ -29,57 +29,6 @@ public class AvgSentenceLength
         minWordLength = Constants.MIN_WORD_LENGTH;
         file = null;
     }
-    
-    /**
-     * Set the sentence separators to be used
-     * @param sentenceDelimiters sentence delimiters
-     */
-    public void setSentenceDelimiters(String sentenceDelimiters) 
-    {
-   		this.sentenceDelimiters = sentenceDelimiters;
-    }
-
-    /**
-     * Returns the currently configured sentence delimiter. 
-     * @return sentence delimiter as a String, every character is another delimiter
-     */
-    public String getSentenceDelimiters() {
-        return sentenceDelimiters;
-    }
-
-    /**
-     * Set the minimum word length. 
-     * @param minWordLength set the minimum word length
-     */
-    public void setMinWordLength(int minWordLength) 
-    {
-   		this.minWordLength = minWordLength;
-    }
-
-    /**
-     * Returns the currently configured minimum word length. 
-     * @return minimum word length (inclusive)
-     */
-    public int getMinWordLength() {
-        return minWordLength;
-    }
-
-    /**
-     * Set the file to be read from. 
-     * @param file file with content to be analyzed
-     */
-    public void setFile(File file) 
-    {
-        this.file = file;
-    }
-
-    /**
-     * Returns the currently configured file to process.
-     * @return input file
-     */
-    public File getFile() {
-        return file;
-    }
 
     /**
      * Reads the file and compute the average number of words per sentence.
@@ -164,4 +113,56 @@ public class AvgSentenceLength
         }
         return builder.toString();
     }
+    
+    /**
+     * Returns the currently configured sentence delimiter. 
+     * @return sentence delimiter as a String, every character is another delimiter
+     */
+    public String getSentenceDelimiters() {
+        return sentenceDelimiters;
+    }
+
+    /**
+     * Set the sentence separators to be used
+     * @param sentenceDelimiters sentence delimiters
+     */
+    public void setSentenceDelimiters(String sentenceDelimiters) 
+    {
+   		this.sentenceDelimiters = sentenceDelimiters;
+    }
+
+    /**
+     * Returns the currently configured minimum word length. 
+     * @return minimum word length (inclusive)
+     */
+    public int getMinWordLength() {
+        return minWordLength;
+    }
+
+    /**
+     * Set the minimum word length. 
+     * @param minWordLength set the minimum word length
+     */
+    public void setMinWordLength(int minWordLength) 
+    {
+   		this.minWordLength = minWordLength;
+    }
+
+    /**
+     * Returns the currently configured file to process.
+     * @return input file
+     */
+    public File getFile() {
+        return file;
+    }
+
+    /**
+     * Set the file to be read from. 
+     * @param file file with content to be analyzed
+     */
+    public void setFile(File file) 
+    {
+        this.file = file;
+    }
+    
 }
