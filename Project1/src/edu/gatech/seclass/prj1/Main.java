@@ -14,7 +14,7 @@ public class Main {
      */
     public static void main(String[] args)
     {
-        ProcessingResult result = new ArgProcessor(args).process();
+        ArgResult result = new ArgProcessor(args).process();
         AvgSentenceLength asl = result.getAvgSentenceLength();
         if(result.getStatus() == RUN) {
             long average = asl.computeAverageSentenceLength();

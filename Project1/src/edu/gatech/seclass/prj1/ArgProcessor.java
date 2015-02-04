@@ -17,10 +17,10 @@ public class ArgProcessor {
         this.args = args;
     }
 
-    public ProcessingResult process() {
+    public ArgResult process() {
         if (args.length < 1) 
         {
-            return new ProcessingResult(Constants.ERR_FILE_NAME_MISSING, PRINT_USAGE);
+            return new ArgResult(Constants.ERR_FILE_NAME_MISSING, PRINT_USAGE);
         }
 
         String fileName = null;
@@ -36,7 +36,7 @@ public class ArgProcessor {
                     i++;
                 } 
                 else {
-                    return new ProcessingResult(Constants.ERR_MISSING_DELIMITERS, PRINT_USAGE);
+                    return new ArgResult(Constants.ERR_MISSING_DELIMITERS, PRINT_USAGE);
                 }
             }
             else if (Objects.equals(args[i], "-l")) 
@@ -48,19 +48,19 @@ public class ArgProcessor {
                     	int minWordLength = Integer.valueOf(args[i + 1]);
                     	if (minWordLength <= 0)
                     	{
-                            return new ProcessingResult(Constants.ERR_MIN_LENGTH_SHOULD_BE_GREATER_THAN_0 + args[i + 1], PRINT_USAGE);
+                            return new ArgResult(Constants.ERR_MIN_LENGTH_SHOULD_BE_GREATER_THAN_0 + args[i + 1], PRINT_USAGE);
                     	}
                     	avgSentenceLength.setMinWordLength(minWordLength);
                     }
                     catch (NumberFormatException e) 
                     {
-                        return new ProcessingResult(Constants.ERR_INVALID_MIN_LENGTH + ": " + args[i + 1], PRINT_USAGE);
+                        return new ArgResult(Constants.ERR_INVALID_MIN_LENGTH + ": " + args[i + 1], PRINT_USAGE);
                     }
                     i++;
                 } 
                 else 
                 {
-                    return new ProcessingResult(Constants.ERR_MISSING_MIN_LENGTH, PRINT_USAGE);
+                    return new ArgResult(Constants.ERR_MISSING_MIN_LENGTH, PRINT_USAGE);
                 }
             }
             else
@@ -75,16 +75,16 @@ public class ArgProcessor {
             if (file.exists()) 
             {
                 avgSentenceLength.setFile(file);
-                return new ProcessingResult(avgSentenceLength);
+                return new ArgResult(avgSentenceLength);
             }
             else 
             {
-                return new ProcessingResult(Constants.ERR_FILE_DOES_NOT_EXIST + ": " + fileName, SYSTEM_EXIT);
+                return new ArgResult(Constants.ERR_FILE_DOES_NOT_EXIST + ": " + fileName, SYSTEM_EXIT);
             }
         } 
         else 
         {
-            return new ProcessingResult(Constants.ERR_FILE_NAME_MISSING, PRINT_USAGE);
+            return new ArgResult(Constants.ERR_FILE_NAME_MISSING, PRINT_USAGE);
         }
     }
 }

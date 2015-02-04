@@ -3,7 +3,7 @@ package edu.gatech.seclass.prj1;
 /**
  * Represents the result of processing the command-line arguments.
  */
-public class ProcessingResult {
+public class ArgResult {
 
     private final String errorMessage;
     private final Status status;
@@ -14,7 +14,7 @@ public class ProcessingResult {
      * to null. 
      * @param errorMessage error message
      */
-    public ProcessingResult(String errorMessage, Status status) {
+    public ArgResult(String errorMessage, Status status) {
         this.avgSentenceLength = null;
         this.errorMessage = errorMessage;
         this.status = status;
@@ -24,7 +24,7 @@ public class ProcessingResult {
      * Instantiate a result with the given {@code AvgSentenceLength} instance and a RUN status.
      * The error message is set to null.
      */
-    public ProcessingResult(AvgSentenceLength avgSentenceLength) {
+    public ArgResult(AvgSentenceLength avgSentenceLength) {
         this.avgSentenceLength = avgSentenceLength;
         this.errorMessage = null;
         this.status = Status.RUN;
