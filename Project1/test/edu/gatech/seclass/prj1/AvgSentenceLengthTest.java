@@ -2,30 +2,71 @@ package edu.gatech.seclass.prj1;
 
 import static org.junit.Assert.assertEquals;
 
+import java.io.ByteArrayOutputStream;
 import java.io.File;
+import java.io.PrintStream;
+import java.security.Permission;
 
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
-public class AvgSentenceLengthTest {
+public class AvgSentenceLengthTest 
+{
 
     private AvgSentenceLength asl;
     private String fileDir;
+    
+    @SuppressWarnings("serial")
+	protected static class ExitException extends SecurityException 
+    {
+        public final int status;
+        public ExitException(int status) 
+        {
+            super("There is no escape!");
+            this.status = status;
+        }
+    }
+    
+    private static class NoExitSecurityManager extends SecurityManager 
+    {
+        @Override
+        public void checkPermission(Permission perm) 
+        {
+            // allow anything.
+        }
+        
+        @Override
+        public void checkPermission(Permission perm, Object context) 
+        {
+            // allow anything.
+        }
+        
+        @Override
+        public void checkExit(int status) 
+        {
+            super.checkExit(status);
+            throw new ExitException(status);
+        }
+    }
 
     @Before
-    public void setUp() throws Exception {
+    public void setUp() throws Exception 
+    {
         asl = new AvgSentenceLength();
-        fileDir = "test" + File.separator + "inputfiles" + File.separator;
+        fileDir = "test" + File.separator + "inputfiles" + File.separator;        
+        System.setSecurityManager(new NoExitSecurityManager());
     }
+    
     @After
-    public void tearDown() throws Exception {
+    public void tearDown() throws Exception 
+    {
         asl = null;
-        fileDir = null;
+        fileDir = null;        
+        System.setSecurityManager(null); // or save and restore original
     }
 
     // -- START OF PROVIDED TEST CASES, DON'T CHANGE THESE --
-    
     @Test
     public void testComputeAverageSentenceLength1() {
         String comment = "Testing sentences that span multiple lines";
@@ -46,7 +87,6 @@ public class AvgSentenceLengthTest {
         asl.setMinWordLength(5);
         assertEquals(comment, 3, asl.computeAverageSentenceLength(), 0);
     }
-    
     // -- END OF PROVIDED TEST CASES --
     
     @Test
@@ -56,11 +96,34 @@ public class AvgSentenceLengthTest {
         asl.setFile(new File(fileDir + "emptyFile.txt"));
         assertEquals(comment, 0, asl.computeAverageSentenceLength(), 0);
     }
+
     @Test
     public void testComputeAverageSentenceLength5() 
     {
         String comment = "Testing file with no delimiters";
         asl.setFile(new File(fileDir + "noDelimiters.txt"));
         assertEquals(comment, 13, asl.computeAverageSentenceLength(), 0);
+    }
+    
+    //Test - Missing File Name
+	@Test
+    public void testMissingFileName() throws Exception
+    {	
+    	ByteArrayOutputStream outContent = new ByteArrayOutputStream();
+        System.setErr(new PrintStream(outContent));        
+        
+        int exitStatus = 0;
+    	try
+    	{    		
+    		String[] args = new String[1];
+    		Main.main(args);
+    	}
+    	catch (ExitException e)
+    	{
+    		exitStatus = e.status;
+    	}
+    	
+        assertEquals(1, exitStatus);
+        assertEquals(true, outContent.toString().contains(Consts.ERR_FILE_NAME_MISSING));        
     }
 }

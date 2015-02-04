@@ -33,11 +33,11 @@ public class Main {
                 } 
                 else 
                 {
-                    System.err.println("Missing delimiters");
+                    System.err.println(Consts.ERR_MISSING_DELIMITERS);
                     printUsageAndExit();
                 }
             }
-            else if (args[i].equals("-l")) 
+            else if (Objects.equals(args[i], "-l")) 
             {
                 if (i + 1 < args.length) 
                 {
@@ -46,21 +46,21 @@ public class Main {
                     	int minWordLength = Integer.valueOf(args[i + 1]);
                     	if (minWordLength <= 0)
                     	{
-                    		System.err.println("min_length should be greater than 0" + args[i + 1]);
+                    		System.err.println(Consts.ERR_MIN_LENGTH_SHOULD_BE_GREATER_THAN_0 + args[i + 1]);
                         	printUsageAndExit();
                     	}
                     	asl.setMinWordLength(minWordLength);
                     }
                     catch (NumberFormatException e) 
                     {
-                        System.err.println("Invalid min_length: " + args[i + 1]);
+                        System.err.println(Consts.ERR_INVALID_MIN_LENGTH + ": " + args[i + 1]);
                         printUsageAndExit();
                     }
                     i++;
                 } 
                 else 
                 {
-                    System.err.println("Missing min_length");
+                    System.err.println(Consts.ERR_MISSING_MIN_LENGTH);
                     printUsageAndExit();
                 }
             }
@@ -81,13 +81,13 @@ public class Main {
             }
             else 
             {
-                System.err.println("Specified file does not exist: " + fileName);
+                System.err.println(Consts.ERR_FILE_DOES_NOT_EXIST + ": " + fileName);
                 System.exit(1);
             }
         } 
         else 
         {
-            System.err.println("Missing filename");
+            System.err.println(Consts.ERR_FILE_NAME_MISSING);
             printUsageAndExit();
         }
     }
