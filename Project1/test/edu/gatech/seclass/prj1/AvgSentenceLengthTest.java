@@ -89,16 +89,18 @@ public class AvgSentenceLengthTest
     }
     // -- END OF PROVIDED TEST CASES --
     
+    //Test - empty File
     @Test
-    public void testComputeAverageSentenceLength4() 
+    public void testComputeAverageSentenceLength_emptyFile()
     {
         String comment = "Testing empty file";
         asl.setFile(new File(fileDir + "emptyFile.txt"));
         assertEquals(comment, 0, asl.computeAverageSentenceLength(), 0);
     }
-
+    
+    //Test - file with no delimiters at all
     @Test
-    public void testComputeAverageSentenceLength5() 
+    public void testComputeAverageSentenceLength_noDelimiters() 
     {
         String comment = "Testing file with no delimiters";
         asl.setFile(new File(fileDir + "noDelimiters.txt"));
@@ -125,5 +127,14 @@ public class AvgSentenceLengthTest
     	
         assertEquals(1, exitStatus);
         assertEquals(true, outContent.toString().contains(Constants.ERR_FILE_NAME_MISSING));
+    }
+    
+    //Test - multiple spaces separated text
+    @Test
+    public void testComputeAverage_MultipleSpace()
+    {
+        String comment = "Testing multiple spaces separated file";
+        List<String> list = Arrays.asList("Testing     multiple spaces  text.","Will   it      work?");
+        assertEquals(comment, 3, asl.computeAverage(list), 0);
     }
 }
