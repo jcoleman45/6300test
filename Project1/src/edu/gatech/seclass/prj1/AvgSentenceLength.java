@@ -72,7 +72,7 @@ public class AvgSentenceLength
      * @param lines list of strings 
      * @return average sentence length
      */
-    private long computeAverage(List<String> lines)
+    long computeAverage(List<String> lines)
     {
         String text = joinLines(lines, " ");
         String[] sentences = text.split("[" + sentenceDelimiters + "]");
