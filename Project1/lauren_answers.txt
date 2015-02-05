@@ -1,0 +1,5 @@
+What error conditions does the application need to take care of?
+A: I don't think text normal text files allow these characters and  we are looking only to support default text files.
+
+What encoding do the input text files use?
+A: A very technical question but I would go ahead and say that I need it to work with normal text files with the defualt encoding
