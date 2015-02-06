@@ -196,12 +196,12 @@ Essay text file does not exist or wrong folder path is specified.
 > `  min_length: (optional) Specify minimum word length (inclusive) - defaults to: 3. Should be greater than 0`
 
 If there are any issues in accessing the essay text file (Ex - insufficient security permissions, file Locked etc...),
-a Java IO exception stack trace is given so that the appropriate issue is reported. 
+a Java exception stack trace is given so that the appropriate issue is reported. 
 
-> ***`Could not start calculation: Error reading text file`***
-
-> [Java IO Exception - Stack Trace]
+> [Java Exception - Stack Trace]
 > 
+> ***`Could not start calculation: Error reading text file`***
+>
 > `Usage: java -cp . edu.gatech.seclass.prj1.Main [-d <delimiters>] [-l <min_length>] <file_path>`
 > 
 > `  delimiters: (optional) Specify a list of sentence delimiters - defaults to: .?!`

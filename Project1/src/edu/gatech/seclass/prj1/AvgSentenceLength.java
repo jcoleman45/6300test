@@ -43,6 +43,7 @@ public class AvgSentenceLength
     	}
     	catch (IOException e)
     	{
+    		e.printStackTrace();
     		return -1;
     	}
     }   

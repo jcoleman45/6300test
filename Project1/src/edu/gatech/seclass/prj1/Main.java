@@ -17,8 +17,14 @@ public class Main {
         ArgResult result = new ArgProcessor(args).process();
         AvgSentenceLength asl = result.getAvgSentenceLength();
         if(result.getStatus() == RUN) {
-            long average = asl.computeAverageSentenceLength();
-            System.out.printf(Constants.OUT_AVERAGE_NUMBER, asl.getFile().getPath(), average);
+            long average = asl.computeAverageSentenceLength();            
+            if (average != -1) {
+                System.out.printf(Constants.OUT_AVERAGE_NUMBER, asl.getFile().getPath(), average);            	
+            }
+            else {
+            	System.err.printf(Constants.ERR_COULD_NOT_START_CALCULATION, Constants.ERR_READING_TEXT_FILE);
+            	System.exit(1);
+            }
         } else {
             System.err.printf(Constants.ERR_COULD_NOT_START_CALCULATION, result.getErrorMessage());
             if(result.getStatus() == PRINT_USAGE) {
