@@ -53,7 +53,6 @@ review.
 - Requirements document review and approval by all team members
 - Questions about the requirements to be posted to Laura
 - Requirements specification document to be uploaded to Github repository
-- Requirements added as issues in Github issue tracker
 
 ###2.3 Develop Software
 The software will be developed using Java technology. The code will be shared and managed using Github version control 
@@ -64,7 +63,6 @@ team members.
 
 - Project plan
 - Software requirements specification
-- Requirements issues in Github issue tracker
 
 **Exit Criteria**
 
@@ -88,8 +86,7 @@ also be validated. The defects will be categorized in severity with critical/maj
 
 **Exit Criteria**
 
-- Agreed test cases (integration, system, unit etc...) that test each requirement. This will be part of "Test Cases"
-document.
+- Agreed test cases (integration, system, unit etc...) that test each requirement. 
 - Sample test data preparation and agreement by the QA manager
 - Test completion details
 - Approval of test completion by QA manager

@@ -119,10 +119,9 @@ information and details around the various error messages.
 Reasonably friendly, helpful messages shall be returned in various error cases.
 
 - Invalid file path
-- File inaccessible
+- Missing file name
 - Invalid usage of command-line parameters
-- Invalid file extension
 - Empty input file
 
 #####2.2.2.6 Input file encoding (must have)
-The application shall be able to handle raw text files encoded in ASCII.
+The application shall be able to handle normal text files with the defualt encoding.
