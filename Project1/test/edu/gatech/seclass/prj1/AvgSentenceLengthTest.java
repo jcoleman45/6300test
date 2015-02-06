@@ -119,7 +119,7 @@ public class AvgSentenceLengthTest
         int exitStatus = 0;
     	try
     	{    		
-    		String[] args = new String[1];
+    		String[] args = new String[0];
     		Main.main(args);
     	}
     	catch (ExitException e)
