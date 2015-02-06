@@ -196,7 +196,7 @@ Essay text file does not exist or wrong folder path is specified.
 > `  min_length: (optional) Specify minimum word length (inclusive) - defaults to: 3. Should be greater than 0`
 
 If there are any issues in accessing the essay text file (Ex - insufficient security permissions, file Locked etc...),
-a File IO exception stack trace is given appropriately so that the exact issue is reported. 
+a Java IO exception stack trace is given so that the appropriate issue is reported. 
 
 > ***`Could not start calculation: Error reading text file`***
 
@@ -211,7 +211,9 @@ a File IO exception stack trace is given appropriately so that the exact issue i
 ##5 Technical Support
 For more technical support, please get it touch with the support team. The team contacts are give below
 
-- Yuchun Qin : yqin47@gatech.edu
-- Ganesh S : ganesh30@gatech.com
-- Cedric Meury : cedric@meury.com
-- Yue Li : liyue2011@gmail.com 
+| Name         | Email               |
+|--------------|---------------------|
+| Yuchun Qin   | yqin47@gatech.edu   |
+| Ganesh S     | ganesh30@gatech.edu |
+| Cedric Meury | cedric@meury.com    |
+| Yue Li       | liyue2011@gmail.com |
