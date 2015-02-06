@@ -1,7 +1,6 @@
 package edu.gatech.seclass.prj1;
 
 import java.io.File;
-import java.util.Objects;
 
 import static edu.gatech.seclass.prj1.Status.PRINT_USAGE;
 import static edu.gatech.seclass.prj1.Status.SYSTEM_EXIT;
@@ -28,7 +27,7 @@ public class ArgProcessor {
 
         for (int i = 0; i < args.length; i++) 
         {
-            if (Objects.equals(args[i], "d")) 
+            if (args[i].equals("d"))
             {
                 if (i + 1 < args.length) 
                 {
@@ -39,7 +38,7 @@ public class ArgProcessor {
                     return new ArgResult(Constants.ERR_MISSING_DELIMITERS, PRINT_USAGE);
                 }
             }
-            else if (Objects.equals(args[i], "-l")) 
+            else if (args[i].equals("-l"))
             {
                 if (i + 1 < args.length) 
                 {
