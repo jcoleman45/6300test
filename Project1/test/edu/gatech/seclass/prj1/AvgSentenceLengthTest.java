@@ -3,7 +3,7 @@ package edu.gatech.seclass.prj1;
 import static org.junit.Assert.assertEquals;
 
 import java.io.File;
-import java.util.Arrays;
+import java.util.ArrayList;
 import java.util.List;
 
 import org.junit.After;
@@ -69,6 +69,14 @@ public class AvgSentenceLengthTest
         assertEquals(comment, 13, asl.computeAverageSentenceLength(), 0);
     }
     
+    @Test
+    public void testComputeAverageSentenceLength_LongEssay()
+    {
+        String comment = "Testing with long student essay";
+        asl.setFile(new File(fileDir + "SampleEssay.txt"));
+        assertEquals(comment, 15, asl.computeAverageSentenceLength(), 0);
+    }
+    
 //	@Test
 //    public void testMissingFileName() throws Exception
 //    {	
@@ -76,10 +84,42 @@ public class AvgSentenceLengthTest
 //    }
     
     @Test
-    public void testComputeAverage_MultipleSpacesSepartedText()
+    public void testComputeAverage_MultipleSpace()
     {
         String comment = "Testing multiple spaces separated file";
-        List<String> list = Arrays.asList("Testing     multiple spaces  text.","Will   it      work?");
+        List<String> list = new ArrayList<String>();
+        list.add("Testing     multiple spaces  text.");
+        list.add("Will   it      work?");
         assertEquals(comment, 3, asl.computeAverage(list), 0);
+    }
+    
+    @Test
+    public void testComputeAverage_numbers()
+    {
+        String comment = "Testing file with numbers";
+        List<String> list = new ArrayList<String>();
+        list.add("This file is to test files with numbers inside.");
+        list.add("Generate random sequence from 123456:");
+        list.add("123465, 123546, 123564, 123645, 123654....");
+        assertEquals(comment, 8, asl.computeAverage(list), 0);
+    }
+    
+    @Test
+    public void testComputeAverage_table()
+    {
+        String comment = "Testing file with a table";
+        List<String> table = new ArrayList<String>();
+        table.add("This file contains a table:");
+        table.add("----------------------------------------------------------------------");
+        table.add("|project manager    | setting goals and tracking the whole progress. |");
+        table.add("---------------------------------------------------------------------|");
+        table.add("|Development Lead   | writes the Java code for the Java application. |");
+        table.add("---------------------------------------------------------------------|");
+        table.add("|Documentation Lead | manages the various documents.                 |");
+        table.add("---------------------------------------------------------------------|");
+        table.add("|QA Manager         | prepare test cases and write test code.        |");
+        table.add("----------------------------------------------------------------------");
+        asl.setSentenceDelimiters(":.");
+        assertEquals(comment, 7, asl.computeAverage(table), 0);
     }
 }
