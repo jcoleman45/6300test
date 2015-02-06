@@ -12,10 +12,20 @@ public class ArgProcessor {
     
     final private String[] args;
 
+    /**
+     * Instantiate an {@code ArgProcessor} class using the given command-line arguments
+     * @param args command-line arguments from a Java main() entry-point
+     */
     public ArgProcessor(String[] args) {
         this.args = args;
     }
 
+    /**
+     * Process the stored command-line arguments and return the result and
+     * potentially an {@code AvgSentenceLength} instance configured using the
+     * command-line arguments * 
+     * @return result of the argument processing
+     */
     public ArgResult process() {
         if (args.length < 1) 
         {
