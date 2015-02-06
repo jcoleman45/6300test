@@ -132,40 +132,55 @@ list of such error scenarios is given below for quick reference.
 In the command line arguments, `-d` option is specified; but the actual delimiters are missing.
 
 > ***`Could not start calculation: Missing delimiters`***
+> 
 > `Usage: java -cp . edu.gatech.seclass.prj1.Main [-d <delimiters>] [-l <min_length>] <file_path>`
+> 
 > `  delimiters: (optional) Specify a list of sentence delimiters - defaults to: .?!`
+> 
 > `  min_length: (optional) Specify minimum word length (inclusive) - defaults to: 3. Should be greater than 0`
 
 #####4.2.2 Missing minimum word length
 In the command line arguments, `-l` option is specified; but the `min_length` value is missing.
 
 > ***`Could not start calculation: Missing min_length`***
+> 
 > `Usage: java -cp . edu.gatech.seclass.prj1.Main [-d <delimiters>] [-l <min_length>] <file_path>`
+> 
 > `  delimiters: (optional) Specify a list of sentence delimiters - defaults to: .?!`
+> 
 > `  min_length: (optional) Specify minimum word length (inclusive) - defaults to: 3. Should be greater than 0`
 
 #####4.2.3 Invalid minimum word length
 In the command line arguments, `-l` option is specified; but the `min_length` value is not a valid number.
 
 > ***`Could not start calculation: Invalid min_length: <user specified min_length value>`***
+> 
 > `Usage: java -cp . edu.gatech.seclass.prj1.Main [-d <delimiters>] [-l <min_length>] <file_path>`
+> 
 > `  delimiters: (optional) Specify a list of sentence delimiters - defaults to: .?!`
+> 
 > `  min_length: (optional) Specify minimum word length (inclusive) - defaults to: 3. Should be greater than 0`
 
 #####4.2.4 Minimum word length less than or equal to zero
 In the command line arguments, `-l` option is specified; but the `min_length` value is less than or equal to zero.
 
 > ***`Could not start calculation: min_length should be greater than 0`***
+> 
 > `Usage: java -cp . edu.gatech.seclass.prj1.Main [-d <delimiters>] [-l <min_length>] <file_path>`
+> 
 > `  delimiters: (optional) Specify a list of sentence delimiters - defaults to: .?!`
+> 
 > `  min_length: (optional) Specify minimum word length (inclusive) - defaults to: 3. Should be greater than 0`
 
 #####4.2.5 Missing `<file_path>` argument
 In the command line arguments, the file name (`<file_path>`) is not specified.
 
 > ***`Could not start calculation: Missing filename`***
+> 
 > `Usage: java -cp . edu.gatech.seclass.prj1.Main [-d <delimiters>] [-l <min_length>] <file_path>`
+> 
 > `  delimiters: (optional) Specify a list of sentence delimiters - defaults to: .?!`
+> 
 > `  min_length: (optional) Specify minimum word length (inclusive) - defaults to: 3. Should be greater than 0`
 
 ###4.3 Input text file issues
@@ -173,8 +188,11 @@ In the command line arguments, the file name (`<file_path>`) is not specified.
 Essay text file does not exist or wrong folder path is specified.
 
 > ***`Could not start calculation: Specified file does not exist OR wrong filename`***
+> 
 > `Usage: java -cp . edu.gatech.seclass.prj1.Main [-d <delimiters>] [-l <min_length>] <file_path>`
+> 
 > `  delimiters: (optional) Specify a list of sentence delimiters - defaults to: .?!`
+> 
 > `  min_length: (optional) Specify minimum word length (inclusive) - defaults to: 3. Should be greater than 0`
 
 If there are any issues in accessing the essay text file (Ex - insufficient security permissions, file Locked etc...),
@@ -185,7 +203,9 @@ a File IO exception stack trace is given appropriately so that the exact issue i
 > [Java IO Exception - Stack Trace]
 > 
 > `Usage: java -cp . edu.gatech.seclass.prj1.Main [-d <delimiters>] [-l <min_length>] <file_path>`
+> 
 > `  delimiters: (optional) Specify a list of sentence delimiters - defaults to: .?!`
+> 
 > `  min_length: (optional) Specify minimum word length (inclusive) - defaults to: 3. Should be greater than 0`
 
 ##5 Technical Support
