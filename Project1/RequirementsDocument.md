@@ -67,14 +67,14 @@ this program that is not the part of JDK, should be included as source code with
 
 ####2.1.1 Command-line interface
 
-#####2.1.1.1 File path (must have)
-The `file path` shall be specified by the user as the single command-line argument.
-
-#####2.1.1.2 Delimiters (must have)
+#####2.1.1.1 Delimiters (must have)
 A flag `-d` shall be used to specify the sentence separators. The default value is: `.?!`
 
-#####2.1.1.3 Minimum word length (must have)
+#####2.1.1.2 Minimum word length (must have)
 A flag `-l` shall be used to specify an inclusive lower limit for word length. The default value is: `3`
+
+#####2.1.1.3 File path (must have)
+The `file path` shall be specified by the user as the single command-line argument or after the delimiters and minimum word length.
 
 ####2.1.3 Output (must have)
 The software shall return the average number of words per sentence, rounded down to the nearest integer.
