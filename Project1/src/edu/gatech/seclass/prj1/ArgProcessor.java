@@ -63,7 +63,11 @@ public class ArgProcessor {
                 }
             }
             else {
-                fileName = args[i];
+                if(i == args.length - 1) {
+                    fileName = args[i];
+                } else {
+                    return new ArgResult(Constants.ERR_MISSING_PARAMETER_VALUES, PRINT_USAGE);
+                }
             }
         }
 

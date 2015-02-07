@@ -69,7 +69,15 @@ public class ArgProcessorTest {
 		ArgResult result = new ArgProcessor(args).process();
 		assertEquals(Constants.ERR_FILE_DOES_NOT_EXIST + " : input.txt", result.getErrorMessage());
 	}
-	
+
+    @Test
+    public void test_MissingDelimiterArgument() {
+        String[] args = new String[] {"-d", "-l", "5", fileDir + "input.txt"};
+        ArgResult result = new ArgProcessor(args).process();
+        // -d -l is  valid (-l are delimiters), but then the length is missing
+        assertEquals(Constants.ERR_MISSING_PARAMETER_VALUES, result.getErrorMessage());
+    }
+
 	@Test
 	public void test_CorrectInput() {
 		String[] args = new String[] {"-d", ".!?", "-l", "5", fileDir};
