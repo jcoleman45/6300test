@@ -12,8 +12,8 @@ public class Main {
      * Application entry-point.
      * @param args command-line arguments
      */
-    public static void main(String[] args)
-    {
+    public static void main(String[] args) {
+    	
         ArgResult result = new ArgProcessor(args).process();
         AvgSentenceLength asl = result.getAvgSentenceLength();
         if(result.getStatus() == RUN) {
@@ -37,8 +37,7 @@ public class Main {
     /**
      * Print usage information.
      */
-    private static void printUsage() 
-    {
+    private static void printUsage() {
         System.err.println("Usage: java -cp . edu.gatech.seclass.prj1.Main [-d <delimiters>] [-l <min_length>] <file_path>");
         System.err.println("  delimiters: (optional) Specify a list of sentence delimiters - defaults to: .?!");
         System.err.println("  min_length: (optional) Specify minimum word length (inclusive) - defaults to: 3. Should be greater than 0");

@@ -4,73 +4,69 @@ import static org.junit.Assert.*;
 
 import java.io.File;
 
+import org.junit.After;
+import org.junit.Before;
 import org.junit.Test;
 
 public class ArgProcessorTest {
 	
-    private String fileDir = "test" + File.separator + "inputfiles" + File.separator; 
-    
-	//-- test no arguments
-	@Test
-	public void test1() {
-		String[] args = new String[]{};
-		
-		ArgResult result = new ArgProcessor(args).process();
-		assertEquals("Missing filename",result.errorMessage);
-	}
-	
-	//test missing delimiters
-	@Test
-	public void test2() {
-		String[] args = new String[]{"-d"};
-			
-		ArgResult result = new ArgProcessor(args).process();
-		assertEquals("Missing delimiters",result.errorMessage);
-	}
-	
-	//test wrong minimum word length
-	@Test
-	public void test3() {
-		String[] args = new String[]{"-d",".!?","-l", "-1",fileDir};
-				
-		ArgResult result = new ArgProcessor(args).process();
-		assertEquals("min_length should be greater than 0-1",result.errorMessage);
-	}
-	
-	//test missing minimum length
-	@Test
-	public void test4() {
+    private String fileDir; 
 
-		String[] args = new String[]{"-d",".!?","-l"};
-				
+    @Before
+    public void setUp() throws Exception {
+    	fileDir = "test" + File.separator + "inputfiles" + File.separator; 
+    }
+    @After
+    public void tearDown() throws Exception {
+        fileDir = null;        
+    }    
+    
+	@Test
+	public void test_NoArguments() {
+		String[] args = new String[] { };
 		ArgResult result = new ArgProcessor(args).process();
-		assertEquals("Missing min_length",result.errorMessage);
+		assertEquals(Constants.ERR_FILE_NAME_MISSING, result.getErrorMessage());
 	}
 	
-	//test missing filename
 	@Test
-	public void test5() {
-		String[] args = new String[]{"-d",".!?","-l", "5",null};
-				
+	public void test_MissingDelimiters() {
+		String[] args = new String[] {"-d"};
 		ArgResult result = new ArgProcessor(args).process();
-		assertEquals("Missing filename",result.errorMessage);
+		assertEquals(Constants.ERR_MISSING_DELIMITERS, result.getErrorMessage());
 	}
 	
-	//test wrong file path
 	@Test
-	public void test6() {
-		String[] args = new String[]{"-d",".!?","-l","5","input.txt"};
-				
+	public void test_MinimumWordLength() {
+		String[] args = new String[] {"-d", ".!?", "-l", "-1", fileDir};
 		ArgResult result = new ArgProcessor(args).process();
-		assertEquals("Specified file does not exist: input.txt",result.errorMessage);
+		assertEquals(Constants.ERR_MIN_LENGTH_SHOULD_BE_GREATER_THAN_0 + "-1", result.getErrorMessage());
 	}
 	
-	//test correct input
 	@Test
-	public void test7() {
-		String[] args = new String[]{"-d",".!?","-l","5",fileDir};
-				
+	public void test_MissingMinimumLength() {
+		String[] args = new String[] {"-d", ".!?", "-l"};
 		ArgResult result = new ArgProcessor(args).process();
-		assertEquals(null,result.errorMessage);
+		assertEquals(Constants.ERR_MISSING_MIN_LENGTH, result.getErrorMessage());
+	}
+	
+	@Test
+	public void test_MissingFileName() {
+		String[] args = new String[] {"-d", ".!?", "-l", "5"};
+		ArgResult result = new ArgProcessor(args).process();
+		assertEquals(Constants.ERR_FILE_NAME_MISSING, result.getErrorMessage());
+	}
+	
+	@Test
+	public void test_WrongFilePath() {
+		String[] args = new String[] {"-d",".!?","-l","5","input.txt"};
+		ArgResult result = new ArgProcessor(args).process();
+		assertEquals(Constants.ERR_FILE_DOES_NOT_EXIST + ": input.txt", result.getErrorMessage());
+	}
+	
+	@Test
+	public void test_CorrectInput() {
+		String[] args = new String[] {"-d",".!?","-l","5",fileDir};
+		ArgResult result = new ArgProcessor(args).process();
+		assertEquals(null, result.getErrorMessage());
 	}
 }

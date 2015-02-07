@@ -27,20 +27,16 @@ public class ArgProcessor {
      * @return result of the argument processing
      */
     public ArgResult process() {
-        if (args.length < 1) 
-        {
+        if (args.length < 1) {
             return new ArgResult(Constants.ERR_FILE_NAME_MISSING, PRINT_USAGE);
         }
 
         String fileName = null;
         AvgSentenceLength avgSentenceLength = new AvgSentenceLength();
 
-        for (int i = 0; i < args.length; i++) 
-        {
-            if (args[i].equals("-d"))
-            {
-                if (i + 1 < args.length) 
-                {
+        for (int i = 0; i < args.length; i++) {
+            if (args[i].equals("-d")) {
+                if (i + 1 < args.length) {
                     avgSentenceLength.setSentenceDelimiters(args[i + 1]);
                     i++;
                 } 
@@ -48,51 +44,40 @@ public class ArgProcessor {
                     return new ArgResult(Constants.ERR_MISSING_DELIMITERS, PRINT_USAGE);
                 }
             }
-            else if (args[i].equals("-l"))
-            {
-                if (i + 1 < args.length) 
-                {
-                    try 
-                    {
+            else if (args[i].equals("-l")) {
+                if (i + 1 < args.length) {
+                    try {
                     	int minWordLength = Integer.valueOf(args[i + 1]);
-                    	if (minWordLength <= 0)
-                    	{
+                    	if (minWordLength <= 0) {
                             return new ArgResult(Constants.ERR_MIN_LENGTH_SHOULD_BE_GREATER_THAN_0 + args[i + 1], PRINT_USAGE);
                     	}
                     	avgSentenceLength.setMinWordLength(minWordLength);
                     }
-                    catch (NumberFormatException e) 
-                    {
+                    catch (NumberFormatException e) {
                         return new ArgResult(Constants.ERR_INVALID_MIN_LENGTH + ": " + args[i + 1], PRINT_USAGE);
                     }
                     i++;
                 } 
-                else 
-                {
+                else {
                     return new ArgResult(Constants.ERR_MISSING_MIN_LENGTH, PRINT_USAGE);
                 }
             }
-            else
-            {
+            else {
                 fileName = args[i];
             }
         }
 
-        if (fileName != null) 
-        {
+        if (fileName != null) {
             File file = new File(fileName);
-            if (file.exists()) 
-            {
+            if (file.exists()) {
                 avgSentenceLength.setFile(file);
                 return new ArgResult(avgSentenceLength);
             }
-            else 
-            {
+            else {
                 return new ArgResult(Constants.ERR_FILE_DOES_NOT_EXIST + ": " + fileName, SYSTEM_EXIT);
             }
         } 
-        else 
-        {
+        else {
             return new ArgResult(Constants.ERR_FILE_NAME_MISSING, PRINT_USAGE);
         }
     }

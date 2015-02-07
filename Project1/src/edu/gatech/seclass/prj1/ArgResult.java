@@ -5,7 +5,7 @@ package edu.gatech.seclass.prj1;
  */
 public class ArgResult {
 
-    final String errorMessage;
+    private final String errorMessage;
     private final Status status;
     private final AvgSentenceLength avgSentenceLength;
 
@@ -53,5 +53,4 @@ public class ArgResult {
     public AvgSentenceLength getAvgSentenceLength() {
         return avgSentenceLength;
     }
-    
 }
