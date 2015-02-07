@@ -36,9 +36,9 @@ public class ArgProcessorTest
 	@Test
 	public void test_MissingDelimiters()
 	{
-		String[] args = new String[]{"-d"};
+		String[] args = new String[]{"-d", fileDir};
 		ArgResult result = new ArgProcessor(args).process();
-		assertEquals(Constants.ERR_MISSING_DELIMITERS, result.getErrorMessage());
+		assertEquals(Constants.ERR_INVALID_COMMAND, result.getErrorMessage());
 	}
 
 	@Test
@@ -52,15 +52,15 @@ public class ArgProcessorTest
 	@Test
 	public void test_MissingMinimumWordLength()
 	{
-		String[] args = new String[]{"-d", ".!?", "-l"};
+		String[] args = new String[]{"-d", ".!?", "-l", fileDir};
 		ArgResult result = new ArgProcessor(args).process();
-		assertEquals(Constants.ERR_MISSING_MIN_LENGTH, result.getErrorMessage());
+		assertEquals(Constants.ERR_INVALID_COMMAND, result.getErrorMessage());
 	}
 
 	@Test
 	public void test_InvalidMinimumWordLength()
 	{
-		String[] args = new String[]{"-l", "a"};
+		String[] args = new String[]{"-l", "a", fileDir};
 		ArgResult result = new ArgProcessor(args).process();
 		assertEquals(Constants.ERR_INVALID_MIN_LENGTH + " : a", result.getErrorMessage());
 	}
@@ -70,7 +70,7 @@ public class ArgProcessorTest
 	{
 		String[] args = new String[]{"-d", ".!?", "-l", "5"};
 		ArgResult result = new ArgProcessor(args).process();
-		assertEquals(Constants.ERR_FILE_NAME_MISSING, result.getErrorMessage());
+		assertEquals(Constants.ERR_INVALID_COMMAND, result.getErrorMessage());
 	}
 
 	@Test
@@ -87,7 +87,7 @@ public class ArgProcessorTest
 		String[] args = new String[]{"-d", "-l", "5", fileDir + "input.txt"};
 		ArgResult result = new ArgProcessor(args).process();
 		// -d -l is  valid (-l are delimiters), but then the length is missing
-		assertEquals(Constants.ERR_MISSING_PARAMETER_VALUES, result.getErrorMessage());
+		assertEquals(Constants.ERR_INVALID_COMMAND, result.getErrorMessage());
 	}
 
 	@Test

@@ -39,10 +39,13 @@ java -cp . edu.gatech.seclass.prj1.Main [-d <delimiters>] [-l <min_length>] <fil
 | `[-l <min_length>]`            | *min_length:* (optional) Specify minimum word length (inclusive) - defaults to: `3` |
 | `<file_path>`                  | (mandatory) File name (includes folder path) that contains the text file            |
 
-For optional arguments,
 
-- `-d` : Sentence delimiters are specified without any spaces. Ex - `.;:`. This will override the default delimiters `.?!`
-- `-l` : Value of `min_length` should be a valid integer greater than 0. This will override the default value of 3
+- `<file_path>` is mandatory and should always be last argument. The file path should be specified as a single command-line
+argument or after the `delimiters` and `min_length`.
+
+- For optional arguments,
+	- `-d` : Sentence delimiters are specified without any spaces. Ex - `.;:`. This will override the default delimiters `.?!`
+	- `-l` : Value of `min_length` should be a valid integer greater than 0. This will override the default value of 3
 
 ###3.3 Examples
 
@@ -77,11 +80,7 @@ java -cp . edu.gatech.seclass.prj1.Main -d +#; -l 2 InputEssay5.txt
 ````
 
 ````
-java -cp . edu.gatech.seclass.prj1.Main InputEssay7.txt -d ?!. -l 4 
-````
-
-````
-java -cp . edu.gatech.seclass.prj1.Main InputEssay8.txt -l 3 -d ,:! 
+java -cp . edu.gatech.seclass.prj1.Main -l 2 -d +#; InputEssay5.txt
 ````
 
 ###3.4 Application Output
@@ -121,13 +120,13 @@ The `Java` command will be available in the `command line` if the JRE is install
 
 ###4.2 Invalid usage of Command Line parameters
 
-There are various errors that may be encountered if the application execution command is not specified correctly. The 
-list of such error scenarios is given below for quick reference.
+There are various errors that may be encountered if the application execution command is not specified correctly. A 
+sample list of such error scenarios is given below for quick reference.
 
 #####4.2.1 Missing delimiters
 In the command line arguments, `-d` option is specified; but the actual delimiters are missing.
 
-> ***`Could not start calculation: Missing 'delimiters' in the command line arguments`***
+> ***`Could not start calculation: Invalid Command line arguments`***
 > 
 > `Usage: java -cp . edu.gatech.seclass.prj1.Main [-d <delimiters>] [-l <min_length>] <file_path>`
 > 
@@ -138,7 +137,7 @@ In the command line arguments, `-d` option is specified; but the actual delimite
 #####4.2.2 Missing minimum word length
 In the command line arguments, `-l` option is specified; but the `min_length` value is missing.
 
-> ***`Could not start calculation: Missing 'min_length' in the command line arguments`***
+> ***`Could not start calculation: Invalid Command line arguments`***
 > 
 > `Usage: java -cp . edu.gatech.seclass.prj1.Main [-d <delimiters>] [-l <min_length>] <file_path>`
 > 
@@ -160,7 +159,7 @@ In the command line arguments, `-l` option is specified; but the `min_length` va
 #####4.2.4 Minimum word length less than or equal to zero
 In the command line arguments, `-l` option is specified; but the `min_length` value is less than or equal to zero.
 
-> ***`Could not start calculation: min_length should be greater than 0`***
+> ***`Could not start calculation: min_length should be greater than 0 : min_length`***
 > 
 > `Usage: java -cp . edu.gatech.seclass.prj1.Main [-d <delimiters>] [-l <min_length>] <file_path>`
 > 
@@ -179,11 +178,10 @@ In the command line arguments, the file name (`<file_path>`) is not specified.
 > 
 > `  min_length: (optional) Specify minimum word length (inclusive) - defaults to: 3. Should be greater than 0`
 
-###4.3 Input text file issues
+#####4.2.6 Wrong command line arguments
+Command line arguments are not missing or are in incorrect order. A generic error message given is
 
-Essay text file does not exist or wrong folder path is specified.
-
-> ***`Could not start calculation: Specified file does not exist OR wrong filename`***
+> ***`Could not start calculation: Invalid Command line arguments`***
 > 
 > `Usage: java -cp . edu.gatech.seclass.prj1.Main [-d <delimiters>] [-l <min_length>] <file_path>`
 > 
@@ -191,6 +189,14 @@ Essay text file does not exist or wrong folder path is specified.
 > 
 > `  min_length: (optional) Specify minimum word length (inclusive) - defaults to: 3. Should be greater than 0`
 
+###4.3 Input text file issues
+
+Essay text file does not exist or wrong folder path is specified.
+
+>
+> ***`Could not start calculation: Specified file does not exist OR wrong filename : <file_path>`***
+>
+>
 If there are any issues in accessing the essay text file (Ex - insufficient security permissions, file Locked etc...),
 a Java exception stack trace is given so that the appropriate issue is reported. 
 

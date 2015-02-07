@@ -27,6 +27,13 @@ public class ArgProcessor
 	 * Process the stored command-line arguments and return the result and
 	 * potentially an {@code AvgSentenceLength} instance configured using the
 	 * command-line arguments *
+	 * 
+	 * The only possible command type combinations are -
+	 *    1 arg  : java -cp . edu.gatech.seclass.prj1.Main <file_path>
+	 *    3 args : java -cp . edu.gatech.seclass.prj1.Main -d <delimiters> <file_path>
+	 *    3 args : java -cp . edu.gatech.seclass.prj1.Main -l <min_length> <file_path>
+	 *    5 args : java -cp . edu.gatech.seclass.prj1.Main -d <delimiters> -l <min_length> <file_path>
+	 *    5 args : java -cp . edu.gatech.seclass.prj1.Main -l <min_length> -d <delimiters> <file_path>
 	 *
 	 * @return result of the argument processing
 	 */
@@ -36,57 +43,85 @@ public class ArgProcessor
 		{
 			return new ArgResult(Constants.ERR_FILE_NAME_MISSING, PRINT_USAGE);
 		}
-
-		String fileName = null;
-		AvgSentenceLength avgSentenceLength = new AvgSentenceLength();
-
-		for (int i = 0; i < args.length; i++)
+		
+		int minLengthIndex = -1;
+		int delimitersIndex = -1;
+		int fileNameIndex = -1;
+		boolean wrongCommand = false;
+		
+		switch (args.length)
 		{
-			if (args[i].equals("-d"))
-			{
-				if (i + 1 < args.length)
+			case 1 :
+				fileNameIndex = 0;
+				break;
+				
+			case 3 :
+				if (args[0].equals("-l"))
 				{
-					avgSentenceLength.setSentenceDelimiters(args[i + 1]);
-					i++;
+					minLengthIndex = 1;
+				} else if (args[0].equals("-d"))
+				{
+					delimitersIndex = 1;
+				}
+				else
+				{
+					wrongCommand = true;
+				}
+				fileNameIndex = 2;
+				break;
+				
+			case 5 :
+				if (args[0].equals("-l") && args[2].equals("-d"))
+				{
+					minLengthIndex = 1;
+					delimitersIndex = 3;
+				} else if (args[0].equals("-d") && args[2].equals("-l"))
+				{
+					minLengthIndex = 3;
+					delimitersIndex = 1;
 				} else
 				{
-					return new ArgResult(Constants.ERR_MISSING_DELIMITERS, PRINT_USAGE);
+					wrongCommand = true;					
 				}
-			} else if (args[i].equals("-l"))
-			{
-				if (i + 1 < args.length)
-				{
-					try
-					{
-						int minWordLength = Integer.valueOf(args[i + 1]);
-						if (minWordLength <= 0)
-						{
-							return new ArgResult(Constants.ERR_MIN_LENGTH_SHOULD_BE_GREATER_THAN_0 + " : " + args[i + 1], PRINT_USAGE);
-						}
-						avgSentenceLength.setMinWordLength(minWordLength);
-					} catch (NumberFormatException e)
-					{
-						return new ArgResult(Constants.ERR_INVALID_MIN_LENGTH + " : " + args[i + 1], PRINT_USAGE);
-					}
-					i++;
-				} else
-				{
-					return new ArgResult(Constants.ERR_MISSING_MIN_LENGTH, PRINT_USAGE);
-				}
-			} else
-			{
-				if (i == args.length - 1)
-				{
-					fileName = args[i];
-				} else
-				{
-					return new ArgResult(Constants.ERR_MISSING_PARAMETER_VALUES, PRINT_USAGE);
-				}
-			}
+				fileNameIndex = 4;
+				break;
+				
+			default :
+				wrongCommand = true;
+				break;
 		}
-
-		if (fileName != null)
+		
+		if(wrongCommand)
+		{	
+			return new ArgResult(Constants.ERR_INVALID_COMMAND, PRINT_USAGE);
+		}
+		
+		AvgSentenceLength avgSentenceLength = new AvgSentenceLength();
+		
+		if (delimitersIndex != -1)
 		{
+			avgSentenceLength.setSentenceDelimiters(args[delimitersIndex]);
+		}
+		
+		if (minLengthIndex != -1)
+		{
+			try
+			{
+				int minWordLength = Integer.valueOf(args[minLengthIndex]);
+				if (minWordLength <= 0)
+				{
+					return new ArgResult(Constants.ERR_MIN_LENGTH_SHOULD_BE_GREATER_THAN_0 + " : " + args[minLengthIndex], PRINT_USAGE);
+				}
+				avgSentenceLength.setMinWordLength(minWordLength);
+			} catch (NumberFormatException e)
+			{
+				return new ArgResult(Constants.ERR_INVALID_MIN_LENGTH + " : " + args[minLengthIndex], PRINT_USAGE);
+			}			
+		}
+		
+		if(fileNameIndex != -1)
+		{
+			String fileName = args[fileNameIndex];
 			File file = new File(fileName);
 			if (file.exists())
 			{
@@ -96,9 +131,8 @@ public class ArgProcessor
 			{
 				return new ArgResult(Constants.ERR_FILE_DOES_NOT_EXIST + " : " + fileName, SYSTEM_EXIT);
 			}
-		} else
-		{
-			return new ArgResult(Constants.ERR_FILE_NAME_MISSING, PRINT_USAGE);
 		}
+		
+		return new ArgResult(Constants.ERR_INVALID_COMMAND, PRINT_USAGE);
 	}
 }

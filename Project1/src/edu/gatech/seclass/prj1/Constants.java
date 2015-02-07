@@ -11,11 +11,9 @@ public final class Constants
 	public static final String SENTENCE_DELIMITERS = ".?!";
 
 	/* Error Messages  */
-	public static final String ERR_MISSING_DELIMITERS = "Missing 'delimiters' in the command line arguments";
 	public static final String ERR_MIN_LENGTH_SHOULD_BE_GREATER_THAN_0 = "min_length should be greater than 0";
 	public static final String ERR_INVALID_MIN_LENGTH = "Invalid min_length";
-	public static final String ERR_MISSING_MIN_LENGTH = "Missing 'min_length' in the command line arguments";
-	public static final String ERR_MISSING_PARAMETER_VALUES = "Missing parameter values";
+	public static final String ERR_INVALID_COMMAND = "Invalid Command line arguments";
 	public static final String ERR_FILE_DOES_NOT_EXIST = "Specified file does not exist OR wrong filename";
 	public static final String ERR_FILE_NAME_MISSING = "Missing filename in the command line arguments";
 	public static final String ERR_READING_TEXT_FILE = "Error reading text file";
