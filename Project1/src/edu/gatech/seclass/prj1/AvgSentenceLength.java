@@ -29,16 +29,16 @@ public class AvgSentenceLength {
         file = null;
     }
 
-    /**
-     * Reads the file and compute the average number of words per sentence.
-     * @return average sentence length, or -1 if there was a problem opening or reading the file
-     */
-    public long computeAverageSentenceLength() throws IOException {
-        List<String> lines = readLinesFromFile(file);
-        return computeAverage(lines);
-    }
-    
-    /**
+	/**
+	 * Reads the file and compute the average number of words per sentence.
+	 * @return average sentence length, or -1 if there was a problem opening or reading the file
+	 */
+	public long computeAverageSentenceLength() throws IOException {
+		List<String> lines = readLinesFromFile(file);
+		return computeAverage(lines);
+	}
+
+	/**
      * Reads the content of the given file into a list of Strings. 
      * @param file file to read from
      * @return all lines of the file or an empty list if the file is empty

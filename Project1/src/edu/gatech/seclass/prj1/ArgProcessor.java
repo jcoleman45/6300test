@@ -62,14 +62,15 @@ public class ArgProcessor {
                     return new ArgResult(Constants.ERR_MISSING_MIN_LENGTH, PRINT_USAGE);
                 }
             }
-            else {
-                if(i == args.length - 1) {
-                    fileName = args[i];
-                } else {
-                    return new ArgResult(Constants.ERR_MISSING_PARAMETER_VALUES, PRINT_USAGE);
-                }
-            }
-        }
+			else
+			{
+				if (i == args.length - 1) {
+					fileName = args[i];
+				} else {
+					return new ArgResult(Constants.ERR_MISSING_PARAMETER_VALUES, PRINT_USAGE);
+				}
+			}
+		}
 
         if (fileName != null) {
             File file = new File(fileName);
