@@ -53,7 +53,7 @@ java -cp . edu.gatech.seclass.prj1.Main InputEssay1.txt
 ````
 
 ````
-java -cp . /root/installers/AvgSentenceLength edu.gatech.seclass.prj1.Main /root/Essays/InputEssay1.txt
+java -cp . /root/installers/AvgSentLength edu.gatech.seclass.prj1.Main /root/Essays/File1.txt
 ````
 
 ````
@@ -74,6 +74,14 @@ java -cp . edu.gatech.seclass.prj1.Main -l 4 InputEssay4.txt
 
 ````
 java -cp . edu.gatech.seclass.prj1.Main -d +#; -l 2 InputEssay5.txt
+````
+
+````
+java -cp . edu.gatech.seclass.prj1.Main InputEssay7.txt -d ?!. -l 4 
+````
+
+````
+java -cp . edu.gatech.seclass.prj1.Main InputEssay8.txt -l 3 -d ,:! 
 ````
 
 ###3.4 Application Output
