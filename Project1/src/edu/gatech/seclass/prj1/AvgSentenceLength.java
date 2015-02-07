@@ -73,7 +73,9 @@ public class AvgSentenceLength
 	{
 
 		if (lines == null)
+		{
 			return -1;
+		}
 
 		String text = joinLines(lines, " ");
 		String[] sentences = text.split("[" + sentenceDelimiters + "]");
@@ -105,7 +107,9 @@ public class AvgSentenceLength
 	String joinLines(List<String> lines, String delimiter)
 	{
 		if ((lines == null) || (delimiter == null))
+		{
 			return null;
+		}
 
 		StringBuilder builder = new StringBuilder();
 		for (int i = 0; i < lines.size(); i++)
