@@ -3,6 +3,7 @@ package edu.gatech.seclass.prj1;
 import static org.junit.Assert.assertEquals;
 
 import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -28,20 +29,20 @@ public class AvgSentenceLengthTest {
     }
     // -- START OF PROVIDED TEST CASES, DON'T CHANGE THESE --
     @Test
-    public void testComputeAverageSentenceLength1() {
+    public void testComputeAverageSentenceLength1() throws IOException {
         String comment = "Testing sentences that span multiple lines";
         asl.setFile(new File(fileDir + "input.txt"));
         assertEquals(comment, 7, asl.computeAverageSentenceLength(), 0);
     }
     @Test
-    public void testComputeAverageSentenceLength2() {
+    public void testComputeAverageSentenceLength2() throws IOException {
         String comment = "Testing customized delimiters";
         asl.setFile(new File(fileDir + "input.txt"));
         asl.setSentenceDelimiters("%.");
         assertEquals(comment, 3, asl.computeAverageSentenceLength(), 0);
     }
     @Test
-    public void testComputeAverageSentenceLength3() {
+    public void testComputeAverageSentenceLength3() throws IOException {
         String comment = "Testing customized minimal word length";
         asl.setFile(new File(fileDir + "input.txt"));
         asl.setMinWordLength(5);
@@ -176,32 +177,30 @@ public class AvgSentenceLengthTest {
     }
     
     @Test
-    public void test_ComputeAverageSentenceLength_EmptyFile() {
+    public void test_ComputeAverageSentenceLength_EmptyFile() throws IOException {
         String comment = "Testing empty file";
         asl.setFile(new File(fileDir + "emptyFile.txt"));
         assertEquals(comment, 0, asl.computeAverageSentenceLength(), 0);
     }
     
     @Test
-    public void test_ComputeAverageSentenceLength_NoDelimiters() {
+    public void test_ComputeAverageSentenceLength_NoDelimiters() throws IOException {
         String comment = "Testing file with no delimiters";
         asl.setFile(new File(fileDir + "noDelimiters.txt"));
         assertEquals(comment, 13, asl.computeAverageSentenceLength(), 0);
     }
     
     @Test
-    public void test_ComputeAverageSentenceLength_LongEssay() {
+    public void test_ComputeAverageSentenceLength_LongEssay() throws IOException {
         String comment = "Testing with long student essay";
         asl.setFile(new File(fileDir + "SampleEssay.txt"));
         assertEquals(comment, 15, asl.computeAverageSentenceLength(), 0);
     }
     
-    @Test
-    public void test_ComputeAverageSentenceLength_ExceptionCondition() {
+    @Test(expected = IOException.class)
+    public void test_ComputeAverageSentenceLength_ExceptionCondition() throws IOException {
     	File file = new File("NoSuchFile");
     	asl.setFile(file);
-    	
-    	//this also writes the exception stack trace to System.Err
-    	assertEquals(Constants.INVALID_SENTENCE_LENGTH, asl.computeAverageSentenceLength());
+        asl.computeAverageSentenceLength();
     }
 }

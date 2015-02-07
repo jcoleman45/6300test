@@ -33,18 +33,10 @@ public class AvgSentenceLength {
      * Reads the file and compute the average number of words per sentence.
      * @return average sentence length, or -1 if there was a problem opening or reading the file
      */
-    public long computeAverageSentenceLength() {
-    	try {
-    		List<String> lines = readLinesFromFile(file);
-    		return computeAverage(lines);
-    	}
-    	catch (Exception e) {
-    		//File not found, Unable to open file, File locked, Wrong security permissions etc... 
-    		//Hence generic-exception is caught
-    		e.printStackTrace();
-    		return Constants.INVALID_SENTENCE_LENGTH;
-    	}
-    }   
+    public long computeAverageSentenceLength() throws IOException {
+        List<String> lines = readLinesFromFile(file);
+        return computeAverage(lines);
+    }
     
     /**
      * Reads the content of the given file into a list of Strings. 
@@ -52,7 +44,7 @@ public class AvgSentenceLength {
      * @return all lines of the file or an empty list if the file is empty
      * @throws IOException if the file cannot be opened or read from
      */
-    List<String> readLinesFromFile(File file) throws Exception {
+    List<String> readLinesFromFile(File file) throws IOException {
         BufferedReader reader = new BufferedReader(new FileReader(file));
         List<String> lines = new ArrayList<String>();
         String line = reader.readLine();

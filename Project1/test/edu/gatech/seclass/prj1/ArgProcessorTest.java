@@ -84,5 +84,7 @@ public class ArgProcessorTest {
 		ArgResult result = new ArgProcessor(args).process();
 		assertEquals(null, result.getErrorMessage());
 		assertEquals(Status.RUN, result.getStatus());
+        assertEquals(".!?", result.getAvgSentenceLength().getSentenceDelimiters());
+        assertEquals(5, result.getAvgSentenceLength().getMinWordLength());
 	}
 }

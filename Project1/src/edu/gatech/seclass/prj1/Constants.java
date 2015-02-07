@@ -8,10 +8,7 @@ public final class Constants {
 	/* Default input parameters  */
 	public static final int MIN_WORD_LENGTH = 3;
 	public static final String SENTENCE_DELIMITERS = ".?!";
-	
-	/* Invalid results */
-	public static final long INVALID_SENTENCE_LENGTH = -1;
-	
+
 	/* Error Messages  */
 	public static final String ERR_MISSING_DELIMITERS = "Missing 'delimiters' in the command line arguments";
 	public static final String ERR_MIN_LENGTH_SHOULD_BE_GREATER_THAN_0 = "min_length should be greater than 0";
@@ -20,8 +17,8 @@ public final class Constants {
     public static final String ERR_MISSING_PARAMETER_VALUES = "Missing parameter values";
     public static final String ERR_FILE_DOES_NOT_EXIST = "Specified file does not exist OR wrong filename";
     public static final String ERR_FILE_NAME_MISSING = "Missing filename in the command line arguments";
-
 	public static final String ERR_READING_TEXT_FILE = "Error reading text file";
+    
     /* Error Messages using format string */
     public static final String OUT_AVERAGE_NUMBER = "Average number of words per sentence in the file - %s : %d\n";
     public static final String ERR_COULD_NOT_START_CALCULATION = "Could not start calculation: %s\n";

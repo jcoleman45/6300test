@@ -1,5 +1,7 @@
 package edu.gatech.seclass.prj1;
 
+import java.io.IOException;
+
 import static edu.gatech.seclass.prj1.Status.PRINT_USAGE;
 import static edu.gatech.seclass.prj1.Status.RUN;
 
@@ -17,7 +19,12 @@ public class Main {
         ArgResult result = new ArgProcessor(args).process();
         AvgSentenceLength asl = result.getAvgSentenceLength();
         if(result.getStatus() == RUN) {
-            long average = asl.computeAverageSentenceLength();            
+            long average = 0;
+            try {
+                average = asl.computeAverageSentenceLength();
+            } catch (IOException e) {
+                System.err.println(Constants.ERR_READING_TEXT_FILE);
+            }
             if (average != -1) {
                 System.out.printf(Constants.OUT_AVERAGE_NUMBER, asl.getFile().getPath(), average);            	
             }
