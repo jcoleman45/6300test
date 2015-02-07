@@ -50,35 +50,35 @@ public class AvgSentenceLengthTest {
     // -- END OF PROVIDED TEST CASES --
     
     @Test
-    public void testJoinLines_MultipleLines() {
+    public void test_JoinLines_MultipleLines() {
     	List<String> lines = Arrays.asList("Line 1", "Line 2", "Line 3", "Line 4");
     	String joinedLine = asl.joinLines(lines, " ");
     	assertEquals("Line 1 Line 2 Line 3 Line 4", joinedLine);
     }
     
     @Test
-    public void testJoinLines_SingleLine() {
+    public void test_JoinLines_SingleLine() {
     	List<String> lines = Arrays.asList("Line");
     	String joinedLine = asl.joinLines(lines, "#");
     	assertEquals("Line", joinedLine);
     }
     
     @Test
-    public void testJoinLines_NoLine() {
+    public void test_JoinLines_NoLine() {
         List<String> lines = new ArrayList<String>();
     	String joinedLine = asl.joinLines(lines, "@");
     	assertEquals("", joinedLine);
     }
     
     @Test
-    public void testJoinLines_NoDelimiter() {
+    public void test_JoinLines_NoDelimiter() {
     	List<String> lines = Arrays.asList("Line 1", "Line 2", "Line 3");
     	String joinedLine = asl.joinLines(lines, "");
     	assertEquals("Line 1Line 2Line 3", joinedLine);    	
     }
     
     @Test
-    public void testJoinLines_NullChecks() {
+    public void test_JoinLines_NullChecks() {
     	List<String> lines1 = Arrays.asList("Line 1", "Line 2");
     	String joinedLine1 = asl.joinLines(lines1, null);
     	assertEquals(null, joinedLine1);
@@ -88,48 +88,48 @@ public class AvgSentenceLengthTest {
     }
 
     @Test
-    public void testComputeAverage_NullCheck() {
+    public void test_ComputeAverage_NullCheck() {
     	long average = asl.computeAverage(null);
     	assertEquals(-1, average);
     }
 
     @Test
-    public void testComputeAverage_EmptyString() {
+    public void test_ComputeAverage_EmptyString() {
     	List<String> lines = new ArrayList<String>();
     	long average = asl.computeAverage(lines);
     	assertEquals(0, average);
     }
     
     @Test
-    public void testComputeAverage_MultipleSpacesTabsSepartedText() {
+    public void test_ComputeAverage_MultipleSpacesTabsSepartedText() {
         String comment = "Testing multiple spaces separated file";
         List<String> list = Arrays.asList("Testing     multiple spaces  text.","Will   it      work?I	guess		it			will");
         assertEquals(comment, 2, asl.computeAverage(list), 0);
     }
     
     @Test
-    public void testComputeAverage_NoDelimiters() {
+    public void test_ComputeAverage_NoDelimiters() {
     	List<String> lines = Arrays.asList("This is sentence 1\n", "This is a bigger sentence 2\n", "This is the biggest sentence of all and it is sentence 3");
     	long average = asl.computeAverage(lines);
     	assertEquals(12, average);
     }
     
     @Test
-    public void testComputeAverage_GoodText() {
+    public void test_ComputeAverage_GoodText() {
     	List<String> lines = Arrays.asList("This is sentence 1.\n", "Is this a bigger sentence 2?\n", "This is the biggest sentence of all and it is sentence 3!");
     	long average = asl.computeAverage(lines);
     	assertEquals(4, average);
     }
     
     @Test
-    public void testComputeAverage_TooManyDelimiters() {
+    public void test_ComputeAverage_TooManyDelimiters() {
     	List<String> lines = Arrays.asList("This is sentence 1...\n", "Is this a bigger bigger sentence 2??\n", "This is the biggest sentence of all and it is sentence 3!");
     	long average = asl.computeAverage(lines);
     	assertEquals(2, average);
     }    
     
     @Test
-    public void testComputeAverage_numbers() {
+    public void test_ComputeAverage_Numbers() {
         String comment = "Testing file with numbers";
         List<String> list = new ArrayList<String>();
         list.add("This file is to test files with numbers inside.");
@@ -139,7 +139,7 @@ public class AvgSentenceLengthTest {
     }
     
     @Test
-    public void testComputeAverage_table() {
+    public void test_ComputeAverage_Table() {
         String comment = "Testing file with a table";
         List<String> table = new ArrayList<String>();
         table.add("This file contains a table:");
@@ -156,24 +156,52 @@ public class AvgSentenceLengthTest {
         assertEquals(comment, 7, asl.computeAverage(table), 0);
     }    
 
+    @Test(expected = Exception.class)
+    public void test_ReadLinesFromFile_FileDoesNotExist() throws Exception
+    {
+    	File file = new File("NoSuchFile");
+    	asl.readLinesFromFile(file);
+    }
+    
     @Test
-    public void testComputeAverageSentenceLength_EmptyFile() {
+    public void test_ReadLinesFromFile_NoErrors() throws Exception
+    {
+    	File file = new File(fileDir + "input.txt");
+    	List<String> lines = asl.readLinesFromFile(file);
+    	assertEquals("This is an example of a sentence that spans", lines.get(0));
+    	assertEquals("multiple lines in", lines.get(1));
+    	assertEquals("the text file. We need to handle it.", lines.get(2));
+    	assertEquals("In addition% it also contains some weird characters%", lines.get(3));
+    	assertEquals("that are not% that common%.", lines.get(4));
+    }
+    
+    @Test
+    public void test_ComputeAverageSentenceLength_EmptyFile() {
         String comment = "Testing empty file";
         asl.setFile(new File(fileDir + "emptyFile.txt"));
         assertEquals(comment, 0, asl.computeAverageSentenceLength(), 0);
     }
     
     @Test
-    public void testComputeAverageSentenceLength_NoDelimiters() {
+    public void test_ComputeAverageSentenceLength_NoDelimiters() {
         String comment = "Testing file with no delimiters";
         asl.setFile(new File(fileDir + "noDelimiters.txt"));
         assertEquals(comment, 13, asl.computeAverageSentenceLength(), 0);
     }
     
     @Test
-    public void testComputeAverageSentenceLength_LongEssay() {
+    public void test_ComputeAverageSentenceLength_LongEssay() {
         String comment = "Testing with long student essay";
         asl.setFile(new File(fileDir + "SampleEssay.txt"));
         assertEquals(comment, 15, asl.computeAverageSentenceLength(), 0);
+    }
+    
+    @Test
+    public void test_ComputeAverageSentenceLength_ExceptionCondition() {
+    	File file = new File("NoSuchFile");
+    	asl.setFile(file);
+    	
+    	//this also writes the exception stack trace to System.Err
+    	assertEquals(Constants.INVALID_SENTENCE_LENGTH, asl.computeAverageSentenceLength());
     }
 }

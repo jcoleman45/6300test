@@ -33,8 +33,8 @@ java -cp . edu.gatech.seclass.prj1.Main [-d <delimiters>] [-l <min_length>] <fil
 | Command Argument               | Description                                                                         |
 | ------------------------------ | ----------------------------------------------------------------------------------- |
 | `java -cp`                     | Java command to run the application                                                 |
-| `.`                            | Directory/Folder location of the application                                        |
-| `edu.gatech.seclass.prj1.Main` | Application name                                                                    |
+| `.`                            | Current folder                                                                      |
+| `edu.gatech.seclass.prj1.Main` | Application name (specify installation folder)                                      |
 | `[-d <delimiters>]`            | *delimiters:* (optional) Specify a list of sentence delimiters - defaults to: `.?!` |
 | `[-l <min_length>]`            | *min_length:* (optional) Specify minimum word length (inclusive) - defaults to: `3` |
 | `<file_path>`                  | (mandatory) File name (includes folder path) that contains the text file            |
@@ -53,7 +53,7 @@ java -cp . edu.gatech.seclass.prj1.Main InputEssay1.txt
 ````
 
 ````
-java -cp C:\Tools\AppInstallationFolder edu.gatech.seclass.prj1.Main InputEssay2.txt
+java -cp . /root/installers/AvgSentenceLength edu.gatech.seclass.prj1.Main /root/Essays/InputEssay1.txt
 ````
 
 ````
@@ -61,7 +61,7 @@ java -cp . edu.gatech.seclass.prj1.Main D:\Essays\Essay1.txt
 ````
 
 ````
-java -cp . edu.gatech.seclass.prj1.Main \Users\User1\MyWork\EducationEssay.txt
+java -cp . edu.gatech.seclass.prj1.Main /Users/User1/MyWork/EducationEssay.txt
 ````
 
 ````
@@ -74,18 +74,6 @@ java -cp . edu.gatech.seclass.prj1.Main -l 4 InputEssay4.txt
 
 ````
 java -cp . edu.gatech.seclass.prj1.Main -d +#; -l 2 InputEssay5.txt
-````
-
-````
-java -cp . edu.gatech.seclass.prj1.Main -l 5 -d ,: InputEssay6.txt
-````
-
-````
-java -cp . edu.gatech.seclass.prj1.Main InputEssay7.txt -d ?!. -l 4 
-````
-
-````
-java -cp . edu.gatech.seclass.prj1.Main InputEssay8.txt -l 3 -d ,:! 
 ````
 
 ###3.4 Application Output
@@ -102,7 +90,7 @@ Average number of words per sentence in the file - D:\Essays\Essay10.txt : 10
 ````
 
 ````
-Average number of words per sentence in the file - \Users\User1\MyWork\ScienceEssay.txt : 8
+Average number of words per sentence in the file - /Users/User1/MyWork/ScienceEssay.txt : 8
 ````
 
 ##4 Troubleshooting
@@ -131,7 +119,7 @@ list of such error scenarios is given below for quick reference.
 #####4.2.1 Missing delimiters
 In the command line arguments, `-d` option is specified; but the actual delimiters are missing.
 
-> ***`Could not start calculation: Missing delimiters`***
+> ***`Could not start calculation: Missing 'delimiters' in the command line arguments`***
 > 
 > `Usage: java -cp . edu.gatech.seclass.prj1.Main [-d <delimiters>] [-l <min_length>] <file_path>`
 > 
@@ -142,7 +130,7 @@ In the command line arguments, `-d` option is specified; but the actual delimite
 #####4.2.2 Missing minimum word length
 In the command line arguments, `-l` option is specified; but the `min_length` value is missing.
 
-> ***`Could not start calculation: Missing min_length`***
+> ***`Could not start calculation: Missing 'min_length' in the command line arguments`***
 > 
 > `Usage: java -cp . edu.gatech.seclass.prj1.Main [-d <delimiters>] [-l <min_length>] <file_path>`
 > 
@@ -175,7 +163,7 @@ In the command line arguments, `-l` option is specified; but the `min_length` va
 #####4.2.5 Missing `<file_path>` argument
 In the command line arguments, the file name (`<file_path>`) is not specified.
 
-> ***`Could not start calculation: Missing filename`***
+> ***`Could not start calculation: Missing filename in the command line arguments`***
 > 
 > `Usage: java -cp . edu.gatech.seclass.prj1.Main [-d <delimiters>] [-l <min_length>] <file_path>`
 > 

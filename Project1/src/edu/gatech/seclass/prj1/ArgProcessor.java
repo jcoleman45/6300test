@@ -49,12 +49,12 @@ public class ArgProcessor {
                     try {
                     	int minWordLength = Integer.valueOf(args[i + 1]);
                     	if (minWordLength <= 0) {
-                            return new ArgResult(Constants.ERR_MIN_LENGTH_SHOULD_BE_GREATER_THAN_0 + args[i + 1], PRINT_USAGE);
+                            return new ArgResult(Constants.ERR_MIN_LENGTH_SHOULD_BE_GREATER_THAN_0 + " : " + args[i + 1], PRINT_USAGE);
                     	}
                     	avgSentenceLength.setMinWordLength(minWordLength);
                     }
                     catch (NumberFormatException e) {
-                        return new ArgResult(Constants.ERR_INVALID_MIN_LENGTH + ": " + args[i + 1], PRINT_USAGE);
+                        return new ArgResult(Constants.ERR_INVALID_MIN_LENGTH + " : " + args[i + 1], PRINT_USAGE);
                     }
                     i++;
                 } 
@@ -74,7 +74,7 @@ public class ArgProcessor {
                 return new ArgResult(avgSentenceLength);
             }
             else {
-                return new ArgResult(Constants.ERR_FILE_DOES_NOT_EXIST + ": " + fileName, SYSTEM_EXIT);
+                return new ArgResult(Constants.ERR_FILE_DOES_NOT_EXIST + " : " + fileName, SYSTEM_EXIT);
             }
         } 
         else {

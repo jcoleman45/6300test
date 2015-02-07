@@ -36,17 +36,24 @@ public class ArgProcessorTest {
 	}
 	
 	@Test
-	public void test_MinimumWordLength() {
-		String[] args = new String[] {"-d", ".!?", "-l", "-1", fileDir};
+	public void test_NegativeMinimumWordLength() {
+		String[] args = new String[] {"-d", ".!?", "-l", "-2", fileDir};
 		ArgResult result = new ArgProcessor(args).process();
-		assertEquals(Constants.ERR_MIN_LENGTH_SHOULD_BE_GREATER_THAN_0 + "-1", result.getErrorMessage());
+		assertEquals(Constants.ERR_MIN_LENGTH_SHOULD_BE_GREATER_THAN_0 + " : " + "-2", result.getErrorMessage());
 	}
 	
 	@Test
-	public void test_MissingMinimumLength() {
+	public void test_MissingMinimumWordLength() {
 		String[] args = new String[] {"-d", ".!?", "-l"};
 		ArgResult result = new ArgProcessor(args).process();
 		assertEquals(Constants.ERR_MISSING_MIN_LENGTH, result.getErrorMessage());
+	}
+	
+	@Test
+	public void test_InvalidMinimumWordLength() {
+		String[] args = new String[] { "-l", "a" };
+		ArgResult result = new ArgProcessor(args).process();
+		assertEquals(Constants.ERR_INVALID_MIN_LENGTH + " : a", result.getErrorMessage());
 	}
 	
 	@Test
@@ -58,15 +65,16 @@ public class ArgProcessorTest {
 	
 	@Test
 	public void test_WrongFilePath() {
-		String[] args = new String[] {"-d",".!?","-l","5","input.txt"};
+		String[] args = new String[] {"-d", ".!?", "-l", "5", "input.txt"};
 		ArgResult result = new ArgProcessor(args).process();
-		assertEquals(Constants.ERR_FILE_DOES_NOT_EXIST + ": input.txt", result.getErrorMessage());
+		assertEquals(Constants.ERR_FILE_DOES_NOT_EXIST + " : input.txt", result.getErrorMessage());
 	}
 	
 	@Test
 	public void test_CorrectInput() {
-		String[] args = new String[] {"-d",".!?","-l","5",fileDir};
+		String[] args = new String[] {"-d", ".!?", "-l", "5", fileDir};
 		ArgResult result = new ArgProcessor(args).process();
 		assertEquals(null, result.getErrorMessage());
+		assertEquals(Status.RUN, result.getStatus());
 	}
 }

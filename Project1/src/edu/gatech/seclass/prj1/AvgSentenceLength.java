@@ -38,9 +38,11 @@ public class AvgSentenceLength {
     		List<String> lines = readLinesFromFile(file);
     		return computeAverage(lines);
     	}
-    	catch (IOException e) {
+    	catch (Exception e) {
+    		//File not found, Unable to open file, File locked, Wrong security permissions etc... 
+    		//Hence generic-exception is caught
     		e.printStackTrace();
-    		return -1;
+    		return Constants.INVALID_SENTENCE_LENGTH;
     	}
     }   
     
@@ -50,7 +52,7 @@ public class AvgSentenceLength {
      * @return all lines of the file or an empty list if the file is empty
      * @throws IOException if the file cannot be opened or read from
      */
-    private List<String> readLinesFromFile(File file) throws IOException {
+    List<String> readLinesFromFile(File file) throws Exception {
         BufferedReader reader = new BufferedReader(new FileReader(file));
         List<String> lines = new ArrayList<String>();
         String line = reader.readLine();
