@@ -3,7 +3,8 @@ package edu.gatech.seclass.prj1;
 /**
  * Constants of general utility
  */
-public final class Constants {
+public final class Constants
+{
 
 	/* Default input parameters  */
 	public static final int MIN_WORD_LENGTH = 3;
