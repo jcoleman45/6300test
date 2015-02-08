@@ -49,7 +49,7 @@ argument or after the `delimiters` and `min_length`.
 
 ###3.3 Examples
 
-Few valid application execution examples are given below
+Few valid application execution examples are given below.
 
 ````
 java -cp . edu.gatech.seclass.prj1.Main InputEssay1.txt
@@ -86,7 +86,7 @@ java -cp . edu.gatech.seclass.prj1.Main -l 2 -d +#; InputEssay5.txt
 ###3.4 Application Output
 
 The software will return the average number of words per sentence, rounded down to the nearest integer. Sample outputs
-are given below
+are given below.
 
 ````
 Average number of words per sentence in the file - InputEssay7.txt : 7
@@ -140,7 +140,7 @@ In the command line arguments, the file name (`<file_path>`) is not specified.
 
 
 #####4.1.6 Wrong command line arguments
-Command line arguments are not missing or are in incorrect order. A generic error message given is
+Command line arguments are missing or are in incorrect order. A generic error message given is
 
 ***`Could not start calculation: Invalid Command line arguments`***
 
