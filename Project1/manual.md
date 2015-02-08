@@ -24,21 +24,17 @@ the command is valid, the software returns the average number of words per sente
 
 ###3.2 Running the application
 
-The application is run on the command prompt and command usage is given below.
+The application is run in the installation folder on the command prompt. The usage is given below.
 
 ````
-java -cp . edu.gatech.seclass.prj1.Main [-d <delimiters>] [-l <min_length>] <file_path>
+java -cp src/ edu.gatech.seclass.prj1.Main [-d <delimiters>] [-l <min_length>] <file_path>
 ````
 
 | Command Argument               | Description                                                                         |
 | ------------------------------ | ----------------------------------------------------------------------------------- |
-| `java -cp`                     | Java command to run the application                                                 |
-| `.`                            | Folder location of the installer                                                    |
-| `edu.gatech.seclass.prj1.Main` | Application name (specify installation folder)                                      |
 | `[-d <delimiters>]`            | *delimiters:* (optional) Specify a list of sentence delimiters - defaults to: `.?!` |
 | `[-l <min_length>]`            | *min_length:* (optional) Specify minimum word length (inclusive) - defaults to: `3` |
 | `<file_path>`                  | (mandatory) File name (includes folder path) that contains the text file            |
-
 
 - `<file_path>` is mandatory and should always be last argument. The file path should be specified as a single command-line
 argument or after the `delimiters` and `min_length`.
