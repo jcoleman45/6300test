@@ -118,21 +118,16 @@ public class ArgProcessor
 				return new ArgResult(Constants.ERR_INVALID_MIN_LENGTH + " : " + args[minLengthIndex], PRINT_USAGE);
 			}			
 		}
-		
-		if(fileNameIndex != -1)
+
+		String fileName = args[fileNameIndex];
+		File file = new File(fileName);
+		if (file.exists())
 		{
-			String fileName = args[fileNameIndex];
-			File file = new File(fileName);
-			if (file.exists())
-			{
-				avgSentenceLength.setFile(file);
-				return new ArgResult(avgSentenceLength);
-			} else
-			{
-				return new ArgResult(Constants.ERR_FILE_DOES_NOT_EXIST + " : " + fileName, SYSTEM_EXIT);
-			}
+			avgSentenceLength.setFile(file);
+			return new ArgResult(avgSentenceLength);
+		} else
+		{
+			return new ArgResult(Constants.ERR_FILE_DOES_NOT_EXIST + " : " + fileName, SYSTEM_EXIT);
 		}
-		
-		return new ArgResult(Constants.ERR_INVALID_COMMAND, PRINT_USAGE);
 	}
 }
