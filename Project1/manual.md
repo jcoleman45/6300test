@@ -48,39 +48,39 @@ argument or after the `delimiters` and `min_length`.
 Few valid application execution examples are given below.
 
 ````
-java -cp . edu.gatech.seclass.prj1.Main InputEssay1.txt
+java -cp src/ edu.gatech.seclass.prj1.Main InputEssay1.txt
 ````
 
 ````
-java -cp ./bin edu.gatech.seclass.prj1.Main ./bin/inputFiles/Input.txt
+java -cp src/ edu.gatech.seclass.prj1.Main ./bin/inputFiles/Input.txt
 ````
 
 ````
-java -cp /root/installers/AvgSentLength edu.gatech.seclass.prj1.Main /root/Essays/File1.txt
+java -cp src/ edu.gatech.seclass.prj1.Main /root/Essays/File1.txt
 ````
 
 ````
-java -cp . edu.gatech.seclass.prj1.Main D:\Essays\Essay1.txt
+java -cp src/ edu.gatech.seclass.prj1.Main D:\Essays\Essay1.txt
 ````
 
 ````
-java -cp . edu.gatech.seclass.prj1.Main /Users/User1/MyWork/EducationEssay.txt
+java -cp src/ edu.gatech.seclass.prj1.Main /Users/User1/MyWork/EducationEssay.txt
 ````
 
 ````
-java -cp . edu.gatech.seclass.prj1.Main -d #$: InputEssay3.txt
+java -cp src/ edu.gatech.seclass.prj1.Main -d #$: InputEssay3.txt
 ````
 
 ````
-java -cp . edu.gatech.seclass.prj1.Main -l 4 InputEssay4.txt
+java -cp src/ edu.gatech.seclass.prj1.Main -l 4 InputEssay4.txt
 ````
 
 ````
-java -cp . edu.gatech.seclass.prj1.Main -d +#; -l 2 InputEssay5.txt
+java -cp src/ edu.gatech.seclass.prj1.Main -d +#; -l 2 InputEssay5.txt
 ````
 
 ````
-java -cp . edu.gatech.seclass.prj1.Main -l 2 -d +#; InputEssay5.txt
+java -cp src/ edu.gatech.seclass.prj1.Main -l 2 -d +#; InputEssay5.txt
 ````
 
 ###3.4 Application Output
