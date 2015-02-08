@@ -18,7 +18,7 @@ sentences in terms of the number of words will help improve the writing style of
 
 ###3.1 Introduction
 `Average Sentence Length` is a Java application that is run on the command line. As part of command-line parameters,
-users have the option to customize the `minimum word length` and `sentence delimiters` that need to be used to evaluate
+users have the option to customize the *minimum word length* and *sentence delimiters* that need to be used to evaluate
 the essay. If the user input is not according to what the software expects, helpful error messages are returned. If 
 the command is valid, the software returns the average number of words per sentence for the particular essay. 
 
@@ -44,7 +44,7 @@ java -cp . edu.gatech.seclass.prj1.Main [-d <delimiters>] [-l <min_length>] <fil
 argument or after the `delimiters` and `min_length`.
 
 - For optional arguments,
-	- `-d` : Sentence delimiters are specified without any spaces. Ex - `.;:`. This will override the default delimiters `.?!`
+	- `-d` : Sentence delimiters are specified without any spaces. Example: `.;:`. This will override the default delimiters of `.?!`
 	- `-l` : Value of `min_length` should be a valid integer greater than 0. This will override the default value of 3
 
 ###3.3 Examples
@@ -104,114 +104,60 @@ Average number of words per sentence in the file - /Users/User1/MyWork/ScienceEs
 
 This section provides various error scenarios and possible solutions.
 
-###4.1 `Java` command not recognized in the command prompt
-
-Java Runtime Environment may not be installed or is corrupted. For more information on how to install JRE (1.6/1.7), 
-please refer to the Java documentation [here](http://docs.oracle.com/javase/8/). Post installation, the setup needs to 
-be validated as given below.
-
-#####4.1.1 Windows
-The JRE executable command `Java` needs to be available in the `System Path` environment variable to enable running 
-of the application from any folder within the user machine. Please refer to Microsoft Windows documentation on how to 
-add an EXE to the `system path` environment variable if not present already.
-
-#####4.1.2 Mac/Linux
-The `Java` command will be available in the `command line` if the JRE is installed correctly. 
-
-###4.2 Invalid usage of Command Line parameters
+###4.1 Invalid usage of Command Line parameters
 
 There are various errors that may be encountered if the application execution command is not specified correctly. A 
 sample list of such error scenarios is given below for quick reference.
 
-#####4.2.1 Missing delimiters
+#####4.1.1 Missing delimiters
 In the command line arguments, `-d` option is specified; but the actual delimiters are missing.
 
-> ***`Could not start calculation: Invalid Command line arguments`***
-> 
-> `Usage: java -cp . edu.gatech.seclass.prj1.Main [-d <delimiters>] [-l <min_length>] <file_path>`
-> 
-> `  delimiters: (optional) Specify a list of sentence delimiters - defaults to: .?!`
-> 
-> `  min_length: (optional) Specify minimum word length (inclusive) - defaults to: 3. Should be greater than 0`
+***`Could not start calculation: Invalid Command line arguments`***
 
-#####4.2.2 Missing minimum word length
+
+#####4.1.2 Missing minimum word length
 In the command line arguments, `-l` option is specified; but the `min_length` value is missing.
 
-> ***`Could not start calculation: Invalid Command line arguments`***
-> 
-> `Usage: java -cp . edu.gatech.seclass.prj1.Main [-d <delimiters>] [-l <min_length>] <file_path>`
-> 
-> `  delimiters: (optional) Specify a list of sentence delimiters - defaults to: .?!`
-> 
-> `  min_length: (optional) Specify minimum word length (inclusive) - defaults to: 3. Should be greater than 0`
+***`Could not start calculation: Invalid Command line arguments`***
 
-#####4.2.3 Invalid minimum word length
+
+#####4.1.3 Invalid minimum word length
 In the command line arguments, `-l` option is specified; but the `min_length` value is not a valid number.
 
-> ***`Could not start calculation: Invalid min_length: <user specified min_length value>`***
-> 
-> `Usage: java -cp . edu.gatech.seclass.prj1.Main [-d <delimiters>] [-l <min_length>] <file_path>`
-> 
-> `  delimiters: (optional) Specify a list of sentence delimiters - defaults to: .?!`
-> 
-> `  min_length: (optional) Specify minimum word length (inclusive) - defaults to: 3. Should be greater than 0`
+***`Could not start calculation: Invalid min_length: <user specified min_length value>`***
 
-#####4.2.4 Minimum word length less than or equal to zero
+
+#####4.1.4 Minimum word length less than or equal to zero
 In the command line arguments, `-l` option is specified; but the `min_length` value is less than or equal to zero.
 
-> ***`Could not start calculation: min_length should be greater than 0 : min_length`***
-> 
-> `Usage: java -cp . edu.gatech.seclass.prj1.Main [-d <delimiters>] [-l <min_length>] <file_path>`
-> 
-> `  delimiters: (optional) Specify a list of sentence delimiters - defaults to: .?!`
-> 
-> `  min_length: (optional) Specify minimum word length (inclusive) - defaults to: 3. Should be greater than 0`
+***`Could not start calculation: min_length should be greater than 0 : min_length`***
 
-#####4.2.5 Missing `<file_path>` argument
+
+#####4.1.5 Missing `<file_path>` argument
 In the command line arguments, the file name (`<file_path>`) is not specified.
 
-> ***`Could not start calculation: Missing filename in the command line arguments`***
-> 
-> `Usage: java -cp . edu.gatech.seclass.prj1.Main [-d <delimiters>] [-l <min_length>] <file_path>`
-> 
-> `  delimiters: (optional) Specify a list of sentence delimiters - defaults to: .?!`
-> 
-> `  min_length: (optional) Specify minimum word length (inclusive) - defaults to: 3. Should be greater than 0`
+***`Could not start calculation: Missing filename in the command line arguments`***
 
-#####4.2.6 Wrong command line arguments
+
+#####4.1.6 Wrong command line arguments
 Command line arguments are not missing or are in incorrect order. A generic error message given is
 
-> ***`Could not start calculation: Invalid Command line arguments`***
-> 
-> `Usage: java -cp . edu.gatech.seclass.prj1.Main [-d <delimiters>] [-l <min_length>] <file_path>`
-> 
-> `  delimiters: (optional) Specify a list of sentence delimiters - defaults to: .?!`
-> 
-> `  min_length: (optional) Specify minimum word length (inclusive) - defaults to: 3. Should be greater than 0`
+***`Could not start calculation: Invalid Command line arguments`***
 
-###4.3 Input text file issues
+
+###4.2 Input text file issues
 
 Essay text file does not exist or wrong folder path is specified.
 
->
-> ***`Could not start calculation: Specified file does not exist OR wrong filename : <file_path>`***
->
->
-If there are any issues in accessing the essay text file (Ex - insufficient security permissions, file Locked etc...),
-a Java exception stack trace is given so that the appropriate issue is reported. 
+***`Could not start calculation: Specified file does not exist OR wrong filename : <file_path>`***
 
-> [Java Exception - Stack Trace]
-> 
-> ***`Could not start calculation: Error reading text file`***
->
-> `Usage: java -cp . edu.gatech.seclass.prj1.Main [-d <delimiters>] [-l <min_length>] <file_path>`
-> 
-> `  delimiters: (optional) Specify a list of sentence delimiters - defaults to: .?!`
-> 
-> `  min_length: (optional) Specify minimum word length (inclusive) - defaults to: 3. Should be greater than 0`
+If there are any issues in accessing the essay text file (insufficient security permissions,
+file locked, etc.), an error message is printed.
+
+***`Could not start calculation: Error reading text file`***
 
 ##5 Technical Support
-For more technical support, please get it touch with the support team. The team contacts are give below
+For more technical support, please get it touch with the support team. The team contacts are given below.
 
 | Name         | Email               |
 |--------------|---------------------|
