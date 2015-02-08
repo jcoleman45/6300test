@@ -1,9 +1,9 @@
 package edu.gatech.seclass.prj1;
 
-import static edu.gatech.seclass.prj1.Status.PRINT_USAGE;
-import static edu.gatech.seclass.prj1.Status.EXIT;
-
 import java.io.File;
+
+import static edu.gatech.seclass.prj1.Status.EXIT;
+import static edu.gatech.seclass.prj1.Status.PRINT_USAGE;
 
 /**
  * Processes command-line arguments.
@@ -27,13 +27,13 @@ public class ArgProcessor
 	 * Process the stored command-line arguments and return the result and
 	 * potentially an {@code AvgSentenceLength} instance configured using the
 	 * command-line arguments *
-	 * 
+	 * <p/>
 	 * The only possible command type combinations are -
-	 *    1 arg  : java -cp . edu.gatech.seclass.prj1.Main <file_path>
-	 *    3 args : java -cp . edu.gatech.seclass.prj1.Main -d <delimiters> <file_path>
-	 *    3 args : java -cp . edu.gatech.seclass.prj1.Main -l <min_length> <file_path>
-	 *    5 args : java -cp . edu.gatech.seclass.prj1.Main -d <delimiters> -l <min_length> <file_path>
-	 *    5 args : java -cp . edu.gatech.seclass.prj1.Main -l <min_length> -d <delimiters> <file_path>
+	 * 1 arg  : java -cp . edu.gatech.seclass.prj1.Main <file_path>
+	 * 3 args : java -cp . edu.gatech.seclass.prj1.Main -d <delimiters> <file_path>
+	 * 3 args : java -cp . edu.gatech.seclass.prj1.Main -l <min_length> <file_path>
+	 * 5 args : java -cp . edu.gatech.seclass.prj1.Main -d <delimiters> -l <min_length> <file_path>
+	 * 5 args : java -cp . edu.gatech.seclass.prj1.Main -l <min_length> -d <delimiters> <file_path>
 	 *
 	 * @return result of the argument processing
 	 */
@@ -43,23 +43,24 @@ public class ArgProcessor
 		{
 			return new ArgResult(Constants.ERR_FILE_NAME_MISSING, PRINT_USAGE);
 		}
-		
+
 		int minLengthIndex = -1;
 		int delimitersIndex = -1;
 		int fileNameIndex = -1;
 		boolean wrongCommand = false;
-		
+
 		switch (args.length)
 		{
-			case 1 :
+			case 1:
 				fileNameIndex = 0;
 				break;
-				
-			case 3 :
+
+			case 3:
 				if (args[0].equals(Constants.MIN_LENGTH_COMMAND))
 				{
 					minLengthIndex = 1;
-				} else if (args[0].equals(Constants.DELIMITER_COMMAND))
+				}
+				else if (args[0].equals(Constants.DELIMITER_COMMAND))
 				{
 					delimitersIndex = 1;
 				}
@@ -69,40 +70,42 @@ public class ArgProcessor
 				}
 				fileNameIndex = 2;
 				break;
-				
-			case 5 :
+
+			case 5:
 				if (args[0].equals(Constants.MIN_LENGTH_COMMAND) && args[2].equals(Constants.DELIMITER_COMMAND))
 				{
 					minLengthIndex = 1;
 					delimitersIndex = 3;
-				} else if (args[0].equals(Constants.DELIMITER_COMMAND) && args[2].equals(Constants.MIN_LENGTH_COMMAND))
+				}
+				else if (args[0].equals(Constants.DELIMITER_COMMAND) && args[2].equals(Constants.MIN_LENGTH_COMMAND))
 				{
 					minLengthIndex = 3;
 					delimitersIndex = 1;
-				} else
+				}
+				else
 				{
-					wrongCommand = true;					
+					wrongCommand = true;
 				}
 				fileNameIndex = 4;
 				break;
-				
-			default :
+
+			default:
 				wrongCommand = true;
 				break;
 		}
-		
-		if(wrongCommand)
-		{	
+
+		if (wrongCommand)
+		{
 			return new ArgResult(Constants.ERR_INVALID_COMMAND, PRINT_USAGE);
 		}
-		
+
 		AvgSentenceLength avgSentenceLength = new AvgSentenceLength();
-		
+
 		if (delimitersIndex != -1)
 		{
 			avgSentenceLength.setSentenceDelimiters(args[delimitersIndex]);
 		}
-		
+
 		if (minLengthIndex != -1)
 		{
 			try
@@ -116,7 +119,7 @@ public class ArgProcessor
 			} catch (NumberFormatException e)
 			{
 				return new ArgResult(Constants.ERR_INVALID_MIN_LENGTH + " : " + args[minLengthIndex], PRINT_USAGE);
-			}			
+			}
 		}
 
 		String fileName = args[fileNameIndex];
@@ -125,7 +128,8 @@ public class ArgProcessor
 		{
 			avgSentenceLength.setFile(file);
 			return new ArgResult(avgSentenceLength);
-		} else
+		}
+		else
 		{
 			return new ArgResult(Constants.ERR_FILE_DOES_NOT_EXIST + " : " + fileName, EXIT);
 		}

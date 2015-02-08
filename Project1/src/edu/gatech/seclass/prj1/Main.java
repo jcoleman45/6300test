@@ -34,7 +34,7 @@ public class Main
 					System.exit(1);
 				}
 				break;
-			
+
 			case EXIT:
 				System.out.println();
 				System.err.printf(Constants.ERR_COULD_NOT_START_CALCULATION, result.getErrorMessage());

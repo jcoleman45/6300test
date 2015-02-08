@@ -71,10 +71,11 @@ public class AvgSentenceLength
 	 */
 	long computeAverage(List<String> lines)
 	{
-		if(lines == null) {
+		if (lines == null)
+		{
 			throw new IllegalArgumentException("lines must not be null");
 		}
-		
+
 		String text = joinLines(lines, " ");
 		String[] sentences = text.split("[" + sentenceDelimiters + "]");
 		long totalWords = 0;
