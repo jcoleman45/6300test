@@ -59,7 +59,7 @@ running the program or if the input commands are wrongly entered.
 ##2 System Requirements
 
 This software should be an application running using the Java Runtime Environment version 1.6 or 1.7. It is developed
-to analyze the average words of sentences in a raw text file encoded in ASCII. It should have a main method and contain 
+to analyze the average words of sentences in a raw text file with default encoding. It should have a main method and contain 
 a command line without other options. The code must be written in Java and must use standard Java libraries. All code in
 this program that is not the part of JDK, should be included as source code with the program.
  
@@ -95,7 +95,7 @@ All code required to execute the program that is not part of the  standard JDK, 
 code with the program.
 
 #####2.2.1.3 Compilation (must have)
-The source shall must compile with the `javac` command; without providing any compiler options.
+The source must compile with the `javac` command, without providing any compiler options.
 
 ####2.2.2 Execution
 
@@ -109,10 +109,10 @@ The software is a Java application having a `main()` method.
 The application shall be executable from the command prompt using the `java` command.
 
 #####2.2.2.3 Usability (must have)
-The application shall be easy to use and have user-friendly error messages rather than having error codes
+The application shall be easy to use and have user-friendly error messages rather than having error codes.
 
 #####2.2.2.4 Documentation (must have)
-The application shall be accompanied by help documentation that indicates how to use the tool, troubleshooting 
+The application shall be accompanied by a user manual that indicates how to use the tool, troubleshooting 
 information and details around the various error messages.
 
 #####2.2.2.5 Error messages (must have)
