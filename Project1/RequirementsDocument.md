@@ -124,4 +124,4 @@ Reasonably friendly, helpful messages shall be returned in various error cases.
 - Empty input file
 
 #####2.2.2.6 Input file encoding (must have)
-The application shall be able to handle normal text files with the defualt encoding.
+The application shall be able to handle normal text files with the default encoding.
