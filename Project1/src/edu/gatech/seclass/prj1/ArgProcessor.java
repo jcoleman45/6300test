@@ -1,7 +1,7 @@
 package edu.gatech.seclass.prj1;
 
 import static edu.gatech.seclass.prj1.Status.PRINT_USAGE;
-import static edu.gatech.seclass.prj1.Status.SYSTEM_EXIT;
+import static edu.gatech.seclass.prj1.Status.EXIT;
 
 import java.io.File;
 
@@ -127,7 +127,7 @@ public class ArgProcessor
 			return new ArgResult(avgSentenceLength);
 		} else
 		{
-			return new ArgResult(Constants.ERR_FILE_DOES_NOT_EXIST + " : " + fileName, SYSTEM_EXIT);
+			return new ArgResult(Constants.ERR_FILE_DOES_NOT_EXIST + " : " + fileName, EXIT);
 		}
 	}
 }

@@ -2,9 +2,6 @@ package edu.gatech.seclass.prj1;
 
 import java.io.IOException;
 
-import static edu.gatech.seclass.prj1.Status.PRINT_USAGE;
-import static edu.gatech.seclass.prj1.Status.RUN;
-
 /**
  * Calculates average sentence length per word of a raw text file.
  */
@@ -20,33 +17,36 @@ public class Main
 	{
 
 		ArgResult result = new ArgProcessor(args).process();
-		AvgSentenceLength asl = result.getAvgSentenceLength();
-		if (result.getStatus() == RUN)
+
+		switch (result.getStatus())
 		{
-			long average = 0;
-			try
-			{
-				average = asl.computeAverageSentenceLength();
-			} catch (IOException e)
-			{
-				System.err.println("\n" + Constants.ERR_READING_TEXT_FILE);
-			}
-			if (average != -1)
-			{
-				System.out.printf("\n" + Constants.OUT_AVERAGE_NUMBER, asl.getFile().getPath(), average);
-			} else
-			{
-				System.err.printf("\n" + Constants.ERR_COULD_NOT_START_CALCULATION, Constants.ERR_READING_TEXT_FILE);
+			case RUN:
+				try
+				{
+					AvgSentenceLength asl = result.getAvgSentenceLength();
+					long average = asl.computeAverageSentenceLength();
+					System.out.println();
+					System.out.printf(Constants.OUT_AVERAGE_NUMBER, asl.getFile().getPath(), average);
+				} catch (IOException e)
+				{
+					System.out.println();
+					System.err.printf(Constants.ERR_COULD_NOT_START_CALCULATION, Constants.ERR_READING_TEXT_FILE);
+					System.exit(1);
+				}
+				break;
+			
+			case EXIT:
+				System.out.println();
+				System.err.printf(Constants.ERR_COULD_NOT_START_CALCULATION, result.getErrorMessage());
 				System.exit(1);
-			}
-		} else
-		{
-			System.err.printf("\n" + Constants.ERR_COULD_NOT_START_CALCULATION, result.getErrorMessage());
-			if (result.getStatus() == PRINT_USAGE)
-			{
+				break;
+			case PRINT_USAGE:
+			default:
+				System.out.println();
+				System.err.printf(Constants.ERR_COULD_NOT_START_CALCULATION, result.getErrorMessage());
 				printUsage();
-			}
-			System.exit(1);
+				System.exit(1);
+				break;
 		}
 	}
 

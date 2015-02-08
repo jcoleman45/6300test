@@ -5,5 +5,5 @@ package edu.gatech.seclass.prj1;
  */
 public enum Status
 {
-	PRINT_USAGE, SYSTEM_EXIT, RUN;
+	PRINT_USAGE, EXIT, RUN
 }

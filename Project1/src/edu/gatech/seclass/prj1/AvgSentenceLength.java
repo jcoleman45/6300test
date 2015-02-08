@@ -66,17 +66,15 @@ public class AvgSentenceLength
 	/**
 	 * Computes average sentence length in terms of number of words
 	 *
-	 * @param lines list of strings
+	 * @param lines list of strings, must not be null
 	 * @return average sentence length
 	 */
 	long computeAverage(List<String> lines)
 	{
-
-		if (lines == null)
-		{
-			return -1;
+		if(lines == null) {
+			throw new IllegalArgumentException("lines must not be null");
 		}
-
+		
 		String text = joinLines(lines, " ");
 		String[] sentences = text.split("[" + sentenceDelimiters + "]");
 		long totalWords = 0;

@@ -103,11 +103,10 @@ public class AvgSentenceLengthTest
 		assertEquals(null, joinedLine2);
 	}
 
-	@Test
+	@Test(expected = IllegalArgumentException.class)
 	public void test_ComputeAverage_NullCheck()
 	{
-		long average = asl.computeAverage(null);
-		assertEquals(-1, average);
+		asl.computeAverage(null);
 	}
 
 	@Test
