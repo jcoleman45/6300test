@@ -24,7 +24,8 @@ the command is valid, the software returns the average number of words per sente
 
 ###3.2 Running the application
 
-The application is run in the installation folder on the command prompt. The usage is given below.
+We assume you have opened a command-line prompt in the installation directory (containing this documentation and a
+`src/` folder where the compiled application binaries reside). The application is run on that prompt as follows.
 
 ````
 java -cp src/ edu.gatech.seclass.prj1.Main [-d <delimiters>] [-l <min_length>] <file_path>
