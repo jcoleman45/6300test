@@ -1,9 +1,9 @@
 package edu.gatech.seclass.prj1;
 
-import java.io.File;
-
 import static edu.gatech.seclass.prj1.Status.PRINT_USAGE;
 import static edu.gatech.seclass.prj1.Status.SYSTEM_EXIT;
+
+import java.io.File;
 
 /**
  * Processes command-line arguments.
@@ -56,10 +56,10 @@ public class ArgProcessor
 				break;
 				
 			case 3 :
-				if (args[0].equals("-l"))
+				if (args[0].equals(Constants.MIN_LENGTH_COMMAND))
 				{
 					minLengthIndex = 1;
-				} else if (args[0].equals("-d"))
+				} else if (args[0].equals(Constants.DELIMITER_COMMAND))
 				{
 					delimitersIndex = 1;
 				}
@@ -71,11 +71,11 @@ public class ArgProcessor
 				break;
 				
 			case 5 :
-				if (args[0].equals("-l") && args[2].equals("-d"))
+				if (args[0].equals(Constants.MIN_LENGTH_COMMAND) && args[2].equals(Constants.DELIMITER_COMMAND))
 				{
 					minLengthIndex = 1;
 					delimitersIndex = 3;
-				} else if (args[0].equals("-d") && args[2].equals("-l"))
+				} else if (args[0].equals(Constants.DELIMITER_COMMAND) && args[2].equals(Constants.MIN_LENGTH_COMMAND))
 				{
 					minLengthIndex = 3;
 					delimitersIndex = 1;

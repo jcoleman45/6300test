@@ -82,7 +82,7 @@ also be validated. The defects will be categorized in severity with critical/maj
 
 - Project plan
 - Software requirements specification
-- Application and testing source code
+- Application and Unit-Tests source code
 
 **Exit Criteria**
 
@@ -102,8 +102,8 @@ all team members.
 
 - Project plan
 - Requirements specification
-- Test Cases document
-- Finished application
+- Test Cases
+- Tested application
 
 **Exit Criteria**
 

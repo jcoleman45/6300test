@@ -29,19 +29,19 @@ public class Main
 				average = asl.computeAverageSentenceLength();
 			} catch (IOException e)
 			{
-				System.err.println(Constants.ERR_READING_TEXT_FILE);
+				System.err.println("\n" + Constants.ERR_READING_TEXT_FILE);
 			}
 			if (average != -1)
 			{
-				System.out.printf(Constants.OUT_AVERAGE_NUMBER, asl.getFile().getPath(), average);
+				System.out.printf("\n" + Constants.OUT_AVERAGE_NUMBER, asl.getFile().getPath(), average);
 			} else
 			{
-				System.err.printf(Constants.ERR_COULD_NOT_START_CALCULATION, Constants.ERR_READING_TEXT_FILE);
+				System.err.printf("\n" + Constants.ERR_COULD_NOT_START_CALCULATION, Constants.ERR_READING_TEXT_FILE);
 				System.exit(1);
 			}
 		} else
 		{
-			System.err.printf(Constants.ERR_COULD_NOT_START_CALCULATION, result.getErrorMessage());
+			System.err.printf("\n" + Constants.ERR_COULD_NOT_START_CALCULATION, result.getErrorMessage());
 			if (result.getStatus() == PRINT_USAGE)
 			{
 				printUsage();
@@ -55,7 +55,7 @@ public class Main
 	 */
 	private static void printUsage()
 	{
-		System.err.println("Usage: java -cp . edu.gatech.seclass.prj1.Main [-d <delimiters>] [-l <min_length>] <file_path>");
+		System.err.println("\nUsage: java -cp . edu.gatech.seclass.prj1.Main [-d <delimiters>] [-l <min_length>] <file_path>");
 		System.err.println("  delimiters: (optional) Specify a list of sentence delimiters - defaults to: .?!");
 		System.err.println("  min_length: (optional) Specify minimum word length (inclusive) - defaults to: 3. Should be greater than 0");
 	}

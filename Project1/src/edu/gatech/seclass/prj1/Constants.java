@@ -9,6 +9,10 @@ public final class Constants
 	/* Default input parameters  */
 	public static final int MIN_WORD_LENGTH = 3;
 	public static final String SENTENCE_DELIMITERS = ".?!";
+	
+	/* Command line parameter options */
+	public static final String MIN_LENGTH_COMMAND = "-l";
+	public static final String DELIMITER_COMMAND = "-d";
 
 	/* Error Messages  */
 	public static final String ERR_MIN_LENGTH_SHOULD_BE_GREATER_THAN_0 = "min_length should be greater than 0";

@@ -36,7 +36,7 @@ public class ArgProcessorTest
 	@Test
 	public void test_MissingDelimiters()
 	{
-		String[] args = new String[]{"-d", fileDir};
+		String[] args = new String[]{Constants.DELIMITER_COMMAND, fileDir};
 		ArgResult result = new ArgProcessor(args).process();
 		assertEquals(Constants.ERR_INVALID_COMMAND, result.getErrorMessage());
 	}
@@ -44,7 +44,7 @@ public class ArgProcessorTest
 	@Test
 	public void test_NegativeMinimumWordLength()
 	{
-		String[] args = new String[]{"-d", ".!?", "-l", "-2", fileDir};
+		String[] args = new String[]{Constants.DELIMITER_COMMAND, ".!?", Constants.MIN_LENGTH_COMMAND, "-2", fileDir};
 		ArgResult result = new ArgProcessor(args).process();
 		assertEquals(Constants.ERR_MIN_LENGTH_SHOULD_BE_GREATER_THAN_0 + " : " + "-2", result.getErrorMessage());
 	}
@@ -52,7 +52,7 @@ public class ArgProcessorTest
 	@Test
 	public void test_MissingMinimumWordLength()
 	{
-		String[] args = new String[]{"-d", ".!?", "-l", fileDir};
+		String[] args = new String[]{Constants.DELIMITER_COMMAND, ".!?", Constants.MIN_LENGTH_COMMAND, fileDir};
 		ArgResult result = new ArgProcessor(args).process();
 		assertEquals(Constants.ERR_INVALID_COMMAND, result.getErrorMessage());
 	}
@@ -60,7 +60,7 @@ public class ArgProcessorTest
 	@Test
 	public void test_InvalidMinimumWordLength()
 	{
-		String[] args = new String[]{"-l", "a", fileDir};
+		String[] args = new String[]{Constants.MIN_LENGTH_COMMAND, "a", fileDir};
 		ArgResult result = new ArgProcessor(args).process();
 		assertEquals(Constants.ERR_INVALID_MIN_LENGTH + " : a", result.getErrorMessage());
 	}
@@ -68,7 +68,7 @@ public class ArgProcessorTest
 	@Test
 	public void test_MissingFileName()
 	{
-		String[] args = new String[]{"-d", ".!?", "-l", "5"};
+		String[] args = new String[]{Constants.DELIMITER_COMMAND, ".!?", Constants.MIN_LENGTH_COMMAND, "5"};
 		ArgResult result = new ArgProcessor(args).process();
 		assertEquals(Constants.ERR_INVALID_COMMAND, result.getErrorMessage());
 	}
@@ -76,7 +76,7 @@ public class ArgProcessorTest
 	@Test
 	public void test_WrongFilePath()
 	{
-		String[] args = new String[]{"-d", ".!?", "-l", "5", "input.txt"};
+		String[] args = new String[]{Constants.DELIMITER_COMMAND, ".!?", Constants.MIN_LENGTH_COMMAND, "5", "input.txt"};
 		ArgResult result = new ArgProcessor(args).process();
 		assertEquals(Constants.ERR_FILE_DOES_NOT_EXIST + " : input.txt", result.getErrorMessage());
 	}
@@ -84,7 +84,7 @@ public class ArgProcessorTest
 	@Test
 	public void test_MissingDelimiterArgument()
 	{
-		String[] args = new String[]{"-d", "-l", "5", fileDir + "input.txt"};
+		String[] args = new String[]{Constants.DELIMITER_COMMAND, Constants.MIN_LENGTH_COMMAND, "5", fileDir + "input.txt"};
 		ArgResult result = new ArgProcessor(args).process();
 		// -d -l is  valid (-l are delimiters), but then the length is missing
 		assertEquals(Constants.ERR_INVALID_COMMAND, result.getErrorMessage());
@@ -93,7 +93,7 @@ public class ArgProcessorTest
 	@Test
 	public void test_CorrectInput()
 	{
-		String[] args = new String[]{"-d", ".!?", "-l", "5", fileDir};
+		String[] args = new String[]{Constants.DELIMITER_COMMAND, ".!?", Constants.MIN_LENGTH_COMMAND, "5", fileDir};
 		ArgResult result = new ArgProcessor(args).process();
 		assertEquals(null, result.getErrorMessage());
 		assertEquals(Status.RUN, result.getStatus());

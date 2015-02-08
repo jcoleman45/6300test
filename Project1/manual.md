@@ -33,7 +33,7 @@ java -cp . edu.gatech.seclass.prj1.Main [-d <delimiters>] [-l <min_length>] <fil
 | Command Argument               | Description                                                                         |
 | ------------------------------ | ----------------------------------------------------------------------------------- |
 | `java -cp`                     | Java command to run the application                                                 |
-| `.`                            | Current folder                                                                      |
+| `.`                            | Folder location of the installer                                                    |
 | `edu.gatech.seclass.prj1.Main` | Application name (specify installation folder)                                      |
 | `[-d <delimiters>]`            | *delimiters:* (optional) Specify a list of sentence delimiters - defaults to: `.?!` |
 | `[-l <min_length>]`            | *min_length:* (optional) Specify minimum word length (inclusive) - defaults to: `3` |
@@ -56,7 +56,11 @@ java -cp . edu.gatech.seclass.prj1.Main InputEssay1.txt
 ````
 
 ````
-java -cp . /root/installers/AvgSentLength edu.gatech.seclass.prj1.Main /root/Essays/File1.txt
+java -cp ./bin edu.gatech.seclass.prj1.Main ./bin/inputFiles/Input.txt
+````
+
+````
+java -cp /root/installers/AvgSentLength edu.gatech.seclass.prj1.Main /root/Essays/File1.txt
 ````
 
 ````

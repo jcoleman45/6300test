@@ -28,7 +28,7 @@ the average number of words per sentence for the selected essay.
 
 The users are required to have the Java Runtime Environment version 1.6 or 1.7 installed. The application is
 run on the command-line using the `java` command. The input data shall be specified by passing a path to a (raw text format)
-file on the command-line. The two customizations (sentence-separators and word-length) available are specified by command-
+file on the command-line. The two customizations (sentence-separators and word-length) available are specified by command
 line parameters. 
 
 ####1.3.1 Run the application
