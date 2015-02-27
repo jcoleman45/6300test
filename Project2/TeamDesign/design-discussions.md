@@ -61,8 +61,14 @@ This section discusses the main commonalities and differences between this desig
 
 - Do we need classes such as ‘Stall Manager’ / ‘System Main’ as in the individual class diagrams?
 	-	We will definitely need a main class that ties all the child classes and has the overarching functionality. Maybe we can add Customer and Payment processor helper classes for having separation of concerns and to reduce complexity
-	-	The Utility classes which are part of the standard Java/Android library need not be shown in the class diagrams. (Ex Money, Date, Time etc…)
+-	The Utility classes which are part of the standard Java/Android library need not be shown in the class diagrams. (Ex Money, Date, Time etc…)
 - Email functionality is embedded in a utility class
+-	All team members shared ‘Customer’ and ‘Transaction’ classes, and used utility classes
+-	Ganesh used Main interface and two subsystems, that makes the system easier to implement. The team design used his idea and changed their name to "Customer Management" and "Payment Management"
+-	The "Credit Card" class is used in all member's designs, but shows different relations. The team design connected "Credit Card" with "Transaction", because one customer may have more than one credit card.
+-	Cedric used a component "Email service" in his design. The team design used this part and specified the email sending conditions.
+-	The team design employed Yue's design to organize two type of discounts ("Gold status" and "Rewards")
+
 
 #### Summary
 
@@ -72,3 +78,5 @@ This section summarizes the lessons learnt in the process of discussing the desi
 - Elimination of classes available in the standard library
 - The implementation level attributes are not shown in the design diagrams. Ex – Lists etc…
 - The design is simplified to only include the requirements. Addition of domain knowledge and features can be done once the base application is ready
+-	We need focus on the structure of the system, rather than the implement details
+-	For teamwork, it was difficult to find a common design; but we initially set a design and the rest of the team members gave feedback on the common design
