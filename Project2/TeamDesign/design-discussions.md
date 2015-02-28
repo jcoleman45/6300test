@@ -63,7 +63,7 @@ Cons
 
 - Implementation details such as the `if` condition on connections should not be shown in the diagram.
 - There should not be two relations between `Customer` and `Transaction`
-- `Redeem` and `Add` can be operations in the entities rather than UML relation. And `10DollarReward` can be a subclass of ``RewardBalance`
+- `Redeem` and `Add` can be operations in the entities rather than UML relation. And `10DollarReward` can be a subclass of `RewardBalance`
 - `Edit()` operation in `Order` may not be required. The `Order` class can be removed
 - Can show the components – CreditCardScanner and PaymentProcessingService
 
@@ -73,7 +73,7 @@ Cons
 
 This section discusses the main commonalities and differences between this design and the individual ones, and justifies the main design decisions
 
-- Do we need classes such as `Stall Manager` / `System Main` as in the individual class diagrams?
+- Do we need classes such as `Stall Manager` and `System Main` as in the individual class diagrams?
 	- Me will definitely need a main class that ties all the child classes and has the overarching functionality.
 	  Maybe we can add Customer and Payment processor helper classes for having separation of concerns and to reduce
 	  complexity.
