@@ -74,13 +74,13 @@ Cons
 This section discusses the main commonalities and differences between this design and the individual ones, and justifies the main design decisions
 
 - Do we need classes such as `Stall Manager` and `System Main` as in the individual class diagrams?
-	- Me will definitely need a main class that ties all the child classes and has the overarching functionality.
+	- We will definitely need a main class that ties all the child classes and has the overarching functionality.
 	  Maybe we can add Customer and Payment processor helper classes for having separation of concerns and to reduce
 	  complexity.
 - It was decided to not show the Utility classes which are part of the standard Java/Android libraries for clarity.
   (Ex Money, Date, Time etc…)
 - Email functionality is embedded in a utility class.
-- All team members shared `Customer` and `Transaction` classes, and used similar utility classes.
+- All team members created `Customer` and `Transaction` classes, and used similar utility classes.
 - Ganesh used a Main interface and two Manager clases that tie everything together. The team design uses his idea and 
   changed their name to "Customer Management" and "Payment Management".
 - The "Credit Card" class is used in all member's designs, but shows different relations. The team design connected 
@@ -98,7 +98,7 @@ This section summarizes the lessons learnt in the process of discussing the desi
 - Understood the differences between aggregation and composition and this is depicted in the team design.
 - Elimination of classes available in the standard library.
 - The implementation level attributes are not shown in the design diagrams. Ex – Lists etc.
-- The design is simplified to adhere to the actual the requirements. We tried to be cautious about reading too much
+- The design is simplified to adhere to the actual requirements. We tried to be cautious about reading too much
   between the lines to not add completely new features that are not desired.
 - We need focus on the structure of the system, rather than the implement details
 - For teamwork, it was difficult to find a common design; but we initially set a design and the rest of the team members 
