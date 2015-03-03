@@ -155,5 +155,5 @@ Every member is expected to review documents and codes on Github as needed.
 
 **Lines of Code**
 
-- The estimated amount of LOC for the finished application is around 1000 lines, and an additional 400 lines for 
+- The estimated amount of  for the finished application is around 1000 lines, and an additional 400 lines for 
 tests.
