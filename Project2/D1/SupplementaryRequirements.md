@@ -18,4 +18,5 @@ The software must be run on a Android Platform.
 
 ##1.4 Documentation
 
-The application shall be accompanied by a user manual that indicates how to use the tool, troubleshooting information and details.
+The application shall be accompanied by a user manual that indicates how to use the tool, troubleshooting information
+and details.

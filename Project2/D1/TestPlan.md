@@ -1,43 +1,63 @@
 # Test Plan
 
-*This is the template for your test plan. The parts in italics are concise explanations of what should go in the corresponding sections and should not appear in the final document.*
+*This is the template for your test plan. The parts in italics are concise explanations of what should go in the
+corresponding sections and should not appear in the final document.*
 
 **Author**: \<yli801\>
 
-The purpose of this test plan is to define testing strategies to include all the functional and non-functional requirements; techniques used to select test cases and ensure coverage; bug tracking procedures and lastly list test cases at each test levels.
+The purpose of this test plan is to define testing strategies to include all the functional and non-functional
+requirements; techniques used to select test cases and ensure coverage; bug tracking procedures and lastly list test cases at each test levels.
 
 ## 1 Testing Strategy
 
 ### 1.1 Overall strategy
 
-*This section should provide details about your unit-, integration-, system-, and regression-testing strategies. In particular, it should discuss which activities you will perform as part of your testing process, and who will perform such activities.*
+*This section should provide details about your unit-, integration-, system-, and regression-testing strategies.
+In particular, it should discuss which activities you will perform as part of your testing process, and who will
+perform such activities.*
 
 #### 1.1.1 Unit Testing Strategy
 
-Unit testing will first be performed to ensure the functionality of each modules individually. Each method of each classes willed be tested to ensure it behaves exatcly as expected. Unit test cases will be prepared by the QA manager based on the requirement specifications and executed by application developers during software construction phase. Thus any faulty module can be fixed immediately rather than let it exist and then cause some major issue in the integration phase.
+Unit testing will first be performed to ensure the functionality of each modules individually. Each method of each
+classes willed be tested to ensure it behaves exatcly as expected. Unit test cases will be prepared by the QA manager
+based on the requirement specifications and executed by application developers during software construction phase.
+Thus any faulty module can be fixed immediately rather than let it exist and then cause some major issue in the
+integration phase.
 
 
 #### 1.1.2 Integration Testing Strategy
 
-Integration testing confirms that each piece of the application interacts as designed and that all functionality is working. Integration testing includes interactions between all layers of an application, including interfaces to other applications, as a complete end-to-end test of the functionality. Integration test cases will be prepared and executed by QA manager and should cover all possible interactions or paths between each modules. Other team members will review the test cases to make sure the functional coverage.
+Integration testing confirms that each piece of the application interacts as designed and that all functionality is
+working. Integration testing includes interactions between all layers of an application, including interfaces to other
+applications, as a complete end-to-end test of the functionality. Integration test cases will be prepared and executed
+by QA manager and should cover all possible interactions or paths between each modules. Other team members will review
+the test cases to make sure the functional coverage.
 
 
 #### 1.1.3 System Testing Strategy
 
-The purpose of system testing is to make sure that the software system developed complies with the definition of the software requirements. QA manager will be preparing test cases that cover all scenarios for the requirements and these will also be reviewed by other team members.
+The purpose of system testing is to make sure that the software system developed complies with the definition of the
+software requirements. QA manager will be preparing test cases that cover all scenarios for the requirements and these
+will also be reviewed by other team members.
 
 #### 1.1.4 Regression Testing Strategy
 
-Regression testing is to make sure that the software behaves well after code revision. Retesting for fixed bugs will be done by QA manager and resolved by respective developer.Not only test cases that focused on the changed software components should be retested, other modules should also be checked cause defects may propagated to other modules. 
+Regression testing is to make sure that the software behaves well after code revision. Retesting for fixed bugs will be
+done by QA manager and resolved by respective developer.Not only test cases that focused on the changed software
+components should be retested, other modules should also be checked cause defects may propagated to other modules. 
 
 
 ### 1.2 Test Selection
 
-*Here you should discuss how you are going to select your test cases, that is, which black-box and/or white-box techniques you will use. If you plan to use different techniques at different testing levels (e.g., unit and system), you should clarify that.*
+*Here you should discuss how you are going to select your test cases, that is, which black-box and/or white-box
+techniques you will use. If you plan to use different techniques at different testing levels (e.g., unit and system),
+you should clarify that.*
 
 ### 1.3 Adequacy Criterion
 
-*Define how you are going to assess the quality of your test cases. Typically, this involves some form of functional or structural coverage. If you plan to use different techniques at different testing levels (e.g., unit and system), you should clarify that.*
+*Define how you are going to assess the quality of your test cases. Typically, this involves some form of functional or
+structural coverage. If you plan to use different techniques at different testing levels (e.g., unit and system), you
+should clarify that.*
 
 ### 1.4 Bug Tracking
 
@@ -49,7 +69,10 @@ Regression testing is to make sure that the software behaves well after code rev
 
 ## 2 Test Cases
 
-*This section should be the core of this document. You should provide a table of test cases, one per row. For each test case, the table should provide its purpose, the steps necessary to perform the test, the expected result, the actual result (to be filled later), pass/fail information (to be filled later), and any additional information you think is relevant.*
+*This section should be the core of this document. You should provide a table of test cases, one per row. For each test
+case, the table should provide its purpose, the steps necessary to perform the test, the expected result, the actual
+result (to be filled later), pass/fail information (to be filled later), and any additional information you think is
+relevant.*
 
 | Purposes | Steps | Expected Result | Actual Result | Pass/Fail |
 |-------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------|---------------|-----------|

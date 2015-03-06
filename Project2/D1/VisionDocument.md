@@ -1,31 +1,44 @@
 # Vision Document
 
-
 **Author**: \<Team26\>
 
 ## 1 Introduction
 
 *Here you introduce the product. Keep this  clean 	and simple, one or two sentences at most.*
 
-Payment and rewards management system (PReSM) is an Android application that will allow the two famers of a mobile stall to manage payment and rewards for their customs. The PReSM can be used on their Android devices to edit customers, process payments, track transaction history, and send reward emails.
+Payment and rewards management system (PReSM) is an Android application that will allow the two famers of a mobile stall
+to manage payment and rewards for their customs. The PReSM can be used on their Android devices to edit customers,
+process payments, track transaction history, and send reward emails.
 
 ## 2 Business Needs/Requirements
 
-*Here you discuss the reason you are planning to build your product. Youâ€™ll want to talk about the problem people are facing, the requirements you need to meet to solve that problem (10000-foot view), and the market itself. Essentially, youâ€™re making a case that the product needs to be built.*
+*Here you discuss the reason you are planning to build your product. You'll want to talk about the problem people
+are facing, the requirements you need to meet to solve that problem (10000-foot view), and the market itself.
+Essentially, you're making a case that the product needs to be built.*
 
-Brad and Janet, two young farmers from the Atlanta area who sell their produce regularly at local farmers markets. Currently, they have no effective syetem to manage payment and reward their customers. To simplify the payment process and keep royal customers, they need a Payment and rewards management system to handle these problems quickly and easily. In addition, this system should be run on the Android OS for convenience.
+Brad and Janet, two young farmers from the Atlanta area who sell their produce regularly at local farmers markets.
+Currently, they have no effective syetem to manage payment and reward their customers. To simplify the payment process
+and keep royal customers, they need a Payment and rewards management system to handle these problems quickly and easily.
+In addition, this system should be run on the Android OS for convenience.
 
 ## 3 Product / Solution Overview
 
-*Here you talk about the product itself. Give a high level overview of the solution and how it meets the needs outlined above. Optionally, you can talk about plans for both this version and future versions.*
+*Here you talk about the product itself. Give a high level overview of the solution and how it meets the needs outlined
+above. Optionally, you can talk about plans for both this version and future versions.*
 
-PReSM is an application which can be used on any Android device. It could integrate with other Android utility softwares(credit-card scanning, payment processing, and email management) to implement payment and rewards management functions.
+PReSM is an application which can be used on any Android device. It could integrate with other Android utility
+softwares (credit-card scanning, payment processing, and email management) to implement payment and rewards management
+functions.
 
-The application will store customer information and track transactions to help the stall managers reward their royal customers.The application could work with credit card scanner and payment processing provider to complete transaction. At the same time, the application could integrate with email service to notice customers when they get reward/discount. 
+The application will store customer information and track transactions to help the stall managers reward their royal
+customers.The application could work with credit card scanner and payment processing provider to complete transaction.
+At the same time, the application could integrate with email service to notice customers when they get reward/discount. 
 
 ## 4 Major Features (Optional)
 
-*Here you outline the features at a high level (a detailed feature outline belongs in the requirements document.) Some people prefer to outline features in the above Product/Solution Overview section, which is also a fine approach. Whatever you do, keep it to bullet points, not paragraphs. If you can use pictures, such as mockups, even better.*
+*Here you outline the features at a high level (a detailed feature outline belongs in the requirements document.) Some
+people prefer to outline features in the above Product/Solution Overview section, which is also a fine approach.
+Whatever you do, keep it to bullet points, not paragraphs. If you can use pictures, such as mockups, even better.*
 
 The following are the major features that the MReMs will be able to provide:
 
@@ -47,10 +60,13 @@ The following are the major features that the MReMs will be able to provide:
 
 ## 5 Scope and Limitations
 
-*The Scope and Limitations section is where you talk about what is, and in particular, what is not included. This is where you tactfully tell your boss that his pet feature is not going to be included.*
+*The Scope and Limitations section is where you talk about what is, and in particular, what is not included. This is 
+where you tactfully tell your boss that his pet feature is not going to be included.*
 
-5.1 The PReMS is designed for two mobile stall owners to manage payment and rewards for their business in a local farmer market. It is not open to the public including  customers.
-5.2 The PReMS is only designed to work on Android OS device with Internet access. It won't work on any other systems such as iPhone.
+5.1 The PReMS is designed for two mobile stall owners to manage payment and rewards for their business in a local farmer
+market. It is not open to the public including  customers.
+5.2 The PReMS is only designed to work on Android OS device with Internet access. It won't work on any other systems
+such as iPhone.
 5.3 The PReMs only accept payment by Credit card. It won't work with other payment methods such as cash.
 
 
