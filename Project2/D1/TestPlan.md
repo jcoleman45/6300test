@@ -19,7 +19,7 @@ perform such activities.*
 #### 1.1.1 Unit Testing Strategy
 
 Unit testing will first be performed to ensure the functionality of each modules individually. Each method of each
-classes willed be tested to ensure it behaves exatcly as expected. Unit test cases will be prepared by the QA manager
+classes willed be tested to ensure it behaves exactly as expected. Unit test cases will be prepared by the QA manager
 based on the requirement specifications and executed by application developers during software construction phase.
 Thus any faulty module can be fixed immediately rather than let it exist and then cause some major issue in the
 integration phase.
@@ -77,7 +77,7 @@ relevant.*
 | Purposes | Steps | Expected Result | Actual Result | Pass/Fail |
 |-------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------|---------------|-----------|
 | SystemMain -> CustomerManagement | In system main, click manage customers button | go to customer management page |  |  |
-| SystemMian -> PaymentManagement | In system main, click manage payments button | go to payment management page |  |  |
+| SystemMain -> PaymentManagement | In system main, click manage payments button | go to payment management page |  |  |
 | Customer management -> Customer via add customer | In customer management, select add customer; input customer info and confirm | go to customer page with the newly created customer |  |  |
 | Customer management -> Customer via edit customer | In customer management, select edit customer; edit customer info and confirm | go to customer page with edited customer information |  |  |
 | Customer management -> Customer via get customer | In customer management, select get customer; input customer info and confirm | go to customer page of the requested customer |  |  |
