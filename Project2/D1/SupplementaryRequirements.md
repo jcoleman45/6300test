@@ -4,11 +4,11 @@
 
 Some of the requirements listed here are non-functional requirements that do not fit the use case model.
 
-##1.3 Programming environment
+##1.1 Programming environment
 
-The software must be run on a Android Platform.
+The target platform of the application is Android, the minimum SDK level is not yet specified.
 
-##1.4 Documentation
+##1.2 Documentation
 
-The application shall be accompanied by a user manual that indicates how to use the tool, troubleshooting information
-and details.
+The application shall be accompanied by a user manual that indicates how to use the application, offers trouble-shooting
+information and includes additional technical details.
