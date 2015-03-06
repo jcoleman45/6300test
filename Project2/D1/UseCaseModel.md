@@ -23,7 +23,7 @@ as sequence diagrams.*
 ### 2.1 UC1: ADD CUSTOMER
 - Requirements: This use case allow stall manager to add a new customer.
 
-- Pre-conditions: Stall manager already logged onto the system. Customer provided his/her personal information.
+- Pre-conditions: The application is running. Customer provided his/her personal information.
 
 - Post-conditions: Customer information is added.
 
@@ -33,7 +33,7 @@ to database.
 ### 2.2 UC2: EDIT CUSTOMER
 - Requirements: This use case allows stall manager to edit customer's account information.
 
-- Pre-conditions: Stall manager already logged onto the system. The customer information is already loaded.
+- Pre-conditions: The application is running. The customer information is already loaded.
 
 - Post-conditions: The database for customer is updated.
 
@@ -43,7 +43,7 @@ database.
 ### 2.3 UC3: GET TRANSACTION HISTORY
 - Requirements: This use case allows stall manager to view any customer's transaction history.
 
-- Pre-conditions: Stall manager already logged onto the system. The customer is not new. The customer information is
+- Pre-conditions: The application is running. The customer is not new. The customer information is
 already loaded.
 
 - Post-conditions: None.
@@ -58,19 +58,19 @@ amount, whether discounts were applied ,which ones).
 Single transaction is $100 or more.
 - Post-conditions: Email is send. The $10 dollar reward is added in the customer's account for future purchase.
 
-- Scenarios:Customer spent $100 or more in a single purchase.Then he or she gets a $10 discount towards a future
+- Scenarios: Customer spent $100 or more in a single purchase.Then he or she gets a $10 discount towards a future
 purchase as a reward. System sends an email to the customer.
 
 ### 2.6 UC6: SEND GOLD STATUS EMAIL
 - Requirements: In this use case, system could send email to customer who reached gold status.
 
-- Pre-conditions: The customer's information is in the data base. The customer's total purchase in a calendar >=$1000.
+- Pre-conditions: The customer's information is in the data-base. The customer's total purchase in a calendar >=$1000.
 System is connected with an email service software. 
 
-- Post-conditions:The customers status updates to "Gold". System send an email to the customer. The customer could get
+- Post-conditions: The customers status updates to "Gold". System send an email to the customer. The customer could get
 5% discount on every purchase.
 
-- Scenarios:Customers who spend $1000 or more in a calendar year achieve "gold" status, which entitles them to a 5%
+- Scenarios: Customers who spend $1000 or more in a calendar year achieve "gold" status, which entitles them to a 5%
 discount for life and on every purchase. The change of status is effective immediately after reaching the specified
 threshold. 
 
