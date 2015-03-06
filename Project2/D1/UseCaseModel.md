@@ -48,7 +48,7 @@ already loaded.
 
 - Post-conditions: None.
 - Scenarios: Stall manager selects transaction history and the system displays a list of purchases with detail (date,
-amount, whether discounts were applied ,which ones).
+amount, whether discounts were applied and which ones).
 
 
 ### 2.4 UC4: SEND DOLLAR REWARD EMAIL
@@ -74,7 +74,7 @@ System is connected with an email service software.
 discount for life and on every purchase. The change of status is effective immediately after reaching the specified
 threshold. 
 
-### 2.7 UC7: MAKE TRANSACTION WITHOUT DISCOUNT
+### 2.7 UC7: PERFORM TRANSACTION WITHOUT DISCOUNT
 - Requirements: In this use case, system could make transaction without discount.
 
 - Pre-conditions: Customer bought products. The customer is not gold status. The customer has no money discount in his
@@ -85,7 +85,7 @@ is updated.
  
 - Scenarios: Customer scans his/her credit card, and payment is completed without any discount.
 
-### 2.8 UC8: MAKE TRANSACTION WITH 5% DISCOUNT
+### 2.8 UC8: PERFORM TRANSACTION WITH 5% DISCOUNT
 - Requirements: In this use case, system could make transaction with 5% discount.
 
 - Pre-conditions: Customer buys products. The customer's status is gold. System is connected with credit-card scanning
@@ -96,7 +96,7 @@ calendar purchase is updated.
 
 - Scenarios:Gold customer scans his/her credit card, and payment is completed with 5% discount.
 
-### 2.9 UC9: MAKE TRANSACTION WITH MONEY DISCOUNT
+### 2.9 UC9: PERFORM TRANSACTION WITH MONEY DISCOUNT
 - Requirements: In this use case, system could make transaction with 5% discount.
 
 - Pre-conditions: Customer buys products. The customer's status is not gold. The customer has money reward in his/her
@@ -107,7 +107,7 @@ calendar purchase is updated. Money discount balance is updated.
 
 - Scenarios: Customer scans his/her credit card, and payment is completed with money discount.
 
-### 2.10 UC10: MAKE TRANSACTION WITH 5% DISCOUNT & MONEY DISCOUNT
+### 2.10 UC10: PERFORM TRANSACTION WITH 5% DISCOUNT & MONEY DISCOUNT
 - Requirements: In this use case, system could make transaction with 5% discount and money discount.
 
 - Pre-conditions: Customer buys products. The customer's status is gold. Customer has money reward in his/her account.
