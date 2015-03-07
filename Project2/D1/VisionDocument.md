@@ -58,9 +58,12 @@ rewards.
 
 5.1 The PReMS is designed for two mobile stall owners to manage payment and rewards for their business in a local farmer
 market. It is not open to the public including customers.
+
 5.2 The PReMS is only designed to work on Android OS device with Internet access. It won't work on any other systems
 such as iPhone.
+
 5.3 The PReMS only accepts payment by Credit card. It won't work with other payment methods such as cash.
+
 5.4 PReMS will not use the previously used Credit card (stored in transaction history) for new transactions. Each time,
 the credit card has to be scanned even if it is the same credit card. This is done to enhance security.
 
