@@ -36,7 +36,7 @@ credit card details are associated for that transaction are stored
 
 - Eclipse IDE with an android simulator/android device is used to develop and test the application
 - Eclipse Kepler or above is used for application development and JDK 1.6 or above is used
-- The Payment and Rewards Management Android application is targetted for Android API versions between 16 and 19
+- The Payment and Rewards Management Android application is targeted for Android API versions between 16 and 19
 - Android libraries that are installed on top of Eclipse are used for application development
 
 ## 2 Architectural Design
@@ -52,18 +52,18 @@ and the interaction between them.
 ![Class Diagram Image](Images/componentdiagram.png)
 
 The complexities regarding `E-Mail service`, `Credit card scanner` and `Payment-Processing Provider` services are 
-hidden as they are not explicity implemented in this system. 
+hidden as they are not explicitly implemented in this system. 
 
 ### 2.2 Deployment Diagram
 
-A deployment diagram that indicates the deployment locaion of the various application components, packages & libraries
+A deployment diagram that indicates the deployment location of the various application components, packages & libraries
 is shown below. It also describes the external services and devices used.
 
 ![Deployment Diagram Image](Images/deploymentdiagram.png)
 
 ## 3 Low-Level Design
 
-The main components associated with the application are desribed below
+The main components associated with the application are described below
 
 - Customer, Transaction and Reward classes
 	- A class diagram is specified in section 3.1 that describes the individual entities, attributes, method and their
@@ -95,9 +95,9 @@ as and when the application is implemented to keep it up to date.
 
 ![Class Diagram Image](Images/teamdesign.png)
 
-- The `CustomerManager` and `PaymentManager` classes are implemented to separate the complex functionalities (separation
+- The `CustomerManagement` and `PaymentManagement` classes are implemented to separate the complex functionalities (separation
 of concern)
-- A `Discount` base class is implemented so that there is scope for additional type of discounts to be added in future
+- A `Discount` base class is implemented so that there is scope for additional type of discounts to be added in future.
 Currently only the absolute discount and gold member discounts are available
 - The processed discounts are tied to transactions
 - The implementation level attributes (ex - lists etc...) are not shown in the class diagram
