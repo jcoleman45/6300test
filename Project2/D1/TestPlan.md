@@ -77,7 +77,7 @@ The following guidelines should be used when choosing a set of regression tests:
 
 ### 1.3 Adequacy Criterion
 
-For unit testing, a code coverage tool will be used to ensure branch and condition coverage. Boundary conditions and error exceptions will be included in the test cases.
+For unit testing, test cases are selected to ensure branch and condition coverage. All boundary conditions and error exceptions will be included in the test cases.
 
 For integration and system tests, QA will be preparing test cases that cover all scenarios for the requirements and map test cases to respective requirement to ensure the coverage for requirements. Peer review will be conducted by other team members.
 
@@ -94,22 +94,33 @@ Drag and drop issues to prioritize them
 
 ### 1.5 Technology
 
-JUnit will be used for unit tests inside each class.
-
-Integration and System tests will be done manually. 
+- Eclipse IDE with an android simulator/android device is used to develop and test the application.
+- For unit testing, JUnit will be used for each classes.
+- Integration and System tests will be done manually. 
 
 ## 2 Test Cases
 
-| Purposes | Steps | Expected Result | Actual Result | Pass/Fail |
-|-------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------|---------------|-----------|
-| SystemMain -> CustomerManagement | In system main, click manage customers button | go to customer management page |  |  |
-| SystemMain -> PaymentManagement | In system main, click manage payments button | go to payment management page |  |  |
-| Customer management -> Customer via add customer | In customer management, select add customer; input customer info and confirm | go to customer page with the newly created customer |  |  |
-| Customer management -> Customer via edit customer | In customer management, select edit customer; edit customer info and confirm | go to customer page with edited customer information |  |  |
-| Customer management -> Customer via get customer | In customer management, select get customer; input customer info and confirm | go to customer page of the requested customer |  |  |
-| Customer management will not add duplicate customer | In customer management, select add customer; input customer info of an old customer and confirm | show "Customer already exist" and not create a duplicate sutomer |  |  |
-| Getcustomer show error if no customer is found | In customer management, select get customer; input customer info and confirm | return no matched customer found |  |  |
-| Payment management -> Transaction via listPayments | In payment management, select list payment; input customer info and confirm | show history of all transactions of the customer |  |  |
-| Payment management -> Transaction via processPayment | In payment management, select process payment; input customer info, payment amount | go to transaction page of the new transaction showing correct date, amount and rewardsApplied |  |  |
-| Payment management show error if no customer is found | In payment management, select process payment; input customer info, payment amount | return error (customer not found) |  |  |
-| Payment management show null for a customer without transaction records | In payment management, select list payment; input customer info and confirm | return no matched customer found |  |  |
+| Purposes | Steps | Expected Result | Actual Result | P/F |
+|---------------------------|------------------------------------------|-----------------------------------------------|-----|----|
+| Customer management | In system main, click manage customers button | go to customer management page |  |  |
+| Payment management | In system main, click manage payments button | go to payment management page |  |  |
+| Add a new customer | In customer management, select add customer; input customer info and confirm | go to customer page with the newly created customer |  |  |
+| Do not allow adding duplicate customer | In customer management, select add customer; input customer info of an old customer and confirm | show "Customer already exist" and not create a duplicate sutomer |  |  |
+| Edit customer | In customer management, select edit customer; edit customer info and confirm | go to customer page and update customer information |  |  |
+| Get customer | In customer management, select get customer; input customer info and confirm | go to customer page of the requested customer |  |  |
+| Getcustomer show error if no customer is found | In customer management, select get customer; input a new customer info and confirm | return no matched customer found |  |  |
+| Show customer's transaction history | In customer's page, select transaction history | displays a list of transaction history |  |  |
+| Cannot process payment for unregistered customers | In payment management, select process payment; input a new customer info, payment amount | return "no matched customer found, must add customer info first" |  |  |
+| Process a payment for non-gold customer who do not use reward | In payment management, select process payment; input customer info, payment amount, do not use reward | display a complete transaction showing date, amount and discounts applied (no); update total purchase |  |  |
+| Process a payment for non-gold customer who use reward | In payment management, select process payment; input customer info, payment amount, use reward, reward amount | display a complete transaction showing date, amount and discounts applied (yes), MoneyDiscount; update total purchase |  |  |
+| Process a payment for gold customer who do not use reward | In payment management, select process payment; input customer info, payment amount, do not use reward | display a complete transaction showing date, amount and discounts applied (yes), GoldMemberDiscount; update total purchase |  |  |
+| Process a payment for gold customer who use reward | In payment management, select process payment; input customer info, payment amount, use reward, reward amount | display a complete transaction showing date, amount and discounts applied (yes), GoldMemberDiscount, MoneyDiscount; update total purchase |  |  |
+| Get reward | process a payment which total price after discount is >= 100 | customer's cumulative reward is added by $10 |  |  |
+| Send an email to customer when he receive reward | process a payment which total price after discount is >= 100 | an email is sent notifying the customer new reward amount and accumulative reward amount |  |  |
+| Achieve gold status | process a new payment and customer's total purchase in a calender year >= 1000 | customer's gold status is true |  |  |
+| Send email when gold status is reached | process a new payment and customer's total purchase in a calender year >= 1000 | an email is sent notifying the customer he/she has achieved gold status |  |  |
+
+
+### REFERENCES
+
+- http://agile.csc.ncsu.edu/SEMaterials/BlackBox.pdf
