@@ -8,7 +8,7 @@ Payment and rewards management system (PReMS) is an Android application that wil
 to manage payment and rewards for their customers. The PReMS can be used on their Android devices to add/edit customers,
 process payments, track transaction history, and send rewards' related emails.
 
-## 2 Business Needs/Requirements
+## 2 Business Needs / Requirements
 
 Brad and Janet are two young farmers from the Atlanta area who sell their produce regularly at local farmers markets.
 Currently, they have no effective system to manage payments and reward their loyal customers. A full-fledged Payments
@@ -33,9 +33,7 @@ retailers. There is also a thought of increasing the type of rewards by adding c
 
 ## 4 Major Features (Optional)
 
-*Here you outline the features at a high level (a detailed feature outline belongs in the requirements document.) Some
-people prefer to outline features in the above Product/Solution Overview section, which is also a fine approach.
-Whatever you do, keep it to bullet points, not paragraphs. If you can use pictures, such as mockups, even better.*
+
 
 The following are the major features that the PReMS will be able to provide:
 
