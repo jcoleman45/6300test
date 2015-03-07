@@ -1,7 +1,7 @@
 # Design Document
 
 This document describes the architecture and design of the 'Payment and Rewards Management System for Mobile Stalls 
-for Android' by capturing the details through UML diagrams such as component, deployment and class diagrams.
+for Android' (PReMS) by capturing the details through UML diagrams such as component, deployment and class diagrams.
 
 The document also captures the design constraints and assumptions.
 
@@ -11,7 +11,7 @@ The document also captures the design constraints and assumptions.
 
 ### 1.1 Assumptions
 
-- It is assumed that the stall manager has an Android device to use the application
+- It is assumed that the stall manager has an Android device to use the PReMS application
 - Assumption is that the stall manager user is familiar with the Android OS and in using Android apps
 - No specific user manual is provided with the application other than making the app user interfaces to be intuitive
 for easier navigation. It is assumed that the user is aware of the complete set of requirements
