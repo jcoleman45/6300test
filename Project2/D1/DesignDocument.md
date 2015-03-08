@@ -14,7 +14,7 @@ The document also captures the design constraints and assumptions.
 - It is assumed that the stall manager has an Android device to use the PReMS application
 - Assumption is that the stall manager user is familiar with the Android OS and in using Android apps
 - It is assumed that the user is aware of the complete set of requirements
-- Library classes such as Date, Currency etc... are not shown in the design. More preference is given to the usage
+- Library classes such as Date or Currency  are not shown in the design. More preference is given to the usage
 of standard Java library classes instead of custom implementations
 - This design document does not document the screenshots used. If time permits, they will be captured as part of 
 user manual documentation
@@ -99,4 +99,4 @@ of concern)
 - A `Discount` base class is implemented so that there is scope for additional type of discounts to be added in future.
 Currently only the absolute discount and gold member discounts are available
 - The processed discounts are tied to transactions
-- The implementation level attributes (ex - lists etc...) are not shown in the class diagram
+- The implementation level attributes (for example lists) are not shown in the class diagram

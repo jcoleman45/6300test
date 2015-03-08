@@ -16,7 +16,7 @@ throughout the application’s design and implementation phase. There will be a 
 are  produced as part of this process. The description of these documents and activities generated in each of the phases 
 are given below.
 
-###2.1 Inception and Elaboration (WEEK-1)
+###2.1 Inception and Elaboration (Week 1)
 
 This phase includes the overall planning of activities for the whole project, documenting the whole process and defining 
 individual and team responsibilities.
@@ -67,7 +67,7 @@ documentation)
 - Agreed timelines for the execution of various phases
 - All documents to be uploaded to Github repository
 
-###2.2 Construction (WEEK-2)
+###2.2 Construction (Week 2)
 
 ####2.2.1 Revise Earlier Documents
 The initial project plan, vision document, supplementary requirements, design document and test plan are revised as
@@ -105,7 +105,7 @@ all team members.
 - Updated Traceability matrix
 - All artifacts to be uploaded to Github repository
 
-###2.3 Transition (WEEK-3)
+###2.3 Transition (Week 3)
 
 ####2.3.1 Revise Earlier Documents
 In this phase, the team will go over all the documents throughout the whole project and make any final changes.
@@ -123,7 +123,7 @@ commit-id will be submitted to T­-Square by the project manager as part of assi
 **Exit Criteria**
 
 - Agreed the final version application
-- Agreed test cases (integration, system, unit etc...) that test each requirement
+- Agreed test cases (integration, system and unit tests) that test each requirement
 - Approval of all documents
 - No critical/major/minor defects
 - All artifacts to be uploaded to Github repository
@@ -140,13 +140,13 @@ The project team constitutes of the following members:
 The description of roles assigned to team members are given below:
 
 - **Project Manager:** The project manager is responsible for setting goals and tracking the whole progress. This role
-drafts the project plan,user case model etc...
+is responsible for drafting the project plan and use case model.
 - **Development Lead:** The development lead writes the code for the Android application, and manages merges of
 different branches in the Github repository. 
-- **Documentation Lead:** The documentation lead manages the various documents and writes the supplementary document,
-user manual etc...
+- **Documentation Lead:** The documentation lead manages the various documents and writes the supplementary document and
+user manual.
 - **QA Manager:** The QA manager will prepare test cases and write code to test/debug the code and evaluates the quality
-of the application to meet all requirements.This role will draft the test plan.
+of the application to meet all requirements. This role will draft the test plan.
 
 In this project, the roles are assigned as follows:
 
@@ -158,7 +158,7 @@ In this project, the roles are assigned as follows:
 | Ganesh Shivashankaraiah | Documentation Lead, Developer  |
 
 - Every member is expected to review documents and source code on Github as needed. 
-- Weekly meetings (twice per week) are schedule on Google Hangout for the entire team to understand the progress and 
+- Weekly meetings (twice per week) are scheduled on Google Hangout for the entire team to understand the progress and
 discuss any issues
 - Project team will collaborate on `Slack.com` on a continous basis
 - `Github` will be used as the source control repository
