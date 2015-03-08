@@ -1,9 +1,10 @@
 # Test Plan
 
-The purpose of this test plan is to define testing strategies to include all the functional
-and non-functional requirements; techniques used to select test cases and ensure coverage; bug tracking procedures and lastly list test cases at each test levels.
+The purpose of this test plan is to define testing strategies to include all the functional and non-functional 
+requirements; techniques used to select test cases and ensure coverage; bug tracking procedures and lastly list test 
+cases at each test levels.
 
-**Author**: \<Team26\>
+**Author**: **Team26**
 
 ## 1 Testing Strategy
 
@@ -12,11 +13,10 @@ and non-functional requirements; techniques used to select test cases and ensure
 #### 1.1.1 Unit Testing Strategy
 
 Unit testing will first be performed to ensure the functionality of each modules individually. Each method of each 
-classes willed be tested to ensure it behaves exactly as expected. Unit test cases will be prepared by the QA manager
+classes will be tested to ensure it behaves exactly as expected. Unit test cases will be prepared by the QA manager
 based on the requirement specifications and executed by application developers during software construction phase. 
 Thus any faulty module can be fixed immediately rather than let it exist and then cause some major issue in the
 integration phase.
-
 
 #### 1.1.2 Integration Testing Strategy
 
@@ -25,7 +25,6 @@ working. Integration testing includes interactions between all layers of an appl
 applications, as a complete end-to-end test of the functionality. Integration test cases will be prepared and executed
 by QA manager and should cover all possible interactions or paths between each modules. Other team members will review
 the test cases to make sure the functional coverage.
-
 
 #### 1.1.3 System Testing Strategy
 

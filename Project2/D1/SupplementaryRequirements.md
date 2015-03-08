@@ -1,8 +1,9 @@
 # Supplementary Requirements
 
-**Author**: \<Team26\>
+**Author**: **Team26**
 
-Some of the requirements listed here are non-functional requirements that do not fit the use case model.
+Requirements listed here are non-functional requirements that do not fit the use case model which typically
+captures the functional requirements.
 
 ##1.1 Programming environment
 
@@ -20,3 +21,7 @@ Transactions and customers need to be stored in a storage system for later retri
 ##1.4 User Interaction
 
 One user can use the application at a time.
+
+##1.5 Project Execution Methodology
+
+UML-based process has to be used for project implementation to get an experience of Unified Software Process

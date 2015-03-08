@@ -13,8 +13,7 @@ The document also captures the design constraints and assumptions.
 
 - It is assumed that the stall manager has an Android device to use the PReMS application
 - Assumption is that the stall manager user is familiar with the Android OS and in using Android apps
-- No specific user manual is provided with the application other than making the app user interfaces to be intuitive
-for easier navigation. It is assumed that the user is aware of the complete set of requirements
+- It is assumed that the user is aware of the complete set of requirements
 - Library classes such as Date, Currency etc... are not shown in the design. More preference is given to the usage
 of standard Java library classes instead of custom implementations
 - This design document does not document the screenshots used. If time permits, they will be captured as part of 
@@ -41,7 +40,7 @@ credit card details are associated for that transaction are stored
 
 ## 2 Architectural Design
 
-The architecture provides the high-level design view of a system and the detailed design provides the component details
+The architecture provides a high-level design view of the system and the detailed design provides the component details
 and their interactions.
 
 ### 2.1 Component Diagram
