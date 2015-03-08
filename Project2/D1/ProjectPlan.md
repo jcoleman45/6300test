@@ -162,7 +162,6 @@ In this project, the roles are assigned as follows:
 discuss any issues
 - Project team will collaborate on `Slack.com` on a continous basis
 - `Github` will be used as the source control repository
-- `Jenkins` will be used as an automated build tool
 - Defects will be captured during testing and the individual team members will be assigned as owners
 
 ## 4 Estimates
