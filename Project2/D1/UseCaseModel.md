@@ -5,7 +5,8 @@
 **Author**: \<Team26\>
 
 ## 1 Use Case Diagram
-A use case diagram is given below that shows the various actors, use case and the interaction between them.
+A use case diagram is given below that shows the various actors, use cases and the interaction between them.
+
 ![Class Diagram Image](Images/usecasediagram.png)
 
 
@@ -29,7 +30,7 @@ to database.
 
 - Post-conditions: The database for customer is updated.
 
-- Scenarios:Stall manager looks up customer information, selects the correct customer, edits information, and saves to
+- Scenarios: Stall manager looks up customer information, selects the correct customer, edits information, and saves to
 database. 
 
 ### 2.3 UC3: GET TRANSACTION HISTORY
@@ -86,7 +87,7 @@ and payment processing softwares.
 - Post-conditions: The 5% discount is applied in final transaction. Transaction history is updated. The customer's
 calendar purchase is updated.
 
-- Scenarios:Gold customer scans his/her credit card, and payment is completed with 5% discount.
+- Scenarios: Gold customer scans his/her credit card, and payment is completed with 5% discount.
 
 ### 2.9 UC9: PERFORM TRANSACTION WITH MONEY DISCOUNT
 - Requirements: In this use case, system could make transaction with 5% discount.
