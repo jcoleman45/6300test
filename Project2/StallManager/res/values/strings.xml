@@ -16,8 +16,7 @@
     <string name="txt_welcome">Welcome to the PReMS Stallmanager. What action would you like to perform?</string>
     <string name="title_customer_list">Customers</string>
     <string name="title_customer_detail">Customer Detail</string>
-    <string name="title_activity_customer_add">CustomerAddActivity</string>
-    <string name="hello_world">Hello world!</string>
+    <string name="title_activity_customer_add">Add Customer</string>
     <string name="lbl_firstname">First Name</string>
     <string name="lbl_lastname">Last Name</string>
     <string name="lbl_zipcode">Zip Code</string>
