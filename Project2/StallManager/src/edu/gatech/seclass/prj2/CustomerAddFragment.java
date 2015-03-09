@@ -8,21 +8,24 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.EditText;
 
 import edu.gatech.seclass.prj2.R;
 
+import edu.gatech.seclass.prj2.data.Customer;
+
 /**
- * The main menu fragment containing a welcome text and the menu buttons.
+ * Provides a form to enter customer details and a button to persist the information.
  * Activities containing this fragment MUST implement the {@link Callbacks}
  * interface. 
  */
-public class MainMenuFragment extends Fragment implements OnClickListener {
+public class CustomerAddFragment extends Fragment implements OnClickListener {
 
 	/**
 	 * The fragment's current callback object, which is notified of list item
 	 * clicks.
 	 */
-	private Callbacks mCallbacks = sDummyCallbacks;
+	private CustomerAddFragment.Callbacks mCallbacks = sDummyCallbacks;
 
 	/**
 	 * A callback interface that all activities containing this fragment must
@@ -33,30 +36,33 @@ public class MainMenuFragment extends Fragment implements OnClickListener {
 		/**
 		 * Callback for when a button has been clicked.
 		 */
-		public void mainMenuButtonClicked(int id);
+		public void buttonClicked(int id);
 	}
 
 	/**
 	 * A dummy implementation of the {@link Callbacks} interface that does
 	 * nothing. Used only when this fragment is not attached to an activity.
 	 */
-	private static Callbacks sDummyCallbacks = new Callbacks() {
+	private static CustomerAddFragment.Callbacks sDummyCallbacks = new Callbacks() {
 		
 		@Override
-		public void mainMenuButtonClicked(int id) {
+		public void buttonClicked(int id) {
 		}
 	};
+	private View rootView;
 
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
-		View rootView = inflater.inflate(R.layout.fragment_main, container,
-				false);
-		
-		((Button) rootView.findViewById(R.id.btn_add_customer)).setOnClickListener(this);
-		((Button) rootView.findViewById(R.id.btn_manage_customers)).setOnClickListener(this);
-		
+		rootView = inflater.inflate(R.layout.fragment_customer_add,
+				container, false);
+		((Button) rootView.findViewById(R.id.btn_save_customer)).setOnClickListener(this);
 		return rootView;
+	}
+
+	@Override
+	public void onClick(View v) {
+		mCallbacks.buttonClicked(v.getId());
 	}
 	
 	@Override
@@ -74,10 +80,13 @@ public class MainMenuFragment extends Fragment implements OnClickListener {
 		mCallbacks = sDummyCallbacks;
 	}
 
-	@Override
-	public void onClick(View v) {
-		int id = ((Button) v).getId();
-		mCallbacks.mainMenuButtonClicked(id);
+	public Customer buildCustomer() {
+		Customer c = new Customer();
+		c.setFirstName(((EditText) rootView.findViewById(R.id.txt_firstname)).getText().toString());
+		c.setLastName(((EditText) rootView.findViewById(R.id.txt_lastname)).getText().toString());
+		c.setZipCode(((EditText) rootView.findViewById(R.id.txt_zipcode)).getText().toString());
+		c.setEmail(((EditText) rootView.findViewById(R.id.txt_email)).getText().toString());
+		return c;
 	}
-	
+
 }

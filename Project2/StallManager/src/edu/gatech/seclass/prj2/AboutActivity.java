@@ -8,7 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.example.stallmanager.R;
+import edu.gatech.seclass.prj2.R;
 
 public class AboutActivity extends Activity {
 	
@@ -37,9 +37,6 @@ public class AboutActivity extends Activity {
 	 * The fragment containing information about the application.
 	 */
 	public static class AboutFragment extends Fragment {
-
-		public AboutFragment() {
-		}
 
 		@Override
 		public View onCreateView(LayoutInflater inflater, ViewGroup container,

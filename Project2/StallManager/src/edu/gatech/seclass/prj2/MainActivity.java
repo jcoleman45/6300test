@@ -9,7 +9,7 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 
-import com.example.stallmanager.R;
+import edu.gatech.seclass.prj2.R;
 
 public class MainActivity extends Activity implements MainMenuFragment.Callbacks {
 
@@ -18,15 +18,12 @@ public class MainActivity extends Activity implements MainMenuFragment.Callbacks
 	private static final String TAG_MAIN = "main";
 	
 	Fragment mainFragment;
-	Fragment aboutFragment;
-
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 		getActionBar().setDisplayHomeAsUpEnabled(false);
-
 
 		if (savedInstanceState == null) {
 			FragmentTransaction transaction = getFragmentManager().beginTransaction();
@@ -54,11 +51,16 @@ public class MainActivity extends Activity implements MainMenuFragment.Callbacks
 		// automatically handle clicks on the Home/Up button, so long
 		// as we specify a parent activity in AndroidManifest.xml.
 		int id = item.getItemId();
-		if (id == R.id.action_settings) {
+		switch (id) {
+		case R.id.action_settings:
 			return true;
-		} else if (id == R.id.action_about) {
+		case R.id.action_about:
 			startActivity(new Intent(this, AboutActivity.class));
 			return true;
+		case R.id.action_debug:
+			startActivity(new Intent(this, DebugActivity.class));
+			return true;
+			
 		}
 		return super.onOptionsItemSelected(item);
 	}
@@ -69,6 +71,7 @@ public class MainActivity extends Activity implements MainMenuFragment.Callbacks
 		switch (id) {
 		case R.id.btn_add_customer:
 			Log.d(SN, "Add Customer button clicked");
+			startActivity(new Intent(this, CustomerAddActivity.class));
 			break;
 		case R.id.btn_manage_customers:
 			Log.d(SN, "Manage Customers button clicked");

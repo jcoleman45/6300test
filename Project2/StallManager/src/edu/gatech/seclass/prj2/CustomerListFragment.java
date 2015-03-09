@@ -1,17 +1,19 @@
 package edu.gatech.seclass.prj2;
 
 import android.app.Activity;
-import android.os.Bundle;
 import android.app.ListFragment;
+import android.content.Context;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
+import android.os.Bundle;
 import android.view.View;
-import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import edu.gatech.seclass.prj2.data.Customer;
+import edu.gatech.seclass.prj2.data.CustomerAdapter;
+import edu.gatech.seclass.prj2.data.DataHelper;
 
 /**
- * A list fragment representing a list of Customers. This fragment also supports
- * tablet devices by allowing list items to be given an 'activated' state upon
- * selection. This helps indicate which item is currently being viewed in a
- * {@link CustomerDetailFragment}.
+ * A list fragment representing a list of Customers. 
  * <p>
  * Activities containing this fragment MUST implement the {@link Callbacks}
  * interface.
@@ -19,21 +21,10 @@ import android.widget.ListView;
 public class CustomerListFragment extends ListFragment {
 
 	/**
-	 * The serialization (saved instance state) Bundle key representing the
-	 * activated item position. Only used on tablets.
-	 */
-	private static final String STATE_ACTIVATED_POSITION = "activated_position";
-
-	/**
 	 * The fragment's current callback object, which is notified of list item
 	 * clicks.
 	 */
 	private Callbacks mCallbacks = sDummyCallbacks;
-
-	/**
-	 * The current activated item position. Only used on tablets.
-	 */
-	private int mActivatedPosition = ListView.INVALID_POSITION;
 
 	/**
 	 * A callback interface that all activities containing this fragment must
@@ -44,7 +35,7 @@ public class CustomerListFragment extends ListFragment {
 		/**
 		 * Callback for when an item has been selected.
 		 */
-		public void onItemSelected(String id);
+		public void onItemSelected(long rowId);
 	}
 
 	/**
@@ -54,37 +45,20 @@ public class CustomerListFragment extends ListFragment {
 	private static Callbacks sDummyCallbacks = new Callbacks() {
 		
 		@Override
-		public void onItemSelected(String id) {
+		public void onItemSelected(long id) {
 		}
 	};
-
-	/**
-	 * Mandatory empty constructor for the fragment manager to instantiate the
-	 * fragment (e.g. upon screen orientation changes).
-	 */
-	public CustomerListFragment() {
-	}
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 
-		// TODO: replace with a real list adapter.
-		setListAdapter(new ArrayAdapter<DummyContent.DummyItem>(getActivity(),
-				android.R.layout.simple_list_item_activated_1,
-				android.R.id.text1, DummyContent.ITEMS));
-	}
-
-	@Override
-	public void onViewCreated(View view, Bundle savedInstanceState) {
-		super.onViewCreated(view, savedInstanceState);
-
-		// Restore the previously serialized activated item position.
-		if (savedInstanceState != null
-				&& savedInstanceState.containsKey(STATE_ACTIVATED_POSITION)) {
-			setActivatedPosition(savedInstanceState
-					.getInt(STATE_ACTIVATED_POSITION));
-		}
+		Context context = getActivity();
+		DataHelper data = new DataHelper(context);
+		SQLiteDatabase db = data.getReadableDatabase();
+		Cursor cursor = db.query(Customer.TABLE_CUSTOMER, null, null, null, null, null, null);
+		
+		setListAdapter(new CustomerAdapter(context, cursor));
 	}
 
 	@Override
@@ -106,40 +80,9 @@ public class CustomerListFragment extends ListFragment {
 	public void onListItemClick(ListView listView, View view, int position,
 			long id) {
 		super.onListItemClick(listView, view, position, id);
-
-		// Notify the active callbacks interface (the activity, if the
-		// fragment is attached to one) that an item has been selected.
-		mCallbacks.onItemSelected(DummyContent.ITEMS.get(position).id);
+		long rowId = getListView().getItemIdAtPosition(position);
+		mCallbacks.onItemSelected(rowId);
 	}
 
-	@Override
-	public void onSaveInstanceState(Bundle outState) {
-		super.onSaveInstanceState(outState);
-		if (mActivatedPosition != ListView.INVALID_POSITION) {
-			// Serialize and persist the activated item position.
-			outState.putInt(STATE_ACTIVATED_POSITION, mActivatedPosition);
-		}
-	}
 
-	/**
-	 * Turns on activate-on-click mode. When this mode is on, list items will be
-	 * given the 'activated' state when touched.
-	 */
-	public void setActivateOnItemClick(boolean activateOnItemClick) {
-		// When setting CHOICE_MODE_SINGLE, ListView will automatically
-		// give items the 'activated' state when touched.
-		getListView().setChoiceMode(
-				activateOnItemClick ? ListView.CHOICE_MODE_SINGLE
-						: ListView.CHOICE_MODE_NONE);
-	}
-
-	private void setActivatedPosition(int position) {
-		if (position == ListView.INVALID_POSITION) {
-			getListView().setItemChecked(mActivatedPosition, false);
-		} else {
-			getListView().setItemChecked(position, true);
-		}
-
-		mActivatedPosition = position;
-	}
 }

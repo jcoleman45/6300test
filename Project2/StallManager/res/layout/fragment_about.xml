@@ -8,7 +8,7 @@
     android:layout_marginTop="22dp"
     android:orientation="vertical"
     android:padding="20dp"
-    tools:context="com.example.stallmanager.MainActivity$AboutFragment" >
+    tools:context="edu.gatech.seclass.prj2.MainActivity$AboutFragment" >
 
         <TextView
             android:id="@+id/textView2"
