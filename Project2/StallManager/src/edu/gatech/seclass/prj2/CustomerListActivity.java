@@ -20,19 +20,28 @@ import android.widget.AdapterView.OnItemClickListener;
  */
 public class CustomerListActivity extends Activity implements OnItemClickListener {
 
+	private CustomerAdapter adapter;
+	private ListView listView;
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_customer_list);
 		
+		populateList();
+
+	}
+
+	private void populateList() {
 		DataHelper data = new DataHelper(this);
 		SQLiteDatabase db = data.getReadableDatabase();
 		Cursor cursor = db.query(Customer.TABLE_CUSTOMER, null, null, null, null, null, null);
 		
-		ListView lv = (ListView) findViewById(R.id.customer_list);
-		lv.setOnItemClickListener(this);
-		lv.setAdapter(new CustomerAdapter(this, cursor));
-
+		listView = (ListView) findViewById(R.id.customer_list);
+		listView.setOnItemClickListener(this);
+		adapter = new CustomerAdapter(this, cursor);
+		listView.setAdapter(adapter);
+		db.close();
 	}
 
 	@Override
@@ -42,6 +51,12 @@ public class CustomerListActivity extends Activity implements OnItemClickListene
 
 		detailIntent.putExtra(CustomerDetailActivity.CUSTOMER_ROW_ID, id);
 		startActivity(detailIntent);
+	}
+	
+	@Override
+	protected void onResume() {
+		super.onResume();
+		populateList();
 	}
 	
 }

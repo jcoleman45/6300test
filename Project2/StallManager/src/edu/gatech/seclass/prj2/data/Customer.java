@@ -137,9 +137,11 @@ public class Customer {
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + ((created == null) ? 0 : created.hashCode());
-		result = (int) (prime * result + discount);
-		result = prime * result + ((emailAddress == null) ? 0 : emailAddress.hashCode());
+		long temp;
+		temp = Double.doubleToLongBits(discount);
+		result = prime * result + (int) (temp ^ (temp >>> 32));
+		result = prime * result
+				+ ((emailAddress == null) ? 0 : emailAddress.hashCode());
 		result = prime * result
 				+ ((firstName == null) ? 0 : firstName.hashCode());
 		result = prime * result + (goldStatus ? 1231 : 1237);
@@ -148,6 +150,8 @@ public class Customer {
 		result = prime * result + ((zipCode == null) ? 0 : zipCode.hashCode());
 		return result;
 	}
+
+
 
 	@Override
 	public boolean equals(Object obj) {
@@ -158,6 +162,9 @@ public class Customer {
 		if (getClass() != obj.getClass())
 			return false;
 		Customer other = (Customer) obj;
+		if (Double.doubleToLongBits(discount) != Double
+				.doubleToLongBits(other.discount))
+			return false;
 		if (emailAddress == null) {
 			if (other.emailAddress != null)
 				return false;
@@ -167,6 +174,8 @@ public class Customer {
 			if (other.firstName != null)
 				return false;
 		} else if (!firstName.equals(other.firstName))
+			return false;
+		if (goldStatus != other.goldStatus)
 			return false;
 		if (lastName == null) {
 			if (other.lastName != null)

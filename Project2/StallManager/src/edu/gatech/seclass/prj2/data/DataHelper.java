@@ -1,10 +1,14 @@
 package edu.gatech.seclass.prj2.data;
 
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.util.Log;
 
 public class DataHelper extends SQLiteOpenHelper {
+
+	private static final String SN = DataHelper.class.getSimpleName();
 
     private static final int DATABASE_VERSION = 2;
     private static final String DATABASE_NAME = "jvxcdf_stallmanager";
@@ -36,6 +40,37 @@ public class DataHelper extends SQLiteOpenHelper {
 		}
 		customer.setId(id);
 		return customer;
+	}
+	
+	/**
+	 * Find the customer using the given row ID.
+	 * @param rowId DB row ID
+	 * @return the customer or {@code null} if the entry could not be found
+	 */
+	public Customer findCustomerById(long rowId) {
+		SQLiteDatabase db = getReadableDatabase();
+		Cursor cursor = db.query(Customer.TABLE_CUSTOMER, null, "_id=" + rowId, null, null, null, null);
+		Customer customer;
+		if (cursor.getCount() == 1 && cursor.moveToFirst()) {
+			customer = Customer.fromCursor(cursor);
+		} else {
+			Log.e(SN, "Could not load customer with DB row ID: " + rowId);
+			customer = null;
+		}
+		db.close();
+		return customer;
+	}
+
+	/**
+	 * Update the customer information in the database row specified by the
+	 * ID stored in the {@code Customer} instance.
+	 * @param cust
+	 * @return {@code true} if persisting was successful
+	 */
+	public boolean updateCustomer(Customer cust) {
+		SQLiteDatabase db = getWritableDatabase();
+		int rows = db.update(Customer.TABLE_CUSTOMER, cust.contentValues(), "_id=" + cust.getId(), null);
+		return rows == 1;
 	}
 	
 //	public List<Customer> customers(SQLiteDatabase db) throws PersistanceException {
