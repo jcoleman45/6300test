@@ -20,7 +20,6 @@ public class AboutActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_about);
-		getActionBar().setDisplayHomeAsUpEnabled(true);
 
 		if (savedInstanceState == null) {
 			FragmentTransaction transaction = getFragmentManager().beginTransaction();
@@ -35,7 +34,7 @@ public class AboutActivity extends Activity {
 	}
 
 	/**
-	 * A placeholder fragment containing a simple view.
+	 * The fragment containing information about the application.
 	 */
 	public static class AboutFragment extends Fragment {
 

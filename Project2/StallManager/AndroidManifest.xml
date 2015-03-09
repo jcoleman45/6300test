@@ -29,6 +29,22 @@
             android:label="@string/title_activity_about"
             android:parentActivityName="edu.gatech.seclass.prj2.MainActivity" >
         </activity>
+        <activity
+            android:name="edu.gatech.seclass.prj2.CustomerListActivity"
+            android:label="@string/title_customer_list"
+            android:parentActivityName="edu.gatech.seclass.prj2.MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="edu.gatech.seclass.prj2.MainActivity" />
+        </activity>
+        <activity
+            android:name="edu.gatech.seclass.prj2.CustomerDetailActivity"
+            android:label="@string/title_customer_detail"
+            androedu.gatech.seclass.prj2.CustomerListActivity=".CustomerListActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.stallmanager.CustomerListActivity" />
+        </activity>
     </application>
 
 </manifest>

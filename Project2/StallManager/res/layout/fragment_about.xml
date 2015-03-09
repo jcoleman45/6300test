@@ -20,7 +20,7 @@
             android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/textView1"
+            android:id="@+id/txt_welcome"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/about_team_name"
