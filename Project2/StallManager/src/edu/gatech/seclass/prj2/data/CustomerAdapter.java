@@ -7,7 +7,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CursorAdapter;
 import android.widget.TextView;
-import edu.gatech.seclass.prj2.R;
 
 public class CustomerAdapter extends CursorAdapter {
 
@@ -28,6 +27,5 @@ public class CustomerAdapter extends CursorAdapter {
 	      nameView.setText(customer.fullName());
 	      detailsView.setText("Gold Status: " + customer.hasGoldStatus() + ", Current Discount: " + customer.getDiscount());
 	}
-
 
 }

@@ -1,11 +1,14 @@
-<fragment xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/customer_list"
-    android:name="edu.gatech.seclass.prj2.CustomerListFragment"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:layout_marginLeft="16dp"
-    android:layout_marginRight="16dp"
-    tools:context="edu.gatech.seclass.prj2.CustomerListActivity"
-    tools:layout="@android:layout/list_content" />
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:paddingLeft="7dp"
+    android:paddingRight="7dp" >
 
+    <ListView
+        android:id="@+id/customer_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+    </ListView>
+    
+</FrameLayout>
