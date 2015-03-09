@@ -25,5 +25,10 @@
     <string name="btn_save_customer">Save Customer</string>
     <string name="title_activity_debug">DebugActivity</string>
     <string name="action_debug">Debug</string>
+    <string name="lbl_created_on">Created On:</string>
+    <string name="lbl_discount">Current Absolute Discount</string>
+    <string name="lbl_gold_customer">Gold Customer</string>
+    <string name="btn_edit_customer">Edit</string>
+    <string name="btn_back">Back</string>
 
 </resources>

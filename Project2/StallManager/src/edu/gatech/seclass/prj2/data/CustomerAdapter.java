@@ -25,7 +25,7 @@ public class CustomerAdapter extends CursorAdapter {
 	      TextView detailsView = (TextView) view.findViewById(android.R.id.text2);
 	      Customer customer = Customer.fromCursor(cursor);
 	      nameView.setText(customer.fullName());
-	      detailsView.setText("Gold Status: " + customer.hasGoldStatus() + ", Current Discount: " + customer.getDiscount());
+	      detailsView.setText("Gold Status: " + customer.hasGoldStatus() + ", Current Discount: " + String.valueOf(customer.getDiscount()));
 	}
 
 }

@@ -31,16 +31,16 @@ public class Customer {
             Customer.COLUMN_EMAIL + " TEXT, " +
             Customer.COLUMN_GOLD_STATUS + " BOOLEAN, " +                
             Customer.COLUMN_CREATED + " LONG, " +
-            Customer.COLUMN_DISCOUNT + " INTEGER);";
+            Customer.COLUMN_DISCOUNT + " DOUBLE);";
     
 	private long id;
 
 	private String firstName;
 	private String lastName;
 	private String zipCode;
-	private String email;
+	private String emailAddress;
 	private boolean goldStatus;
-	private int discount;
+	private double discount;
 	private Date created;
 	
 	/**
@@ -73,11 +73,11 @@ public class Customer {
 	public void setZipCode(String zipCode) {
 		this.zipCode = zipCode;
 	}
-	public String getEmail() {
-		return email;
+	public String getEmailAddress() {
+		return emailAddress;
 	}
-	public void setEmail(String email) {
-		this.email = email;
+	public void setEmailAddress(String emailAddress) {
+		this.emailAddress = emailAddress;
 	}
 	public boolean hasGoldStatus() {
 		return goldStatus;
@@ -85,10 +85,10 @@ public class Customer {
 	public void setGoldStatus(boolean goldStatus) {
 		this.goldStatus = goldStatus;
 	}
-	public int getDiscount() {
+	public double getDiscount() {
 		return discount;
 	}
-	public void setDiscount(int discount) {
+	public void setDiscount(double discount) {
 		this.discount = discount;
 	}
 	public Date getCreated() {
@@ -108,7 +108,7 @@ public class Customer {
 	    ContentValues values = new ContentValues();
 	    values.put(COLUMN_FIRST_NAME, getFirstName());
 	    values.put(COLUMN_LAST_NAME, getLastName());
-	    values.put(COLUMN_EMAIL, getEmail());
+	    values.put(COLUMN_EMAIL, getEmailAddress());
 	    values.put(COLUMN_ZIPCODE, getZipCode());
 	    values.put(COLUMN_GOLD_STATUS, hasGoldStatus());
 	    values.put(COLUMN_CREATED, getCreated().getTime());
@@ -122,7 +122,7 @@ public class Customer {
 			c.setFirstName(cursor.getString(cursor.getColumnIndexOrThrow(COLUMN_FIRST_NAME)));
 			c.setLastName(cursor.getString(cursor.getColumnIndexOrThrow(COLUMN_LAST_NAME)));
 			c.setZipCode(cursor.getString(cursor.getColumnIndexOrThrow(COLUMN_ZIPCODE)));
-			c.setEmail(cursor.getString(cursor.getColumnIndexOrThrow(COLUMN_EMAIL)));
+			c.setEmailAddress(cursor.getString(cursor.getColumnIndexOrThrow(COLUMN_EMAIL)));
 			c.setGoldStatus(cursor.getInt(cursor.getColumnIndexOrThrow(COLUMN_GOLD_STATUS))>0);
 			c.setCreated(new Date(cursor.getLong(cursor.getColumnIndexOrThrow(COLUMN_CREATED))));
 			c.setDiscount(cursor.getInt(cursor.getColumnIndexOrThrow(COLUMN_DISCOUNT)));
@@ -138,8 +138,8 @@ public class Customer {
 		final int prime = 31;
 		int result = 1;
 		result = prime * result + ((created == null) ? 0 : created.hashCode());
-		result = prime * result + discount;
-		result = prime * result + ((email == null) ? 0 : email.hashCode());
+		result = (int) (prime * result + discount);
+		result = prime * result + ((emailAddress == null) ? 0 : emailAddress.hashCode());
 		result = prime * result
 				+ ((firstName == null) ? 0 : firstName.hashCode());
 		result = prime * result + (goldStatus ? 1231 : 1237);
@@ -158,10 +158,10 @@ public class Customer {
 		if (getClass() != obj.getClass())
 			return false;
 		Customer other = (Customer) obj;
-		if (email == null) {
-			if (other.email != null)
+		if (emailAddress == null) {
+			if (other.emailAddress != null)
 				return false;
-		} else if (!email.equals(other.email))
+		} else if (!emailAddress.equals(other.emailAddress))
 			return false;
 		if (firstName == null) {
 			if (other.firstName != null)
@@ -185,7 +185,7 @@ public class Customer {
 	public String toString() {
 		return "Customer [id=" + id + ", firstName=" + firstName
 				+ ", lastName=" + lastName + ", zipCode=" + zipCode
-				+ ", email=" + email + ", goldStatus=" + goldStatus
+				+ ", email=" + emailAddress + ", goldStatus=" + goldStatus
 				+ ", discount=" + discount + ", created=" + created + "]";
 	}
 	

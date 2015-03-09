@@ -20,14 +20,14 @@ public class CustomerAddActivity extends Activity implements OnClickListener {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_customer_add);
-		((Button) findViewById(R.id.btn_save_customer)).setOnClickListener(this);
+		((Button) findViewById(R.id.customer_add_btn_save_customer)).setOnClickListener(this);
 	}
 
 	@Override
 	public void onClick(View v) {
 		int id = ((Button) v).getId();
 		switch (id) {
-		case R.id.btn_save_customer:
+		case R.id.customer_add_btn_save_customer:
 			Log.d(SN, "Save Customer button clicked");
 			DataHelper data = new DataHelper(this);
 			SQLiteDatabase db = data.getWritableDatabase();
@@ -49,10 +49,10 @@ public class CustomerAddActivity extends Activity implements OnClickListener {
 	
 	private Customer buildCustomer() {
 		Customer c = new Customer();
-		c.setFirstName(((EditText) findViewById(R.id.txt_firstname)).getText().toString());
-		c.setLastName(((EditText) findViewById(R.id.txt_lastname)).getText().toString());
-		c.setZipCode(((EditText) findViewById(R.id.txt_zipcode)).getText().toString());
-		c.setEmail(((EditText) findViewById(R.id.txt_email)).getText().toString());
+		c.setFirstName(((EditText) findViewById(R.id.customer_add_txt_firstname)).getText().toString());
+		c.setLastName(((EditText) findViewById(R.id.customer_add_txt_lastname)).getText().toString());
+		c.setZipCode(((EditText) findViewById(R.id.customer_add_txt_zipcode)).getText().toString());
+		c.setEmailAddress(((EditText) findViewById(R.id.customer_add_txt_email)).getText().toString());
 		return c;
 	}
 	
